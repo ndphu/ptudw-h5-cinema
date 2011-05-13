@@ -1,0 +1,57 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="H5_Cinema.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title></title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+	background-color: Gray;
+}
+-->
+</style>
+</head>
+
+<body>
+    <form id="form2" runat="server">
+<table width="829" border="0" align="center" bgcolor="#000000">
+  <tr>
+    <td colspan="5">
+      <label></label>
+        <label></label>
+        
+        <div align="right">
+          <input type="submit" name="Submit" value="&#272;&#259;ng nh&#7853;p" />
+          <input type="submit" name="Submit2" value="&#272;&#259;ng xu&#7845;t" />
+          </div>
+      </td>
+  </tr>
+  
+  <tr>
+    <td colspan="5"><img src="../img/banner.jpg" width="829" height="200" /></td>
+  </tr>
+  <tr>
+    <td width="163" height="40"><img src="../img/trangchu.jpg" width="160" height="38" /></td>
+    <td width="164"><a href="../phim/default.aspx" /><img src="../img/phim.jpg" width="160" height="38" /></td>
+    <td width="160"><img src="../img/lichchieu.jpg" width="160" height="38" /></td>
+    <td width="160"><img src="../img/datve.jpg" width="160" height="38" /></td>
+    <td width="160"><img src="../img/thongtin.jpg" width="160" height="38" /></td>
+  </tr>
+  <tr>
+  	<td colspan="5">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="5"><div align="center" class="style1"><br />H5 GROUP <br /><br /></div></td>
+  </tr>
+</table>
+    </form>
+</body>
+</html>

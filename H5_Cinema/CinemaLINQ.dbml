@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Cinema" Class="CinemaLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NDPHU-PC;Initial Catalog=Cinema;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CinemaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BackTicket" Member="BackTickets">
+    <Type Name="BackTicket">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_BookedTicket" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Association Name="BookedTicket_BackTicket" Member="BookedTicket" ThisKey="ID_BookedTicket" OtherKey="ID" Type="BookedTicket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserType" Member="UserTypes">
+    <Type Name="UserType">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="UserRight" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="UserType_User" Member="Users" ThisKey="ID" OtherKey="ID_UserType" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookedTicket" Member="BookedTickets">
+    <Type Name="BookedTicket">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_User" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="ID_Film" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="ID_Cinema" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="ID_Seat" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="ID_OnShowPlan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Seasion" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SingleTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VipTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="BookedTicket_BackTicket" Member="BackTickets" ThisKey="ID" OtherKey="ID_BookedTicket" Type="BackTicket" />
+      <Association Name="Cinema_BookedTicket" Member="Cinema" ThisKey="ID_Cinema" OtherKey="ID" Type="Cinema" IsForeignKey="true" />
+      <Association Name="Film_BookedTicket" Member="Film" ThisKey="ID_Film" OtherKey="ID" Type="Film" IsForeignKey="true" />
+      <Association Name="OnShowPlan_BookedTicket" Member="OnShowPlan" ThisKey="ID_OnShowPlan" OtherKey="ID" Type="OnShowPlan" IsForeignKey="true" />
+      <Association Name="Seat_BookedTicket" Member="Seat" ThisKey="ID_Seat" OtherKey="ID" Type="Seat" IsForeignKey="true" />
+      <Association Name="User_BookedTicket" Member="User" ThisKey="ID_User" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cinema" Member="Cinemas">
+    <Type Name="Cinema">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_Theater" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="TotalSeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Cinema_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_Cinema" Type="BookedTicket" />
+      <Association Name="Cinema_Cinema_OnShowPlan" Member="Cinema_OnShowPlans" ThisKey="ID" OtherKey="ID_Cinema" Type="Cinema_OnShowPlan" />
+      <Association Name="Theater_Cinema" Member="Theater" ThisKey="ID_Theater" OtherKey="ID" Type="Theater" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cinema_OnShowPlan" Member="Cinema_OnShowPlans">
+    <Type Name="Cinema_OnShowPlan">
+      <Column Name="ID_Cinema" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_OnShowPlan" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Cinema_Cinema_OnShowPlan" Member="Cinema" ThisKey="ID_Cinema" OtherKey="ID" Type="Cinema" IsForeignKey="true" />
+      <Association Name="OnShowPlan_Cinema_OnShowPlan" Member="OnShowPlan" ThisKey="ID_OnShowPlan" OtherKey="ID" Type="OnShowPlan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_User" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="ID_Film" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Comment" Member="Comment1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Film_Comment" Member="Film" ThisKey="ID_Film" OtherKey="ID" Type="Film" IsForeignKey="true" />
+      <Association Name="User_Comment" Member="User" ThisKey="ID_User" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Film" Member="Films">
+    <Type Name="Film">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Director" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LeadActors" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PlayWright" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BriefStory" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PlaybillAdd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Length" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Film_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_Film" Type="BookedTicket" />
+      <Association Name="Film_Comment" Member="Comments" ThisKey="ID" OtherKey="ID_Film" Type="Comment" />
+      <Association Name="Film_HistoryRecord" Member="HistoryRecords" ThisKey="ID" OtherKey="ID_Film" Type="HistoryRecord" />
+      <Association Name="Film_OnShowPlan" Member="OnShowPlans" ThisKey="ID" OtherKey="ID_Film" Type="OnShowPlan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GlobalParameter" Member="GlobalParameters">
+    <Type Name="GlobalParameter">
+      <Column Name="ID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdleTimeLimit" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HistoryRecord" Member="HistoryRecords">
+    <Type Name="HistoryRecord">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Film" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="SingleTicketsSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIPTicketsSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Film_HistoryRecord" Member="Film" ThisKey="ID_Film" OtherKey="ID" Type="Film" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoginHistory" Member="LoginHistories">
+    <Type Name="LoginHistory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_User" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="LoginTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoutTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SingleTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIPTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BackTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="User_LoginHistory" Member="User" ThisKey="ID_User" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OnShowPlan" Member="OnShowPlans">
+    <Type Name="OnShowPlan">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Film" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="OnShowDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OnShowEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="WaitingTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Seasion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="OnShowPlan_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_OnShowPlan" Type="BookedTicket" />
+      <Association Name="OnShowPlan_Cinema_OnShowPlan" Member="Cinema_OnShowPlans" ThisKey="ID" OtherKey="ID_OnShowPlan" Type="Cinema_OnShowPlan" />
+      <Association Name="Film_OnShowPlan" Member="Film" ThisKey="ID_Film" OtherKey="ID" Type="Film" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seat" Member="Seats">
+    <Type Name="Seat">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TypeSeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Seat_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_Seat" Type="BookedTicket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Theater" Member="Theaters">
+    <Type Name="Theater">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LocationCity" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Theater_Cinema" Member="Cinemas" ThisKey="ID" OtherKey="ID_Theater" Type="Cinema" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_UserType" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Online" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastAction" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="User_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_User" Type="BookedTicket" />
+      <Association Name="User_Comment" Member="Comments" ThisKey="ID" OtherKey="ID_User" Type="Comment" />
+      <Association Name="User_LoginHistory" Member="LoginHistories" ThisKey="ID" OtherKey="ID_User" Type="LoginHistory" />
+      <Association Name="UserType_User" Member="UserType" ThisKey="ID_UserType" OtherKey="ID" Type="UserType" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
