@@ -51,6 +51,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DeoLeo.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Img\banner.jpg" />
     <Content Include="Img\datve.jpg" />
