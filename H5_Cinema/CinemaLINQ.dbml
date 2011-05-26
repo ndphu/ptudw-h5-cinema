@@ -1,163 +1,211 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Cinema" Class="CinemaLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=NDPHU-PC;Initial Catalog=Cinema;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CinemaConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.BackTicket" Member="BackTickets">
-    <Type Name="BackTicket">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_BookedTicket" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
-      <Association Name="BookedTicket_BackTicket" Member="BookedTicket" ThisKey="ID_BookedTicket" OtherKey="ID" Type="BookedTicket" IsForeignKey="true" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Cinema1" Class="CinemaLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NDPHU-PC;Initial Catalog=Cinema1;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Cinema1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BinhLuan" Member="BinhLuans">
+    <Type Name="BinhLuan">
+      <Column Name="MaBinhLuan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NoiDungBinhLuan" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMucTinhTrangBinhLuan_BinhLuan" Member="DanhMucTinhTrangBinhLuan" ThisKey="TinhTrang" OtherKey="MaTinhTrang" Type="DanhMucTinhTrangBinhLuan" IsForeignKey="true" />
+      <Association Name="NguoiDung_BinhLuan" Member="NguoiDung" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+      <Association Name="Phim_BinhLuan" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.UserType" Member="UserTypes">
-    <Type Name="UserType">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="UserRight" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="UserType_User" Member="Users" ThisKey="ID" OtherKey="ID_UserType" Type="User" />
+  <Table Name="dbo.XuatChieu" Member="XuatChieus">
+    <Type Name="XuatChieu">
+      <Column Name="MaXuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThoiGianBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianKetThuc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MaDanhMucXuatChieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.BookedTicket" Member="BookedTickets">
-    <Type Name="BookedTicket">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_User" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
-      <Column Name="ID_Film" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
-      <Column Name="ID_Cinema" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
-      <Column Name="ID_Seat" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
-      <Column Name="ID_OnShowPlan" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Seasion" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="SingleTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VipTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Association Name="BookedTicket_BackTicket" Member="BackTickets" ThisKey="ID" OtherKey="ID_BookedTicket" Type="BackTicket" />
-      <Association Name="Cinema_BookedTicket" Member="Cinema" ThisKey="ID_Cinema" OtherKey="ID" Type="Cinema" IsForeignKey="true" />
-      <Association Name="Film_BookedTicket" Member="Film" ThisKey="ID_Film" OtherKey="ID" Type="Film" IsForeignKey="true" />
-      <Association Name="OnShowPlan_BookedTicket" Member="OnShowPlan" ThisKey="ID_OnShowPlan" OtherKey="ID" Type="OnShowPlan" IsForeignKey="true" />
-      <Association Name="Seat_BookedTicket" Member="Seat" ThisKey="ID_Seat" OtherKey="ID" Type="Seat" IsForeignKey="true" />
-      <Association Name="User_BookedTicket" Member="User" ThisKey="ID_User" OtherKey="ID" Type="User" IsForeignKey="true" />
+  <Table Name="dbo.ChiTietLichChieu" Member="ChiTietLichChieus">
+    <Type Name="ChiTietLichChieu">
+      <Column Name="MaChiTietLichChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaLichChieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaXuatChieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="LichChieuPhim_ChiTietLichChieu" Member="LichChieuPhim" ThisKey="MaLichChieu" OtherKey="MaLichChieuPhim" Type="LichChieuPhim" IsForeignKey="true" />
+      <Association Name="Phim_ChiTietLichChieu" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Cinema" Member="Cinemas">
-    <Type Name="Cinema">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_Theater" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Type" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
-      <Column Name="TotalSeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="Cinema_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_Cinema" Type="BookedTicket" />
-      <Association Name="Cinema_Cinema_OnShowPlan" Member="Cinema_OnShowPlans" ThisKey="ID" OtherKey="ID_Cinema" Type="Cinema_OnShowPlan" />
-      <Association Name="Theater_Cinema" Member="Theater" ThisKey="ID_Theater" OtherKey="ID" Type="Theater" IsForeignKey="true" />
+  <Table Name="dbo.DanhMucGhe" Member="DanhMucGhes">
+    <Type Name="DanhMucGhe">
+      <Column Name="MaDanhMucGhe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMucGhe" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMucGhe_Ghe" Member="Ghes" ThisKey="MaDanhMucGhe" OtherKey="MaDanhMucGhe" Type="Ghe" />
     </Type>
   </Table>
-  <Table Name="dbo.Cinema_OnShowPlan" Member="Cinema_OnShowPlans">
-    <Type Name="Cinema_OnShowPlan">
-      <Column Name="ID_Cinema" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_OnShowPlan" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Cinema_Cinema_OnShowPlan" Member="Cinema" ThisKey="ID_Cinema" OtherKey="ID" Type="Cinema" IsForeignKey="true" />
-      <Association Name="OnShowPlan_Cinema_OnShowPlan" Member="OnShowPlan" ThisKey="ID_OnShowPlan" OtherKey="ID" Type="OnShowPlan" IsForeignKey="true" />
+  <Table Name="dbo.DanhMucNguoiDung" Member="DanhMucNguoiDungs">
+    <Type Name="DanhMucNguoiDung">
+      <Column Name="MaDanhMucNguoiDung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMucNguoiDung" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMucNguoiDung_NguoiDung" Member="NguoiDungs" ThisKey="MaDanhMucNguoiDung" OtherKey="MaDanhMucNguoiDung" Type="NguoiDung" />
     </Type>
   </Table>
-  <Table Name="dbo.Comment" Member="Comments">
-    <Type Name="Comment">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_User" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
-      <Column Name="ID_Film" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
-      <Column Name="Comment" Member="Comment1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="Film_Comment" Member="Film" ThisKey="ID_Film" OtherKey="ID" Type="Film" IsForeignKey="true" />
-      <Association Name="User_Comment" Member="User" ThisKey="ID_User" OtherKey="ID" Type="User" IsForeignKey="true" />
+  <Table Name="dbo.DanhMucTheLoaiPhim" Member="DanhMucTheLoaiPhims">
+    <Type Name="DanhMucTheLoaiPhim">
+      <Column Name="MaDanhMucTheLoaiPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMucTheLoaiPhim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMucTheLoaiPhim_Phim" Member="Phims" ThisKey="MaDanhMucTheLoaiPhim" OtherKey="TheLoai" Type="Phim" />
     </Type>
   </Table>
-  <Table Name="dbo.Film" Member="Films">
-    <Type Name="Film">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Director" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="LeadActors" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PlayWright" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BriefStory" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PlaybillAdd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Length" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Film_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_Film" Type="BookedTicket" />
-      <Association Name="Film_Comment" Member="Comments" ThisKey="ID" OtherKey="ID_Film" Type="Comment" />
-      <Association Name="Film_HistoryRecord" Member="HistoryRecords" ThisKey="ID" OtherKey="ID_Film" Type="HistoryRecord" />
-      <Association Name="Film_OnShowPlan" Member="OnShowPlans" ThisKey="ID" OtherKey="ID_Film" Type="OnShowPlan" />
+  <Table Name="dbo.DanhMucTinhTrangBinhLuan" Member="DanhMucTinhTrangBinhLuans">
+    <Type Name="DanhMucTinhTrangBinhLuan">
+      <Column Name="MaTinhTrang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTinhTrang" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMucTinhTrangBinhLuan_BinhLuan" Member="BinhLuans" ThisKey="MaTinhTrang" OtherKey="TinhTrang" Type="BinhLuan" />
     </Type>
   </Table>
-  <Table Name="dbo.GlobalParameter" Member="GlobalParameters">
-    <Type Name="GlobalParameter">
-      <Column Name="ID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="IdleTimeLimit" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.DanhMucTinhTrangNguoiDung" Member="DanhMucTinhTrangNguoiDungs">
+    <Type Name="DanhMucTinhTrangNguoiDung">
+      <Column Name="MaDanhMucTinhTrangNguoDung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMucTinhTrangNguoiDung" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMucTinhTrangNguoiDung_NguoiDung" Member="NguoiDungs" ThisKey="MaDanhMucTinhTrangNguoDung" OtherKey="TinhTrang" Type="NguoiDung" />
     </Type>
   </Table>
-  <Table Name="dbo.HistoryRecord" Member="HistoryRecords">
-    <Type Name="HistoryRecord">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_Film" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
-      <Column Name="SingleTicketsSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VIPTicketsSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Association Name="Film_HistoryRecord" Member="Film" ThisKey="ID_Film" OtherKey="ID" Type="Film" IsForeignKey="true" />
+  <Table Name="dbo.DanhMucXuatChieu" Member="DanhMucXuatChieus">
+    <Type Name="DanhMucXuatChieu">
+      <Column Name="MaDanhMucXuatChieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMucXuatChieu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.LoginHistory" Member="LoginHistories">
-    <Type Name="LoginHistory">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_User" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
-      <Column Name="LoginTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="LogoutTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="SingleTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VIPTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="BackTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Association Name="User_LoginHistory" Member="User" ThisKey="ID_User" OtherKey="ID" Type="User" IsForeignKey="true" />
+  <Table Name="dbo.DatVe" Member="DatVes">
+    <Type Name="DatVe">
+      <Column Name="MaDatVe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNguoiDung" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaGhe" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiDiemDat" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaVe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaPhim" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.OnShowPlan" Member="OnShowPlans">
-    <Type Name="OnShowPlan">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_Film" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
-      <Column Name="OnShowDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="OnShowEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="WaitingTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Seasion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="OnShowPlan_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_OnShowPlan" Type="BookedTicket" />
-      <Association Name="OnShowPlan_Cinema_OnShowPlan" Member="Cinema_OnShowPlans" ThisKey="ID" OtherKey="ID_OnShowPlan" Type="Cinema_OnShowPlan" />
-      <Association Name="Film_OnShowPlan" Member="Film" ThisKey="ID_Film" OtherKey="ID" Type="Film" IsForeignKey="true" />
+  <Table Name="dbo.Ghe" Member="Ghes">
+    <Type Name="Ghe">
+      <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaPhongChieuPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenGhe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaDanhMucGhe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hang" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SoThuTu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Ghe_Ve" Member="Ves" ThisKey="MaGhe" OtherKey="MaGhe" Type="Ve" />
+      <Association Name="DanhMucGhe_Ghe" Member="DanhMucGhe" ThisKey="MaDanhMucGhe" OtherKey="MaDanhMucGhe" Type="DanhMucGhe" IsForeignKey="true" />
+      <Association Name="PhongChieuPhim_Ghe" Member="PhongChieuPhim" ThisKey="MaPhongChieuPhim" OtherKey="MaPhongChieuPhim" Type="PhongChieuPhim" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Seat" Member="Seats">
-    <Type Name="Seat">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TypeSeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Seat_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_Seat" Type="BookedTicket" />
+  <Table Name="dbo.LichChieuPhim" Member="LichChieuPhims">
+    <Type Name="LichChieuPhim">
+      <Column Name="MaLichChieuPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaPhongChieuPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianKetThuc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TongXuatChieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="LichChieuPhim_ChiTietLichChieu" Member="ChiTietLichChieus" ThisKey="MaLichChieuPhim" OtherKey="MaLichChieu" Type="ChiTietLichChieu" />
+      <Association Name="PhongChieuPhim_LichChieuPhim" Member="PhongChieuPhim" ThisKey="MaPhongChieuPhim" OtherKey="MaPhongChieuPhim" Type="PhongChieuPhim" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Theater" Member="Theaters">
-    <Type Name="Theater">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="LocationCity" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="Theater_Cinema" Member="Cinemas" ThisKey="ID" OtherKey="ID_Theater" Type="Cinema" />
+  <Table Name="dbo.LichSuNguoiDung" Member="LichSuNguoiDungs">
+    <Type Name="LichSuNguoiDung">
+      <Column Name="MaLichSuNguoiDung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TongThoiGianDangNhap" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianDangNhapGanNhat" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianDangKi" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ThongTinKhac" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NguoiDung_LichSuNguoiDung" Member="NguoiDung" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NguoiDung" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_UserType" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Online" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LastAction" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Balance" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Association Name="User_BookedTicket" Member="BookedTickets" ThisKey="ID" OtherKey="ID_User" Type="BookedTicket" />
-      <Association Name="User_Comment" Member="Comments" ThisKey="ID" OtherKey="ID_User" Type="Comment" />
-      <Association Name="User_LoginHistory" Member="LoginHistories" ThisKey="ID" OtherKey="ID_User" Type="LoginHistory" />
-      <Association Name="UserType_User" Member="UserType" ThisKey="ID_UserType" OtherKey="ID" Type="UserType" IsForeignKey="true" />
+  <Table Name="dbo.NguoiDung" Member="NguoiDungs">
+    <Type Name="NguoiDung">
+      <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaDanhMucNguoiDung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiDung" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NguoiDung_BinhLuan" Member="BinhLuans" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="BinhLuan" />
+      <Association Name="NguoiDung_LichSuNguoiDung" Member="LichSuNguoiDungs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="LichSuNguoiDung" />
+      <Association Name="NguoiDung_Ve" Member="Ves" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="Ve" />
+      <Association Name="DanhMucNguoiDung_NguoiDung" Member="DanhMucNguoiDung" ThisKey="MaDanhMucNguoiDung" OtherKey="MaDanhMucNguoiDung" Type="DanhMucNguoiDung" IsForeignKey="true" />
+      <Association Name="DanhMucTinhTrangNguoiDung_NguoiDung" Member="DanhMucTinhTrangNguoiDung" ThisKey="TinhTrang" OtherKey="MaDanhMucTinhTrangNguoDung" Type="DanhMucTinhTrangNguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phim" Member="Phims">
+    <Type Name="Phim">
+      <Column Name="MaPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPhim" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TheLoai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DaoDien" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DienVienThamGia" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NgonNgu" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiLuong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DiemDanhGia" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AnhPhim" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TrailerPhim" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Phim_BinhLuan" Member="BinhLuans" ThisKey="MaPhim" OtherKey="MaPhim" Type="BinhLuan" />
+      <Association Name="Phim_ChiTietLichChieu" Member="ChiTietLichChieus" ThisKey="MaPhim" OtherKey="MaPhim" Type="ChiTietLichChieu" />
+      <Association Name="DanhMucTheLoaiPhim_Phim" Member="DanhMucTheLoaiPhim" ThisKey="TheLoai" OtherKey="MaDanhMucTheLoaiPhim" Type="DanhMucTheLoaiPhim" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhongChieuPhim" Member="PhongChieuPhims">
+    <Type Name="PhongChieuPhim">
+      <Column Name="MaPhongChieuPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaRapChieuPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenPhongChieuPhim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TongSoLuongGhe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PhongChieuPhim_Ghe" Member="Ghes" ThisKey="MaPhongChieuPhim" OtherKey="MaPhongChieuPhim" Type="Ghe" />
+      <Association Name="PhongChieuPhim_LichChieuPhim" Member="LichChieuPhims" ThisKey="MaPhongChieuPhim" OtherKey="MaPhongChieuPhim" Type="LichChieuPhim" />
+      <Association Name="RapChieuPhim_PhongChieuPhim" Member="RapChieuPhim" ThisKey="MaRapChieuPhim" OtherKey="MaRapChieuPhim" Type="RapChieuPhim" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RapChieuPhim" Member="RapChieuPhims">
+    <Type Name="RapChieuPhim">
+      <Column Name="MaRapChieuPhim" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenRapChieuPhim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChiRapChieuPhim" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SoDienThoaiRapChieuPhim" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AnhDaiDienRapChieuPhim" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ThongTinKhac" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="RapChieuPhim_PhongChieuPhim" Member="PhongChieuPhims" ThisKey="MaRapChieuPhim" OtherKey="MaRapChieuPhim" Type="PhongChieuPhim" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThamSo" Member="ThamSos">
+    <Type Name="ThamSo">
+      <Column Name="MaThamSo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenThamSo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Kieu" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaTri" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ve" Member="Ves">
+    <Type Name="Ve">
+      <Column Name="MaVe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaVe" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiDiemDat" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Ghe_Ve" Member="Ghe" ThisKey="MaGhe" OtherKey="MaGhe" Type="Ghe" IsForeignKey="true" />
+      <Association Name="NguoiDung_Ve" Member="NguoiDung" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NguoiDung" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -4,17 +4,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script src="Scripts/jquery-1.6.js" type="text/javascript"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title></title>
 <style type="text/css">
-<!--
-.style1 {
-	color: #FF0000;
-	font-weight: bold;
-	background-color: Gray;
-}
--->
+
 </style>
+<script type="text/javascript" >
+        
+</script>
 </head>
 
 <body>
@@ -25,7 +24,7 @@
       <label></label>
         <label></label>
         
-        <div align="right">
+        <div align="right" style="background-color: #C0C0C0">
           <input type="submit" name="Submit" value="&#272;&#259;ng nh&#7853;p" />
           <input type="submit" name="Submit2" value="&#272;&#259;ng xu&#7845;t" />
           </div>
@@ -33,14 +32,35 @@
   </tr>
   
   <tr>
-    <td colspan="5"><img src="../img/banner.jpg" width="829" height="200" /></td>
+    <td colspan="5">
+        <img alt="" align="right" class="style2" src="/Img/banner-img.png" /></td>
   </tr>
   <tr>
-    <td width="163" height="40"><img src="../img/trangchu.jpg" width="160" height="38" /></td>
-    <td width="164"><a href="../phim/default.aspx" /><img src="../img/phim.jpg" width="160" height="38" /></td>
-    <td width="160"><img src="../img/lichchieu.jpg" width="160" height="38" /></td>
-    <td width="160"><img src="../img/datve.jpg" width="160" height="38" /></td>
-    <td width="160"><img src="../img/thongtin.jpg" width="160" height="38" /></td>
+    <td width="163" height="40">
+        <a href="/Lichchieu/Default.aspx">
+            <img alt="" class="style3" id="lichchieu" src="/Img/lichchieu_n.png" onmouseover="{this.setAttribute('src','/Img/lichchieu.png')}" onmouseout="{this.setAttribute('src','/Img/lichchieu_n.png')}"/>
+        </a>
+    </td>
+    <td width="164">
+        <a href="/Phim/Default.aspx">
+            <img alt="" class="style3" id="phim" src="/Img/phim_n.png"  onmouseover="{this.setAttribute('src','/Img/phim.png')}" onmouseout="{this.setAttribute('src','/Img/phim_n.png')}"/>
+        </a>
+    </td>
+    <td width="160">
+         <a href="/Datve/Default.aspx">
+            <img alt="" class="style3" id="datve"src="/Img/datve_n.png"  onmouseover="{this.setAttribute('src','/Img/datve.png')}" onmouseout="{this.setAttribute('src','/Img/datve_n.png')}"/>
+        </a>
+    </td>
+    <td width="160">
+         <a href="/thanhvien/Default.aspx">
+        <img alt="" class="style3" id="thanhvien" src="/Img/thanhvien_n.png"  onmouseover="{this.setAttribute('src','/Img/thanhvien.png')}" onmouseout="{this.setAttribute('src','/Img/thanhvien_n.png')}"/>
+        </a>
+    </td>
+    <td width="160">
+        <a href="/thongtin/Default.aspx">
+            <img alt="" class="style3" id="thongtin" src="/Img/thongtin_n.png"  onmouseover="{this.setAttribute('src','/Img/thongtin.png')}" onmouseout="{this.setAttribute('src','/Img/thongtin_n.png')}"/>
+        </a>
+    </td>
   </tr>
   <tr>
   	<td colspan="5">
@@ -49,7 +69,8 @@
       </td>
   </tr>
   <tr>
-    <td colspan="5"><div align="center" class="style1"><br />H5 GROUP <br /><br /></div></td>
+    <td colspan="5"><div align="center" class="style1" 
+            style="background-color: #C0C0C0"><br />H5 GROUP <br /><br /></div></td>
   </tr>
 </table>
     </form>

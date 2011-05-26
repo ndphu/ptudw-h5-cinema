@@ -49,15 +49,15 @@
         try
         {
             H5_Cinema.CinemaLINQDataContext dt = new H5_Cinema.CinemaLINQDataContext();
-            var query = from comment in dt.Comments
-                        where comment.ID_Film == Session["SelectedFilmID"].ToString()
+            var query = from comment in dt.BinhLuans
+                        where comment.MaPhim == int.Parse(Session["SelectedFilmID"].ToString())
                         select comment;
 
-            foreach (H5_Cinema.Comment comment in query)
+            foreach (H5_Cinema.BinhLuan binhluan in query)
             { %>
         <tr>
-            <td style="color: #008000; width: 185px;"><%=comment.User.Name%> &#273;ã vi&#7871;t:</td>
-            <td style="color: #008080"><%=comment.Comment1%></td>
+            <td style="color: #008000; width: 185px;"><%=binhluan.NguoiDung.TenNguoiDung%> &#273;ã vi&#7871;t:</td>
+            <td style="color: #008080"><%=binhluan.NoiDungBinhLuan%></td>
         </tr>
         <% }
         }

@@ -14,19 +14,20 @@ namespace H5_Cinema
             if (Session["SelectedFilmID"] == null)
                 return;
             CinemaLINQDataContext dt = new CinemaLINQDataContext();
-            var query = from f in dt.Films
-                        where f.ID == Session["SelectedFilmID"].ToString()
+            var query = from f in dt.Phims
+                        where f.MaPhim == int.Parse(Session["SelectedFilmID"].ToString())
                         select f;
-            foreach (Film f in query)
+            foreach (Phim f in query)
             {
-                Th_TenPhim.Text = f.Name;
-                Th_ThoiLuong.Text = f.Length.ToString() + " phút";
-                Th_DaoDien.Text = f.Director;
-                Th_Diem.Text = f.Rate.ToString();
-                Th_TheLoai.Text = f.Type;
-                Th_DienVien.Text = f.LeadActors;
-                Th_HinhAnh.ImageUrl = f.PlaybillAdd;
-                Th_TomTat.Text = f.BriefStory;
+                Th_TenPhim.Text = f.TenPhim;
+                Th_ThoiLuong.Text = f.ThoiLuong.ToString() + " phút";
+                Th_DaoDien.Text = f.DaoDien;
+                Th_Diem.Text = f.DiemDanhGia.ToString();
+                //Th_TheLoai.Text = f.TheLoai;
+                Th_TheLoai.Text = f.DanhMucTheLoaiPhim.TenDanhMucTheLoaiPhim;
+                Th_DienVien.Text = f.DienVienThamGia;
+                Th_HinhAnh.ImageUrl = f.AnhPhim;
+                Th_TomTat.Text = f.NoiDung;
             }
         }
 
@@ -34,14 +35,17 @@ namespace H5_Cinema
         {
             CinemaLINQDataContext dt = new CinemaLINQDataContext();
 
-            Comment cm = new Comment();
-            cm.ID_Film = Session["SelectedFilmID"].ToString();
-            cm.Comment1 = Th_BinhLuanMoi.Text;
-            cm.ID_User = "US001";
+            BinhLuan bl = new BinhLuan();
+            bl.MaPhim = int.Parse(Session["SelectedFilmID"].ToString());
+            bl.NoiDungBinhLuan = Th_BinhLuanMoi.Text;
+            bl.MaNguoiDung = 3;
+            bl.TinhTrang = 3;
 
-            dt.Comments.InsertOnSubmit(cm);
+            dt.BinhLuans.InsertOnSubmit(bl);
 
             dt.SubmitChanges();
         }
+
+        
     }
 }

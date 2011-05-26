@@ -3,3 +3,8 @@ c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\bin\H5_
 c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
 c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\obj\Debug\H5_Cinema.dll
 c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\obj\Debug\H5_Cinema.pdb
+C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\bin\H5_Cinema.dll
+C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\bin\H5_Cinema.pdb
+C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\obj\Debug\H5_Cinema.dll
+C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\obj\Debug\H5_Cinema.pdb
