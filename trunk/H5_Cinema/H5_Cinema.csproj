@@ -51,19 +51,28 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DeoLeo.jpg" />
-    <Content Include="Global.asax" />
-    <Content Include="Img\banner.jpg" />
-    <Content Include="Img\datve.jpg" />
+    <Content Include="datve\Default.aspx" />
+    <Content Include="Img\banner-img.png" />
+    <Content Include="Img\datve.png" />
+    <Content Include="Img\datve_n.png" />
+    <Content Include="Img\lichchieu.png" />
+    <Content Include="Img\lichchieu_n.png" />
+    <Content Include="Img\phim.png" />
+    <Content Include="Img\phim_n.png" />
+    <Content Include="Img\thanhvien.png" />
+    <Content Include="Img\thanhvien_n.png" />
+    <Content Include="Img\thongtin.png" />
+    <Content Include="Img\thongtin_n.png" />
+    <Content Include="lichchieu\Default.aspx" />
+    <Content Include="phim\Global.asax" />
     <Content Include="Img\film\lenh_xoa_so.png" />
     <Content Include="Img\film\pirate.png" />
     <Content Include="Img\film\source_code.png" />
-    <Content Include="Img\film\tri_luc_sieu_fam.png" />
+    <Content Include="Img\film\tri_luc_sieu_pham.png" />
     <Content Include="Img\film\vu_em.png" />
-    <Content Include="Img\lichchieu.jpg" />
-    <Content Include="Img\phim.jpg" />
-    <Content Include="Img\thongtin.jpg" />
-    <Content Include="Img\trangchu.jpg" />
+    <Content Include="Scripts\jquery-1.6.js" />
+    <Content Include="thanhvien\Default.aspx" />
+    <Content Include="thongtin\Default.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -74,6 +83,8 @@
     <Content Include="Default.aspx" />
     <Content Include="phim\Default.aspx" />
     <Content Include="phim\ChiTietFilm.aspx" />
+    <Content Include="phim\ThemPhimMoi.aspx" />
+    <Content Include="phim\ChinhSuaFilm.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaLINQ.designer.cs">
@@ -81,17 +92,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CinemaLINQ.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
+    <Compile Include="datve\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datve\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lichchieu\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lichchieu\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="phim\Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,12 +131,44 @@
     <Compile Include="phim\ChiTietFilm.aspx.designer.cs">
       <DependentUpon>ChiTietFilm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="phim\ThemPhimMoi.aspx.cs">
+      <DependentUpon>ThemPhimMoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="phim\ThemPhimMoi.aspx.designer.cs">
+      <DependentUpon>ThemPhimMoi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="phim\ChinhSuaFilm.aspx.cs">
+      <DependentUpon>ChinhSuaFilm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="phim\ChinhSuaFilm.aspx.designer.cs">
+      <DependentUpon>ChinhSuaFilm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="thanhvien\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thongtin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thongtin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -129,6 +179,7 @@
       <LastGenOutput>CinemaLINQ.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CinemaLINQ.dbml.layout">
