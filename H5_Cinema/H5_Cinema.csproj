@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="datve\Default.aspx" />
+    <Content Include="Img\001.png" />
+    <Content Include="Img\background_022.gif" />
     <Content Include="Img\banner-img.png" />
     <Content Include="Img\datve.png" />
     <Content Include="Img\datve_n.png" />
@@ -71,6 +73,7 @@
     <Content Include="Img\film\tri_luc_sieu_pham.png" />
     <Content Include="Img\film\vu_em.png" />
     <Content Include="Scripts\jquery-1.6.js" />
+    <Content Include="Scripts\jwplayer.js" />
     <Content Include="thanhvien\Default.aspx" />
     <Content Include="thongtin\Default.aspx" />
     <Content Include="Web.config" />
@@ -169,6 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="phim\poster\" />
+    <Folder Include="phim\trailer\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

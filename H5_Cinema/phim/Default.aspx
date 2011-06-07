@@ -95,8 +95,8 @@
                 &#272;&#7897; dài (phút):
                 <asp:Label ID="LengthLabel" runat="server" Text='<%# Eval("ThoiLuong") %>' />
                 <br />
-                <asp:Button runat="server" OnClick="ChiTiet_Click" Text="Chi ti&#7871;t" CommandName='<%# Eval("MaPhim") %>' Width="100"> </asp:Button>
-                <asp:Button runat="server" OnClick="ChinhSua_Click" Text="Chỉnh sữa" CommandName='<%# Eval("MaPhim") %>' Width="100"> </asp:Button>
+                <asp:Button runat="server" OnClick="ChiTiet_Click" Text="Chi ti&#7871;t" CommandName='<%# Eval("MaPhim") %>' Width="100" ToolTip="Xem chi ti&#7871;t b&#7897; phim"> </asp:Button>
+                <asp:Button runat="server" OnClick="ChinhSua_Click" Text="Ch&#7881;nh s&#7919;a" CommandName='<%# Eval("MaPhim") %>' Width="100" ToolTip="Ch&#7881;nh s&#7917;a các thông tin liên quan &#273;&#7871;n phim này"> </asp:Button>
                 <br />
             </td>
         </ItemTemplate>
@@ -125,6 +125,8 @@
             </table>
         </LayoutTemplate>
     </asp:ListView>
+    <asp:Button runat="server" Text="Thêm phim m&#7899;i" ID="Xl_ThemPhimMoi" 
+        onclick="Xl_ThemPhimMoi_Click" ToolTip="Thêm m&#7897;t phim m&#7899;i vào CSDL" />
     <asp:LinqDataSource ID="CinemaLINQ" runat="server" 
         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
         Select="new (TenPhim, MaPhim, DanhMucTheLoaiPhim, AnhPhim, ThoiLuong, DienVienThamGia, DaoDien)" 

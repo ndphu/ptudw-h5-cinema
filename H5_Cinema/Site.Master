@@ -10,21 +10,28 @@
 <title></title>
 <style type="text/css">
 
+    .style1
+    {
+        color: #FFFFFF;
+    }
+
 </style>
 <script type="text/javascript" >
         
 </script>
 </head>
 
-<body>
-    <form id="form2" runat="server">
-<table width="829" border="0" align="center" bgcolor="#000000">
+<body background="Img/background_022.gif">
+    <form id="form2" runat="server" 
+    style="font-family: Tahoma; background-image: url('/Img/background_022.gif'); background-repeat: repeat;">
+<table width="829" border="0" align="center" >
   <tr>
     <td colspan="5">
       <label></label>
         <label></label>
         
-        <div align="right" style="background-color: #C0C0C0">
+        <div align="right" 
+            style="background-image: url('/Img/001.png'); background-repeat: repeat">
           <input type="submit" name="Submit" value="&#272;&#259;ng nh&#7853;p" />
           <input type="submit" name="Submit2" value="&#272;&#259;ng xu&#7845;t" />
           </div>
@@ -32,10 +39,11 @@
   </tr>
   
   <tr>
-    <td colspan="5">
+    <td colspan="5" 
+          style="background-image: url('/Img/001.png'); background-repeat: repeat;">
         <img alt="" align="right" class="style2" src="/Img/banner-img.png" /></td>
   </tr>
-  <tr>
+  <tr style="background-image: url('/Img/001.png'); background-repeat: repeat">
     <td width="163" height="40">
         <a href="/Lichchieu/Default.aspx">
             <img alt="" class="style3" id="lichchieu" src="/Img/lichchieu_n.png" onmouseover="{this.setAttribute('src','/Img/lichchieu.png')}" onmouseout="{this.setAttribute('src','/Img/lichchieu_n.png')}"/>
@@ -62,15 +70,25 @@
         </a>
     </td>
   </tr>
-  <tr>
+  <tr style="background-image: url('http://localhost:2194/Img/001.png'); background-repeat: repeat">
   	<td colspan="5">
+        <div style="float: left; width: 2%; height: 19px;">
+        </div>
+        <div style="float: left; width: 25%;">
+        </div>
+        <div style="width: 73%;">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
         </asp:ContentPlaceHolder>
+        </div>
       </td>
   </tr>
   <tr>
-    <td colspan="5"><div align="center" class="style1" 
-            style="background-color: #C0C0C0"><br />H5 GROUP <br /><br /></div></td>
+    <td colspan="5">
+        <div align="center" class="style1" 
+            
+            style="background-image: url('/Img/001.png'); background-repeat: repeat;"><br />
+        <span class="style1">H5 GROUP </span> <br /><br /></div></td>
   </tr>
 </table>
     </form>
