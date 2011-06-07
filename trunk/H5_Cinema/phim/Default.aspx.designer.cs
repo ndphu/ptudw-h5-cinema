@@ -31,6 +31,15 @@ namespace H5_Cinema {
         protected global::System.Web.UI.WebControls.ListView Th_DanhSachPhim;
         
         /// <summary>
+        /// Xl_ThemPhimMoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Xl_ThemPhimMoi;
+        
+        /// <summary>
         /// CinemaLINQ control.
         /// </summary>
         /// <remarks>

@@ -42,5 +42,10 @@ namespace H5_Cinema
             Session["SelectedFilmID"] = ((Button)sender).CommandName;
             Response.Redirect("../phim/ChinhSuaFilm.aspx");
         }
+
+        protected void Xl_ThemPhimMoi_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../phim/ThemPhimMoi.aspx");
+        }
     }
 }

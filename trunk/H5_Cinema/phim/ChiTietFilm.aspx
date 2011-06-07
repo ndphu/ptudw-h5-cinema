@@ -1,8 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChiTietFilm.aspx.cs" Inherits="H5_Cinema.WebForm3" %>
 <%@ Import Namespace="System.Linq" %>
+<%@ Import Namespace="H5_Cinema" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
+    <%
+       
+        try
+        {
+            Phim currentPhim = new Phim();
+            H5_Cinema.CinemaLINQDataContext dt = new H5_Cinema.CinemaLINQDataContext();
+            var query = from phim in dt.Phims
+                         where phim.MaPhim == int.Parse(Session["SelectedFilmID"].ToString())
+                         select phim;
+            foreach (Phim phim in query)
+            {
+                currentPhim = phim;
+            }
+             %>
     <asp:Label ID="Label1" runat="server" Text="CHI TI&#7870;T B&#7896; PHIM" 
         ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
     <br />
@@ -35,7 +50,8 @@
     <tr>
         <td style="width: 185px"><asp:Label ID="Label12" runat="server" Text="Hình &#7843;nh:" ForeColor="Red"></asp:Label></td>
         <td>
-            <asp:Image ID="Th_HinhAnh" runat="server" />
+            <asp:Image ID="Th_HinhAnh" runat="server" ImageUrl="" Width="240px" 
+                Height="360px"/>
         </td>
     </tr>
     <tr>
@@ -45,10 +61,7 @@
     <tr>
         <td style="width: 185px"><asp:Label ID="Label4" ForeColor="Red" Text="Comment:" runat="server"></asp:Label></td>
     </tr>
-    <% 
-        try
-        {
-            H5_Cinema.CinemaLINQDataContext dt = new H5_Cinema.CinemaLINQDataContext();
+    <%         
             var query = from comment in dt.BinhLuans
                         where comment.MaPhim == int.Parse(Session["SelectedFilmID"].ToString())
                         select comment;
@@ -65,7 +78,8 @@
         <tr>
         <td style="width: 185px"><asp:Label runat="server" Text="Bình lu&#7853;n c&#7911;a b&#7841;n:" ForeColor="Red" /></td>
         <td><asp:TextBox Width="400px" Height="129px" runat="server" ID="Th_BinhLuanMoi" 
-                style="text-align: left"  Text="" AutoPostBack="false" CausesValidation="false" /></td>
+                style="text-align: left"  Text="" AutoPostBack="false" 
+                CausesValidation="false" Font-Names="Tahoma" TextMode="MultiLine" /></td>
         </tr>
         <tr>
         <td style="width: 185px"></td>
