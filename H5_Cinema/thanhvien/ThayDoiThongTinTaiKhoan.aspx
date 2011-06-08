@@ -15,7 +15,7 @@
                 <td style="width: 152px">
                     Tên tài kho&#7843;n:</td>
                 <td style="width: 338px">
-                    <asp:TextBox ID="Th_TenTaiKhoan" runat="server" Width="338px" ToolTip="Tên tài kho&#7843;n" ReadOnly="true"></asp:TextBox>
+                    <asp:Label ID="Lb_TenTaiKhoan" runat="server" Width="338px" ToolTip="Tên tài kho&#7843;n" ></asp:Label>
                     <br />                    
                 </td>
             </tr>

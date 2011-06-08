@@ -48,8 +48,7 @@ namespace H5_Cinema.thanhvien
                     query.MatKhau = strPassword1;
 
                     dt.SubmitChanges();
-                    Label2.Text = "Đổi mật khẩu thành công";
-                    Label2.Visible = true;
+                    Response.Redirect("/thanhvien/DoiMatKhauThanhCong.aspx");
                 }
                 else
                 {

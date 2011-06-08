@@ -31,13 +31,13 @@ namespace H5_Cinema.thanhvien {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Th_TenTaiKhoan control.
+        /// Lb_TenTaiKhoan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Th_TenTaiKhoan;
+        protected global::System.Web.UI.WebControls.Label Lb_TenTaiKhoan;
         
         /// <summary>
         /// Th_Email control.
