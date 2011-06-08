@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChiTietPhim.aspx.cs" Inherits="H5_Cinema.WebForm3" %>
 <%@ Import Namespace="System.Linq" %>
 <%@ Import Namespace="H5_Cinema" %>
-
+<%@ Register Src="~/phim/UCBinhLuan.ascx" TagName="UCBinhLuan" TagPrefix="UC"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="border: thin solid #808080; width: 100%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;" 
         align="center">
@@ -26,6 +26,24 @@
     <table align="center" border="0.5" 
             
             style="border: thin solid #808080; background-image: inherit; width: 100%;" >
+            <tr>
+        
+        <td style="color: #008080" colspan="2" align="center">
+        
+        <div id='mediaspace' style="border: medium ridge #FF9933; color: #808080" 
+                align="center">Không tìm th&#7845;y trailer cho phim này</div>
+ 
+        <script type='text/javascript'>
+            jwplayer('mediaspace').setup({
+                'flashplayer': 'player.swf',
+                'file': '<%=currentPhim.TrailerPhim %>',
+                'controlbar': 'bottom',
+                'width': '640',
+                'height': '480'
+            });
+        </script>
+        </td>
+    </tr>
     <tr>
         <td style="width: 200px"><asp:Label ID="Label2" runat="server" Text="Tên film:   " ForeColor="Red"></asp:Label></td>
         <td style="color: #FFFFFF"><%=currentPhim.TenPhim%></td>
@@ -56,61 +74,44 @@
         <asp:Image runat="server" Width="180" ID="Th_HinhAnh"/>
         </td>
     </tr>
+
     <tr>
         <td style="width: 200px"><asp:Label runat="server" Text="Tóm t&#7855;t n&#7897;i dung:" ForeColor="Red"></asp:Label></td>
         <td style="color: #008080"><%=currentPhim.NoiDung %>
         </td>
     </tr>
     <tr>
-        <td style="width: 200px"><asp:Label runat="server" Text="Trailer:" ForeColor="Red" 
-                ID="Label13"></asp:Label></td>
-        <td style="color: #008080">
-        
-        <div id='mediaspace' style="color: #808080">Không tìm th&#7845;y trailer cho phim này</div>
- 
-        <script type='text/javascript'>
-            jwplayer('mediaspace').setup({
-                'flashplayer': 'player.swf',
-                'file': '<%=currentPhim.TrailerPhim %>',
-                'controlbar': 'bottom',
-                'width': '470',
-                'height': '320'
-            });
-        </script>
-        </td>
-    </tr>
-    <tr>
-        <td style="width: 200px"><asp:Label ID="Label4" ForeColor="Red" Text="Comment:" runat="server"></asp:Label></td>
+        <td align="center" colspan="2"><div>
+        <%
+            %>
+            </br>
+            <div style="width: 90%">
+            <asp:Panel ID="Panel1" runat="server" BorderWidth="3px" Height="300px" 
+                    ScrollBars="Horizontal">
+            </asp:Panel>
+            </div>
+            </br>
+        </div></td>
     </tr>
     <%
     }%>
-    <% 
-        CinemaLINQDataContext dt = new CinemaLINQDataContext();
-        var query = from comment in dt.BinhLuans
-                    where comment.MaPhim == int.Parse(currentPhim.MaPhim.ToString())
-                    select comment;
-
-        foreach (H5_Cinema.BinhLuan binhluan in query)
-        { %>
-        <tr>
-            <td style="color: #008000; width: 200px;"><%=binhluan.NguoiDung.TenNguoiDung%> &#273;ã vi&#7871;t:</td>
-            <td style="color: #008080"><%=binhluan.NoiDungBinhLuan%></td>
-        </tr>
-        <%}%>
         <%NguoiDung nguoiDung = (NguoiDung)Session["NguoiDung"];
           if (nguoiDung != null)
           { %>
         <tr>
-        <td style="width: 200px"><asp:Label ID="Label5" runat="server" Text="Bình lu&#7853;n c&#7911;a b&#7841;n:" ForeColor="Red" /></td>
-        <td><asp:TextBox Width="400px" Height="129px" runat="server" ID="Th_BinhLuanMoi" 
+        <td colspan="2" align="center">
+            <asp:TextBox Width="85%" 
+                runat="server" ID="Th_BinhLuanMoi" 
                 style="text-align: left"  Text="" AutoPostBack="false" 
-                CausesValidation="false" Font-Names="Tahoma" TextMode="MultiLine" /></td>
+                CausesValidation="false" Font-Names="Tahoma" TextMode="MultiLine" 
+                Height="116px" /></td>
         </tr>
         <tr>
-        <td style="width: 200px"></td>
-        <td>
+        <td colspan="2" align="center">
+            <br />
             <asp:Button ID="Xl_ThemBinhLuan" runat="server" Text="Bình lu&#7853;n" 
                 onclick="Xl_ThemBinhLuan_Click" />
+            <br />
             </td>
         </tr>
             <%

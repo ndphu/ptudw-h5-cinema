@@ -67,6 +67,7 @@
     <Content Include="Img\thongtin.png" />
     <Content Include="Img\thongtin_n.png" />
     <Content Include="lichchieu\Default.aspx" />
+    <Content Include="phim\UCBinhLuan.ascx" />
     <Content Include="phim\Global.asax" />
     <Content Include="Img\film\lenh_xoa_so.png" />
     <Content Include="Img\film\pirate.png" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="lichchieu\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="phim\UCBinhLuan.ascx.cs">
+      <DependentUpon>UCBinhLuan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="phim\UCBinhLuan.ascx.designer.cs">
+      <DependentUpon>UCBinhLuan.ascx</DependentUpon>
     </Compile>
     <Compile Include="phim\Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
