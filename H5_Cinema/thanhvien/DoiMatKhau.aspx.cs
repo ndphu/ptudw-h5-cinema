@@ -13,7 +13,8 @@ namespace H5_Cinema.thanhvien
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["NguoiDung"]==null)
+                Response.Redirect("/thanhvien/YeuCauDangNhap.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
