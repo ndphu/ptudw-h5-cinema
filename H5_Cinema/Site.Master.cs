@@ -13,5 +13,10 @@ namespace H5_Cinema
         {
 
         }
+
+        protected void Xl_DangNhap_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/thanhvien/dangnhap.aspx");
+        }
     }
 }

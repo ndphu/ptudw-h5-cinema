@@ -1,5 +1,6 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="H5_Cinema.SiteMaster" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="H5_Cinema.SiteMaster" %>
+<%@ Import Namespace="H5_Cinema" %>
+<%@ Import Namespace="System.Linq" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,8 +33,30 @@
         
         <div align="right" 
             style="background-image: url('/Img/001.png'); background-repeat: repeat">
-          <input type="submit" name="Submit" value="&#272;&#259;ng nh&#7853;p" />
-          <input type="submit" name="Submit2" value="&#272;&#259;ng xu&#7845;t" />
+            <%
+                try
+                {
+                    NguoiDung nguoiDung = (NguoiDung)Session["NguoiDung"];
+                    if (nguoiDung != null)
+                    {
+                        %>
+                        <asp:Label Text="<%=nguoiDung.TenNguoiDung %>" runat="server" ForeColor="Wheat"></asp:Label>
+                        <asp:Button ID="Xl_DangXuat" runat="server" Text="&#272;&#259;ng xu&#7845;t" />
+                        <%
+}
+                    else
+                    {
+                        %>
+                        <asp:Button ID="Xl_DangNhap" runat="server" Text="&#272;&#259;ng nh&#7853;p" 
+                onclick="Xl_DangNhap_Click" />
+                        <asp:Button ID="Xl_DangKy" runat="server" Text="&#272;&#259;ng ký" />
+                        <%
+                    }
+                }
+                catch
+                {
+                }
+                 %>
           </div>
       </td>
   </tr>
@@ -89,9 +112,7 @@
         <div align="center" class="style1" 
             
             style="background-image: url('/Img/001.png'); background-repeat: repeat;"><br />
-        <span class="style1">H5 GROUP </span> <br /><br /></div></td>
-  </tr>
-</table>
+        <span class="style1">H5 GROUP </table>
     </form>
 </body>
 </html>
