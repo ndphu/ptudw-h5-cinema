@@ -19,8 +19,15 @@ namespace H5_Cinema
             try
             {
                 CinemaLINQDataContext dt = new CinemaLINQDataContext();
-                int maxMaPhim = (from film in dt.Phims select film.MaPhim).Max();
-
+                int maxMaPhim = -1;
+                try
+                {
+                    maxMaPhim = (from film in dt.Phims select film.MaPhim).Max();
+                }
+                catch
+                {
+                    maxMaPhim = 1;
+                }
                 string posterFileName =  (maxMaPhim + 1).ToString() + Th_AnhPhim.FileName.Substring(Th_AnhPhim.FileName.Length - 4);
                 string posterName = "/phim/poster/" + posterFileName;
                 Th_AnhPhim.SaveAs(Server.MapPath("/phim/poster/") + posterFileName);
