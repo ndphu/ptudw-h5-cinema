@@ -32,9 +32,9 @@
                         ErrorMessage="M&#7853;t kh&#7849;u không &#273;&#432;&#7907;c &#273;&#7875; tr&#7889;ng" ControlToValidate="Th_MatKhau" 
                         Display="None"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
-                        ErrorMessage="M&#7853;t kh&#7849;u ph&#7843;i t&#7915; 6-32 ký t&#7921; và không ch&#7913;a ký t&#7921; &#273;&#7863;c bi&#7879;t" ControlToValidate="Th_MatKhau" 
+                        ErrorMessage="M&#7853;t kh&#7849;u ph&#7843;i t&#7915; 6-32 ký t&#7921;" ControlToValidate="Th_MatKhau" 
                         Display="None" 
-                        ValidationExpression="^[a-zA-Z0-9]{6,32}$"></asp:RegularExpressionValidator>
+                        ValidationExpression="^[a-zA-Z0-9@#$%^&+=]{6,32}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
