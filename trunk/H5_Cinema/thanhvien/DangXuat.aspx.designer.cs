@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace H5_Cinema.thanhvien {
+namespace H5_Cinema {
     
     
-    public partial class TaoTaiKhoanThanhCong {
+    public partial class WebForm11 {
         
         /// <summary>
         /// Label1 control.
@@ -22,21 +22,21 @@ namespace H5_Cinema.thanhvien {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Button1 control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
-        /// Button2 control.
+        /// Button4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Button4;
     }
 }

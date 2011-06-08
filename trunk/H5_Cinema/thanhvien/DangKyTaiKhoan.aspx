@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DangKiTaiKhoan.aspx.cs" Inherits="H5_Cinema.thanhvien.DangKiTaiKhoan" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DangKyTaiKhoan.aspx.cs" Inherits="H5_Cinema.thanhvien.DangKiTaiKhoan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  <div style="width: 100%" align="center"><asp:Label ID="Label1" runat="server" Text="&#272;&#258;NG KÝ TÀI KHO&#7842;N" 
     ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label></div>    

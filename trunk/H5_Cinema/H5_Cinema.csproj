@@ -76,7 +76,7 @@
     <Content Include="phim\player.swf" />
     <Content Include="Scripts\jquery-1.6.js" />
     <Content Include="Scripts\jwplayer.js" />
-    <Content Include="thanhvien\DangKiTaiKhoan.aspx" />
+    <Content Include="thanhvien\DangKyTaiKhoan.aspx" />
     <Content Include="thanhvien\Default.aspx" />
     <Content Include="thanhvien\TaoTaiKhoanThanhCong.aspx" />
     <Content Include="thongtin\Default.aspx" />
@@ -94,6 +94,7 @@
     <Content Include="phim\ChinhSuaPhim.aspx" />
     <Content Include="phim\ThemPhimThanhCong.aspx" />
     <Content Include="thanhvien\DangNhap.aspx" />
+    <Content Include="thanhvien\DangXuat.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaLINQ.designer.cs">
@@ -161,12 +162,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="thanhvien\DangKiTaiKhoan.aspx.cs">
-      <DependentUpon>DangKiTaiKhoan.aspx</DependentUpon>
+    <Compile Include="thanhvien\DangKyTaiKhoan.aspx.cs">
+      <DependentUpon>DangKyTaiKhoan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="thanhvien\DangKiTaiKhoan.aspx.designer.cs">
-      <DependentUpon>DangKiTaiKhoan.aspx</DependentUpon>
+    <Compile Include="thanhvien\DangKyTaiKhoan.aspx.designer.cs">
+      <DependentUpon>DangKyTaiKhoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="thanhvien\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -202,6 +203,13 @@
     </Compile>
     <Compile Include="thanhvien\DangNhap.aspx.designer.cs">
       <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thanhvien\DangXuat.aspx.cs">
+      <DependentUpon>DangXuat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\DangXuat.aspx.designer.cs">
+      <DependentUpon>DangXuat.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

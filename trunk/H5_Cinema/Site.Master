@@ -40,16 +40,19 @@
                     if (nguoiDung != null)
                     {
                         %>
-                        <asp:Label Text="<%=nguoiDung.TenNguoiDung %>" runat="server" ForeColor="Wheat"></asp:Label>
-                        <asp:Button ID="Xl_DangXuat" runat="server" Text="&#272;&#259;ng xu&#7845;t" />
+                        <p style="color: #CCFFFF"><%="Xin chào " + nguoiDung.TenNguoiDung %></p>
+                        <asp:Button ID="Xl_DangXuat" runat="server" 
+                Text="&#272;&#259;ng xu&#7845;t" onclick="Xl_DangXuat_Click" 
+                Width="100px" />
                         <%
 }
                     else
                     {
                         %>
                         <asp:Button ID="Xl_DangNhap" runat="server" Text="&#272;&#259;ng nh&#7853;p" 
-                onclick="Xl_DangNhap_Click" />
-                        <asp:Button ID="Xl_DangKy" runat="server" Text="&#272;&#259;ng ký" />
+                onclick="Xl_DangNhap_Click" Width="100px" />
+                        <asp:Button ID="Xl_DangKy" runat="server" Text="&#272;&#259;ng ký" 
+                onclick="Xl_DangKy_Click" Width="100px" />
                         <%
                     }
                 }
