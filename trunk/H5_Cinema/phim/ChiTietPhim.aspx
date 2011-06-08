@@ -89,7 +89,10 @@
             <td style="color: #008000; width: 185px;"><%=binhluan.NguoiDung.TenNguoiDung%> &#273;ã vi&#7871;t:</td>
             <td style="color: #008080"><%=binhluan.NoiDungBinhLuan%></td>
         </tr>
-        <%} %>
+        <%}%>
+        <%NguoiDung nguoiDung = (NguoiDung)Session["NguoiDung"];
+          if (nguoiDung != null)
+          { %>
         <tr>
         <td style="width: 185px"><asp:Label ID="Label5" runat="server" Text="Bình lu&#7853;n c&#7911;a b&#7841;n:" ForeColor="Red" /></td>
         <td><asp:TextBox Width="400px" Height="129px" runat="server" ID="Th_BinhLuanMoi" 
@@ -104,6 +107,7 @@
             </td>
         </tr>
             <%
+        }
         }
         catch { }%>
         
