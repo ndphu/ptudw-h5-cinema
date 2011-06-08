@@ -76,7 +76,9 @@
     <Content Include="phim\player.swf" />
     <Content Include="Scripts\jquery-1.6.js" />
     <Content Include="Scripts\jwplayer.js" />
+    <Content Include="thanhvien\DangKiTaiKhoan.aspx" />
     <Content Include="thanhvien\Default.aspx" />
+    <Content Include="thanhvien\TaoTaiKhoanThanhCong.aspx" />
     <Content Include="thongtin\Default.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -159,12 +161,26 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="thanhvien\DangKiTaiKhoan.aspx.cs">
+      <DependentUpon>DangKiTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\DangKiTaiKhoan.aspx.designer.cs">
+      <DependentUpon>DangKiTaiKhoan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="thanhvien\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="thanhvien\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thanhvien\TaoTaiKhoanThanhCong.aspx.cs">
+      <DependentUpon>TaoTaiKhoanThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\TaoTaiKhoanThanhCong.aspx.designer.cs">
+      <DependentUpon>TaoTaiKhoanThanhCong.aspx</DependentUpon>
     </Compile>
     <Compile Include="thongtin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
