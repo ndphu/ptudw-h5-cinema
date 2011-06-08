@@ -18,5 +18,16 @@ namespace H5_Cinema
         {
             Response.Redirect("/thanhvien/dangnhap.aspx");
         }
+
+        protected void Xl_DangXuat_Click(object sender, EventArgs e)
+        {
+            Session["NguoiDung"] = null;
+            Response.Redirect("/thanhvien/dangxuat.aspx");
+        }
+
+        protected void Xl_DangKy_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/thanhvien/DangKyTaiKhoan.aspx");
+        }
     }
 }
