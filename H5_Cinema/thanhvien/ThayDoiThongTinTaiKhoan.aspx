@@ -3,7 +3,7 @@
 <div style="width: 100%" align="center">
     <asp:Label ID="Label1" runat="server" Text="C&#7852;P NH&#7852;T THÔNG TIN TÀI KHO&#7842;N" 
     ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label></div>    
-    <div style="width: 100%" align="center"><asp:Label ID="Label2" runat="server" Text="Cập nhật thông tin tài khoản thành công" 
+    <div style="width: 100%" align="center"><asp:Label ID="Label2" runat="server" Text="C&#7853;p nh&#7853;t thông tin tài kho&#7843;n thành công" 
     ForeColor="Red" Font-Bold="True" Font-Size="Large" Visible="false"></asp:Label></div>    
     <br />
     <div>
@@ -50,6 +50,8 @@
     <div style="width: 100%" align="center">
         <asp:Button ID="Xl_CapNhatThayDoi" runat="server" Text="C&#7853;p nh&#7853;t thay &#273;&#7893;i" 
             style="text-align: center" onclick="Xl_CapNhatThayDoi_Click"/>
+        <asp:Button ID="Button3" runat="server" onclick="Button3_Click" 
+            Text="&#272;&#7893;i m&#7853;t kh&#7849;u" Width="122px" />
     </div>
     <div style="width: 100%">
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" 

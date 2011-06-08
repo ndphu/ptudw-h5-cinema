@@ -56,5 +56,10 @@ namespace H5_Cinema.thanhvien
 
             }
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DoiMatKhau.aspx");
+        }
     }
 }

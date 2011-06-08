@@ -29,5 +29,10 @@ namespace H5_Cinema
         {
             Response.Redirect("/thanhvien/DangKyTaiKhoan.aspx");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/thanhvien/thaydoithongtintaikhoan.aspx");
+        }
     }
 }
