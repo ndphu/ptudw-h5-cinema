@@ -38,11 +38,12 @@ namespace H5_Cinema
                              where tenDangNhap.CompareTo(nguoiDung.TenNguoiDung) == 0 && strPassword.CompareTo(nguoiDung.MatKhau) == 0
                              select nguoiDung).Single();
                 Session["NguoiDung"] = query;
-                Response.Redirect("/default.aspx");
+                Response.Redirect("dangnhapthanhcong.aspx");
             }
             catch
             {
-
+                Label2.Text = "Sai tên đăng nhập hoặc mật khẩu";
+                Label2.Visible = true;
             }
         }
     }

@@ -4,7 +4,7 @@
         <asp:Label ID="Label1" runat="server" Text="&#272;&#258;NG NH&#7852;P THÀNH CÔNG" 
         ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
         <div align="center" style="color: Lime">        
-        &#272;&#259;ng nh&#7853;p thành công
+        Xin chào <span style="color: #FFFF00"><%=((H5_Cinema.NguoiDung)Session["NguoiDung"]).TenNguoiDung %></span>
         <p>
             <asp:Button ID="Button3" runat="server" onclick="Button3_Click" 
                 Text="V&#7873; trang ch&#7911;" Width="100px" />

@@ -4,6 +4,8 @@
     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" 
         ForeColor="GreenYellow" Text="&#272;&#258;NG NH&#7852;P"></asp:Label>
     <br />
+        <asp:Label ID="Label2" runat="server" 
+    ForeColor="Red" Font-Bold="True" Font-Size="Large" Visible="False"></asp:Label>
     <br />
     <br />
     <table align="center" style="width: 65%; font-family: Tahoma; color: #FF3300;">
