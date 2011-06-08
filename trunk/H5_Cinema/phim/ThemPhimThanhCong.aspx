@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThemPhimThanhCong.aspx.cs" Inherits="H5_Cinema.WebForm9" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div align="center" style="height: 335px">
         <asp:Label ID="Label1" runat="server" Text="THÔNG BÁO" 
         ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
-        <div align="left" style="color: Lime">        
+        <div align="center" style="color: Lime">        
         Thêm phim m&#7899;i thành công
         <p><asp:Button ID="Button1" runat="server" Text="Xem danh sách phim" 
                 onclick="Button1_Click" /><asp:Button ID="Button2" runat="server" 
@@ -10,5 +11,5 @@
                 runat="server" Text="Xem phim v&#7915;a thêm vào" onclick="Button3_Click" /></p>
           
         </div>
-        
+</div>  
 </asp:Content>

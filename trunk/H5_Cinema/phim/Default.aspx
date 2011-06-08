@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Phim" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="H5_Cinema.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div style="width: 100%" align="center">
+    <div style="width: 100%" align="center">
     <asp:Label ID="Label1" runat="server" Text="DANH SÁCH PHIM" ForeColor="GreenYellow" Font-Bold="true" Font-Size="XX-Large"></asp:Label>
     <br />
     <%-- 

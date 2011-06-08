@@ -91,6 +91,7 @@
     <Content Include="phim\ThemPhimMoi.aspx" />
     <Content Include="phim\ChinhSuaPhim.aspx" />
     <Content Include="phim\ThemPhimThanhCong.aspx" />
+    <Content Include="thanhvien\DangNhap.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaLINQ.designer.cs">
@@ -178,6 +179,13 @@
     </Compile>
     <Compile Include="phim\ThemPhimThanhCong.aspx.designer.cs">
       <DependentUpon>ThemPhimThanhCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thanhvien\DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

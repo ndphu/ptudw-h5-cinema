@@ -3,7 +3,7 @@
 <%@ Import Namespace="H5_Cinema" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div style="width: 100%" align="center">
+    <div style="width: 100%" align="center">
     <script src="../Scripts/jwplayer.js" type="text/javascript"></script>
     <%
        
