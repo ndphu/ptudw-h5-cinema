@@ -55,6 +55,7 @@
     <Content Include="Img\001.png" />
     <Content Include="Img\background_022.gif" />
     <Content Include="Img\banner-img.png" />
+    <Content Include="Img\browndirt.jpg" />
     <Content Include="Img\datve.png" />
     <Content Include="Img\datve_n.png" />
     <Content Include="Img\lichchieu.png" />
@@ -72,6 +73,7 @@
     <Content Include="Img\film\source_code.png" />
     <Content Include="Img\film\tri_luc_sieu_pham.png" />
     <Content Include="Img\film\vu_em.png" />
+    <Content Include="phim\player.swf" />
     <Content Include="Scripts\jquery-1.6.js" />
     <Content Include="Scripts\jwplayer.js" />
     <Content Include="thanhvien\Default.aspx" />
@@ -85,9 +87,10 @@
     </Content>
     <Content Include="Default.aspx" />
     <Content Include="phim\Default.aspx" />
-    <Content Include="phim\ChiTietFilm.aspx" />
+    <Content Include="phim\ChiTietPhim.aspx" />
     <Content Include="phim\ThemPhimMoi.aspx" />
-    <Content Include="phim\ChinhSuaFilm.aspx" />
+    <Content Include="phim\ChinhSuaPhim.aspx" />
+    <Content Include="phim\ThemPhimThanhCong.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaLINQ.designer.cs">
@@ -127,12 +130,12 @@
     <Compile Include="phim\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="phim\ChiTietFilm.aspx.cs">
-      <DependentUpon>ChiTietFilm.aspx</DependentUpon>
+    <Compile Include="phim\ChiTietPhim.aspx.cs">
+      <DependentUpon>ChiTietPhim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="phim\ChiTietFilm.aspx.designer.cs">
-      <DependentUpon>ChiTietFilm.aspx</DependentUpon>
+    <Compile Include="phim\ChiTietPhim.aspx.designer.cs">
+      <DependentUpon>ChiTietPhim.aspx</DependentUpon>
     </Compile>
     <Compile Include="phim\ThemPhimMoi.aspx.cs">
       <DependentUpon>ThemPhimMoi.aspx</DependentUpon>
@@ -141,12 +144,12 @@
     <Compile Include="phim\ThemPhimMoi.aspx.designer.cs">
       <DependentUpon>ThemPhimMoi.aspx</DependentUpon>
     </Compile>
-    <Compile Include="phim\ChinhSuaFilm.aspx.cs">
-      <DependentUpon>ChinhSuaFilm.aspx</DependentUpon>
+    <Compile Include="phim\ChinhSuaPhim.aspx.cs">
+      <DependentUpon>ChinhSuaPhim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="phim\ChinhSuaFilm.aspx.designer.cs">
-      <DependentUpon>ChinhSuaFilm.aspx</DependentUpon>
+    <Compile Include="phim\ChinhSuaPhim.aspx.designer.cs">
+      <DependentUpon>ChinhSuaPhim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -168,6 +171,13 @@
     </Compile>
     <Compile Include="thongtin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="phim\ThemPhimThanhCong.aspx.cs">
+      <DependentUpon>ThemPhimThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="phim\ThemPhimThanhCong.aspx.designer.cs">
+      <DependentUpon>ThemPhimThanhCong.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

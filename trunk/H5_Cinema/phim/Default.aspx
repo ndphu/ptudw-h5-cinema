@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Phim" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="H5_Cinema.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="Label1" runat="server" Text="PHIM" ForeColor="GreenYellow" Font-Bold="true" Font-Size="XX-Large"></asp:Label>
+<div style="width: 100%" align="center">
+    <asp:Label ID="Label1" runat="server" Text="DANH SÁCH PHIM" ForeColor="GreenYellow" Font-Bold="true" Font-Size="XX-Large"></asp:Label>
     <br />
     <%-- 
     <%  
@@ -58,7 +59,7 @@
         }%>
         --%>
         <asp:ListView ID="Th_DanhSachPhim" runat="server" DataSourceID="CinemaLINQ" 
-        GroupItemCount="4" style="text-align: left" 
+        GroupItemCount="3" style="text-align: left" 
         onselectedindexchanged="ListView1_SelectedIndexChanged">
         <EmptyDataTemplate>
             <table id="Table1" runat="server" 
@@ -79,24 +80,34 @@
             </tr>
         </GroupTemplate>
         <ItemTemplate>
-            <td id="Td2" runat="server" style="background-color: #E0FFFF;color: #333333;width: 250px">
-                Mã phim:
-                <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("MaPhim") %>'/>
+            <td id="Td2" runat="server" 
+                style="border: thick ridge #FF9900; width: 400px; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;" 
+                align="char" bgcolor="Black" valign="top">
+                <div style="background-image: url('../Img/001.png'); height: 90px">                
+                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("TenPhim") %>' 
+                    ForeColor="Blue" Font-Size="Small"/>
+                    <br />
+                <asp:Label runat="server" Text="Th&#7875; lo&#7841;i:" ForeColor="Lime" 
+                    Font-Size="Small"></asp:Label>
+                <asp:Label ID="TypeLabel" runat="server" 
+                    Text='<%# Eval("DanhMucTheLoaiPhim.TenDanhMucTheLoaiPhim") %>' 
+                    ForeColor="Lime" Font-Size="Small" />                    
+                    <br />
+                    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="#FF6600" 
+                        Text="Th&#7901;i l&#432;&#7907;ng:"></asp:Label>
+                    <asp:Label ID="LengthLabel" runat="server" Font-Size="Small" 
+                        ForeColor="#FF6600" Text='<%# Eval("ThoiLuong") %>'></asp:Label>
+                </div>
+                <div style="height: 250px; vertical-align: middle; text-align: center; background-image: url('../Img/001.png') ; top: 5px; position: relative;">
+                    <asp:Image ID="PlaybillAddLabel" runat="server" Width="150px"
+                    ImageUrl='<%# Eval("AnhPhim") %>'/></div>
                 <br />
-                Tên phim:
-                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("TenPhim") %>' />
-                <br />
-                Th&#7875; lo&#7841;i:
-                <asp:Label ID="TypeLabel" runat="server" Text='<%# Eval("DanhMucTheLoaiPhim.TenDanhMucTheLoaiPhim") %>' />
-                <br />
-                <asp:Image ID="PlaybillAddLabel" runat="server" 
-                    ImageUrl='<%# Eval("AnhPhim") %>' />
-                <br />
-                &#272;&#7897; dài (phút):
-                <asp:Label ID="LengthLabel" runat="server" Text='<%# Eval("ThoiLuong") %>' />
-                <br />
-                <asp:Button runat="server" OnClick="ChiTiet_Click" Text="Chi ti&#7871;t" CommandName='<%# Eval("MaPhim") %>' Width="100" ToolTip="Xem chi ti&#7871;t b&#7897; phim"> </asp:Button>
-                <asp:Button runat="server" OnClick="ChinhSua_Click" Text="Ch&#7881;nh s&#7919;a" CommandName='<%# Eval("MaPhim") %>' Width="100" ToolTip="Ch&#7881;nh s&#7917;a các thông tin liên quan &#273;&#7871;n phim này"> </asp:Button>
+                <asp:Button runat="server" OnClick="ChiTiet_Click" Text="Chi ti&#7871;t" 
+                    CommandName='<%# Eval("MaPhim") %>' Width="100px" 
+                    ToolTip="Xem chi ti&#7871;t b&#7897; phim"> </asp:Button>
+                <asp:Button runat="server" OnClick="ChinhSua_Click" Text="Ch&#7881;nh s&#7917;a" 
+                    CommandName='<%# Eval("MaPhim") %>' Width="100px" 
+                    ToolTip="Ch&#7881;nh s&#7917;a các thông tin liên quan &#273;&#7871;n phim này"> </asp:Button>
                 <br />
             </td>
         </ItemTemplate>
@@ -135,5 +146,5 @@
             <asp:Parameter DefaultValue="True" Name="TinhTrang" Type="Boolean" />
         </WhereParameters>
     </asp:LinqDataSource>
-    
+    </div>
     </asp:Content>

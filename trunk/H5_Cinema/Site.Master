@@ -75,8 +75,9 @@
         <div style="float: left; width: 2%; height: 19px;">
         </div>
         <div style="float: left; width: 25%;">
+            <asp:Button ID="Button2" runat="server" Text="Button" />
         </div>
-        <div style="width: 73%;">
+        <div style="width: 73%; float: left">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             
         </asp:ContentPlaceHolder>
