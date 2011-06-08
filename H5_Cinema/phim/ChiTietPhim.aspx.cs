@@ -14,6 +14,17 @@ namespace H5_Cinema
             try
             {
                 Th_HinhAnh.ImageUrl = ((Phim)Session["CurrentPhim"]).AnhPhim;
+                CinemaLINQDataContext dt = new CinemaLINQDataContext();
+                var query = from binhLuan in dt.BinhLuans
+                            where binhLuan.MaPhim == ((Phim)Session["CurrentPhim"]).MaPhim && binhLuan.TinhTrang == 3
+                            select binhLuan;
+                foreach (BinhLuan binhLuan in query)
+                {
+                    Control ucbl = LoadControl("UCBinhLuan.ascx");
+                    ((H5_Cinema.phim.UCBinhLuan)ucbl).LoadBinhLuan(binhLuan);
+                    Panel1.Controls.Add(ucbl);
+                    Panel1.Controls.Add(new LiteralControl("</br>"));
+                } 
             }
             catch
             {
@@ -30,16 +41,17 @@ namespace H5_Cinema
                 BinhLuan bl = new BinhLuan();
                 bl.MaPhim = ((Phim)Session["CurrentPhim"]).MaPhim;
                 bl.NoiDungBinhLuan = Th_BinhLuanMoi.Text;
-                bl.MaNguoiDung = 3;
+                bl.MaNguoiDung = ((NguoiDung)Session["NguoiDung"]).MaNguoiDung;
                 bl.TinhTrang = 3;
 
                 dt.BinhLuans.InsertOnSubmit(bl);
 
                 dt.SubmitChanges();
+                Response.Redirect("/phim/chitietphim.aspx");
             }
             catch
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("/phim/chitietphim.aspx");
             }
         }
 
@@ -48,6 +60,5 @@ namespace H5_Cinema
             Response.Redirect("ChinhSuaPhim.aspx");            
         }
 
-        
     }
 }

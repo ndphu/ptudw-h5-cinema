@@ -1,63 +1,10 @@
 ﻿<%@ Page Title="Phim" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="H5_Cinema.WebForm2" %>
-
+<%@ Import Namespace="H5_Cinema" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="width: 100%" align="center">
-    <asp:Label ID="Label1" runat="server" Text="DANH SÁCH PHIM" ForeColor="GreenYellow" Font-Bold="true" Font-Size="XX-Large"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="DANH SÁCH PHIM" ForeColor="GreenYellow" 
+            Font-Bold="True" Font-Size="XX-Large" Font-Names="Tahoma"></asp:Label>
     <br />
-    <%-- 
-    <%  
-        try
-        {
-            H5_Cinema.CinemaLINQDataContext dt = new H5_Cinema.CinemaLINQDataContext();
-            var query = from phim in dt.Phims
-                        select phim;
-            foreach (H5_Cinema.Phim phim in query)
-            {
-        
-        %>
-            <table style="width: 100%;" align="left" bgcolor="#66FFFF">
-        <tr>
-        <td rowspan="5" class="style2" style="width: 36px">
-            <img src="<%=phim.AnhPhim.ToString() %>" />
-        </td>
-        <td style="width: 64px">
-            Tên phim:</td>
-        <td class="style3">
-            <%=phim.TenPhim.ToString() %>
-        </td>
-    </tr>
-    <tr>
-        <td style="width: 64px">
-            Th&#7875; lo&#7841;i:</td>
-        <td class="style3">
-            <%=phim.DanhMucTheLoaiPhim.TenDanhMucTheLoaiPhim.ToString() %>
-        </td>
-    </tr>
-    <tr>
-        <td style="width: 64px">
-            Di&#7877;n viên:</td>
-        <td class="style3">
-            <%=phim.DienVienThamGia.ToString() %>
-        </td>
-    </tr>
-    <tr>
-        <td style="width: 64px">
-            &#272;&#7897; dài:</td>
-        <td class="style3">
-            <%=phim.ThoiLuong.ToString() %>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" class="style3" align="center"><asp:Button ID="btnChiTiet" runat="server" Text="Chi ti&#7871;t" OnClick="ChiTiet_Click" CommandName="<%=phim.MaPhim.ToString() %>"></asp:Button></td>
-    </tr>
-</table>
-        <%
-        }
-        }
-        catch
-        {
-        }%>
-        --%>
         <asp:ListView ID="Th_DanhSachPhim" runat="server" DataSourceID="CinemaLINQ" 
         GroupItemCount="3" style="text-align: left" 
         onselectedindexchanged="ListView1_SelectedIndexChanged">
@@ -105,9 +52,18 @@
                 <asp:Button runat="server" OnClick="ChiTiet_Click" Text="Chi ti&#7871;t" 
                     CommandName='<%# Eval("MaPhim") %>' Width="100px" 
                     ToolTip="Xem chi ti&#7871;t b&#7897; phim"> </asp:Button>
+                    <% 
+                        NguoiDung nguoiDung = (NguoiDung)Session["NguoiDung"];
+                        if (nguoiDung != null && (nguoiDung.MaDanhMucNguoiDung == 1 || nguoiDung.MaDanhMucNguoiDung == 2))
+                        {
+                        %>
+
                 <asp:Button runat="server" OnClick="ChinhSua_Click" Text="Ch&#7881;nh s&#7917;a" 
                     CommandName='<%# Eval("MaPhim") %>' Width="100px" 
                     ToolTip="Ch&#7881;nh s&#7917;a các thông tin liên quan &#273;&#7871;n phim này"> </asp:Button>
+                    <%
+                        }   
+                    %>
                 <br />
             </td>
         </ItemTemplate>
