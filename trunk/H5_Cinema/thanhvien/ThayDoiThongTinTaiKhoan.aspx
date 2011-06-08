@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThayDoiThongTinTaiKhoan.aspx.cs" Inherits="H5_Cinema.thanhvien.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div style="width: 100%" align="center">
+<div style="border: thin solid #FF3300; width: 70%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;">
+<div style="border: thin solid #FF3300; background-image: url('../Img/001.png'); background-repeat: repeat">
     <asp:Label ID="Label1" runat="server" Text="C&#7852;P NH&#7852;T THÔNG TIN TÀI KHO&#7842;N" 
     ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label></div>    
     <div style="width: 100%" align="center"><asp:Label ID="Label2" runat="server" Text="C&#7853;p nh&#7853;t thông tin tài kho&#7843;n thành công" 
@@ -45,7 +47,7 @@
             </tr>
            
         </table>
-
+        </br>
     </div>
     <div style="width: 100%" align="center">
         <asp:Button ID="Xl_CapNhatThayDoi" runat="server" Text="C&#7853;p nh&#7853;t thay &#273;&#7893;i" 
@@ -53,8 +55,11 @@
         <asp:Button ID="Button3" runat="server" onclick="Button3_Click" 
             Text="&#272;&#7893;i m&#7853;t kh&#7849;u" Width="122px" />
     </div>
+    </br>
     <div style="width: 100%">
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" 
             BackColor="#0099CC" />
+    </div>
+    </br>
     </div>
 </asp:Content>

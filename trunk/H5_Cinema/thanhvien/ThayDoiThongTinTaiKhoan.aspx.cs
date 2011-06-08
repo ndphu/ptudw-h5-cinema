@@ -49,7 +49,6 @@ namespace H5_Cinema.thanhvien
                 Label2.Text = "Cập nhật thông tin tài khoản thành công";
                 Label2.Visible = true;
                 Session["NguoiDung"] = query;
-
             }
             catch
             {
