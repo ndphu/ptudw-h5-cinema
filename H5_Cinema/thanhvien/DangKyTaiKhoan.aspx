@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DangKyTaiKhoan.aspx.cs" Inherits="H5_Cinema.thanhvien.DangKiTaiKhoan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div style="width: 100%" align="center"><asp:Label ID="Label1" runat="server" Text="&#272;&#258;NG KÝ TÀI KHO&#7842;N" 
-    ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label></div>    
-    <br />
+<div align="center">
+<div style="border: thin solid #FF3300; width: 79%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;">
+<div style="border: thin solid #FF3300; background-image: url('../Img/001.png'); background-repeat: repeat">
+    <asp:Label ID="Label1" runat="server" Text="&#272;&#258;NG KÝ TÀI KHO&#7842;N" 
+    ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label>  </div>
     <div>
-
         <table style="width:100%; color: #FF3300;" align="center">
             <tr>
                 <td style="width: 152px">
@@ -77,18 +78,18 @@
                         ErrorMessage="&#272;&#7883;a ch&#7881; không &#273;&#432;&#7907;c &#273;&#7875; tr&#7889;ng" ControlToValidate="Th_DiaChi" 
                         Display="None"></asp:RequiredFieldValidator>
                 </td>
-            </tr>
-            
+            </tr>            
         </table>
-
-    </div>
-    <div style="width: 100%" align="center">
+        </br>
         <asp:Button ID="Xl_DangKy" runat="server" Text="&#272;&#259;ng ký" 
             style="text-align: center" onclick="Button1_Click" />
-    </div>
-    <div style="width: 100%">
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" 
-            BackColor="#0099CC" />
+        BackColor="#0099CC" />
+        </br>
+        <asp:Label ID="Label2" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+        </br>
+        </div>
+        </br>
     </div>
-<br />
+</div>
 </asp:Content>
