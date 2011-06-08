@@ -1,6 +1,13 @@
-﻿<%@ Page Title="Thêm phim m&#7899;i" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThemPhimMoi.aspx.cs" Inherits="H5_Cinema.WebForm4" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChinhSuaPhim.aspx.cs" Inherits="H5_Cinema.WebForm5"%>
+<%@ Import Namespace="H5_Cinema" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="width: 100%" align="center"><asp:Label ID="Label1" runat="server" Text="THÊM PHIM M&#7898;I" 
+            <% try
+                   {
+                       Phim phim = ((Phim)Session["CurrentPhim"]);
+             %>
+    <script src="../Scripts/jwplayer.js" type="text/javascript"></script>
+<div style="width: 100%" align="center">
+    <asp:Label ID="Label1" runat="server" Text="C&#7852;P NH&#7852;T THÔNG TIN PHIM" 
     ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label></div>    
     <br />
     <div>
@@ -23,7 +30,8 @@
                 <td style="width: 338px">
                     <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="CinemaLINQ" 
                         DataTextField="TenDanhMucTheLoaiPhim" 
-                        DataValueField="MaDanhMucTheLoaiPhim" Width="200px" ToolTip="Th&#7875; lo&#7841;i phim">
+                        DataValueField="MaDanhMucTheLoaiPhim" Width="200px" 
+                        ToolTip="Th&#7875; lo&#7841;i phim" ondatabound="DropDownList1_DataBound">
                     </asp:DropDownList>
                     <asp:LinqDataSource ID="CinemaLINQ" runat="server" 
                         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
@@ -41,7 +49,8 @@
                 <td style="width: 338px">
                     <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="CinemaLINQLoaiPhim" 
                         DataTextField="TenTheLoai" 
-                        DataValueField="MaLoai" Width="200px" ToolTip="Th&#7875; lo&#7841;i phim">
+                        DataValueField="MaLoai" Width="200px" ToolTip="Th&#7875; lo&#7841;i phim" 
+                        ondatabound="DropDownList2_DataBound">
                     </asp:DropDownList>
                     <asp:LinqDataSource ID="CinemaLINQLoaiPhim" runat="server" 
                         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
@@ -119,12 +128,11 @@
                 <td style="width: 152px">
                     &#7842;nh phim:</td>
                 <td style="width: 338px">
+                    <asp:Image ID="Image1" runat="server" Width="180px" />
+                    <br />
                     <asp:FileUpload ID="Th_AnhPhim" runat="server" Width="218px" 
                         ToolTip="&#7842;nh poster c&#7911;a phim" />
                     <br />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                        ErrorMessage="&#7842;nh phim không th&#7875; b&#7887; tr&#7889;ng" ControlToValidate="Th_AnhPhim" 
-                        Display="None"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                         ControlToValidate="Th_AnhPhim" Display="None" 
                         ErrorMessage="&#7842;nh phim ph&#7843;i là &#273;&#7883;nh d&#7841;ng jpg/jpeg/png/gif/bmp/tif" 
@@ -135,12 +143,23 @@
                 <td style="width: 152px">
                     Trailer:</td>
                 <td style="width: 338px">
+                
+                <div id='mediaspace' style="color: #808080">Không tìm th&#7845;y trailer cho phim này</div> 
+                <script type='text/javascript'>
+                    jwplayer('mediaspace').setup({
+                        'flashplayer': 'player.swf',
+                        'file': '<%=((Phim)Session["CurrentPhim"]).TrailerPhim%>',
+                        'controlbar': 'bottom',
+                        'width': '470',
+                        'height': '320'
+                    });
+                </script>
+                
+
+                    <br />
                     <asp:FileUpload ID="Th_Trailer" runat="server" Width="219px" 
                         ToolTip="Trailer c&#7911;a phim" />
                     <br />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
-                        ErrorMessage="Trailer phim không th&#7875; b&#7887; tr&#7889;ng" 
-                        ControlToValidate="Th_Trailer" Display="None"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                         ControlToValidate="Th_Trailer" Display="None" 
                         ErrorMessage="Trailer ph&#7843;i là &#273;&#7883;nh d&#7841;ng mp4/flv/ogg/avi/wmv" 
@@ -151,12 +170,17 @@
 
     </div>
     <div style="width: 100%" align="center">
-        <asp:Button ID="Xl_ThemPhimMoi" runat="server" Text="Thêm phim m&#7899;i" 
-            style="text-align: center" onclick="Button1_Click" />
+        <asp:Button ID="Xl_CapNhatThayDoi" runat="server" Text="C&#7853;p nh&#7853;t thay &#273;&#7893;i" 
+            style="text-align: center" onclick="Xl_CapNhatThayDoi_Click"/>
     </div>
     <div style="width: 100%">
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" 
             BackColor="#0099CC" />
     </div>
-<br />
+    <%
+                    }
+                   catch
+                   {
+                   }
+                %>
 </asp:Content>

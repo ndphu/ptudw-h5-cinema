@@ -10,7 +10,7 @@
 namespace H5_Cinema {
     
     
-    public partial class WebForm4 {
+    public partial class WebForm5 {
         
         /// <summary>
         /// Label1 control.
@@ -166,6 +166,15 @@ namespace H5_Cinema {
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
         
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+        
+        /// <summary>
         /// Th_AnhPhim control.
         /// </summary>
         /// <remarks>
@@ -173,15 +182,6 @@ namespace H5_Cinema {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload Th_AnhPhim;
-        
-        /// <summary>
-        /// RequiredFieldValidator6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
         /// RegularExpressionValidator1 control.
@@ -202,15 +202,6 @@ namespace H5_Cinema {
         protected global::System.Web.UI.WebControls.FileUpload Th_Trailer;
         
         /// <summary>
-        /// RequiredFieldValidator7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
-        
-        /// <summary>
         /// RegularExpressionValidator2 control.
         /// </summary>
         /// <remarks>
@@ -220,13 +211,13 @@ namespace H5_Cinema {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
         
         /// <summary>
-        /// Xl_ThemPhimMoi control.
+        /// Xl_CapNhatThayDoi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Xl_ThemPhimMoi;
+        protected global::System.Web.UI.WebControls.Button Xl_CapNhatThayDoi;
         
         /// <summary>
         /// ValidationSummary1 control.

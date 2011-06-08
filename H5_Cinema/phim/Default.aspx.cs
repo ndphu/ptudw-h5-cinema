@@ -33,14 +33,20 @@ namespace H5_Cinema
 
         protected void ChiTiet_Click(object sender, EventArgs e)
         {
-            Session["SelectedFilmID"] = ((Button)sender).CommandName;
-            Response.Redirect("../phim/ChiTietFilm.aspx");
+            CinemaLINQDataContext dt = new CinemaLINQDataContext();
+            Session["CurrentPhim"] = (from phim in dt.Phims
+                                      where phim.MaPhim == int.Parse(((Button)sender).CommandName)
+                                      select phim).Single();
+            Response.Redirect("../phim/ChiTietPhim.aspx");
         }
 
         protected void ChinhSua_Click(object sender, EventArgs e)
         {
-            Session["SelectedFilmID"] = ((Button)sender).CommandName;
-            Response.Redirect("../phim/ChinhSuaFilm.aspx");
+            CinemaLINQDataContext dt = new CinemaLINQDataContext();
+            Session["CurrentPhim"] = (from phim in dt.Phims
+                                      where phim.MaPhim == int.Parse(((Button)sender).CommandName)
+                                      select phim).Single();
+            Response.Redirect("../phim/ChinhSuaPhim.aspx");
         }
 
         protected void Xl_ThemPhimMoi_Click(object sender, EventArgs e)
