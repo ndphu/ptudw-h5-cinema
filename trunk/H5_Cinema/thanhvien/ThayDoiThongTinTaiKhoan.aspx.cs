@@ -17,10 +17,10 @@ namespace H5_Cinema.thanhvien
             {
                 try
                 {
-                    if (Th_TenTaiKhoan.Text == null || Th_TenTaiKhoan.Text.Trim().Length == 0)
+                    if (Lb_TenTaiKhoan.Text == null || Lb_TenTaiKhoan.Text.Trim().Length == 0)
                     {
                         CinemaLINQDataContext dt = new CinemaLINQDataContext();
-                        Th_TenTaiKhoan.Text = ((NguoiDung)Session["NguoiDung"]).TenNguoiDung;
+                        Lb_TenTaiKhoan.Text = ((NguoiDung)Session["NguoiDung"]).TenNguoiDung;
                         Th_Email.Text = ((NguoiDung)Session["NguoiDung"]).Email.Trim();
                         Th_DiaChi.Text = ((NguoiDung)Session["NguoiDung"]).DiaChi;
                     }

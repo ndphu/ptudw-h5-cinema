@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="Thêm phim m&#7899;i" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThemPhimMoi.aspx.cs" Inherits="H5_Cinema.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="width: 100%" align="center"><asp:Label ID="Label1" runat="server" Text="THÊM PHIM M&#7898;I" 
+    <div align="center" 
+    style="border: thin solid #808080; background-image: url('../Img/browndirt.jpg')">
+    <div style="border: thin solid #808080; width: 100%; background-image: url('../Img/001.png');" 
+        align="center"><asp:Label ID="Label1" runat="server" Text="THÊM PHIM M&#7898;I" 
     ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label></div>    
     <br />
     <div>
@@ -159,4 +162,5 @@
             BackColor="#0099CC" />
     </div>
 <br />
+</div>
 </asp:Content>

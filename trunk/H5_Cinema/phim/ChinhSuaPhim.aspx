@@ -1,17 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChinhSuaPhim.aspx.cs" Inherits="H5_Cinema.WebForm5"%>
 <%@ Import Namespace="H5_Cinema" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<div style="border: thin solid #808080; width: 100%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;" 
+        align="center">
             <% try
                    {
                        Phim phim = ((Phim)Session["CurrentPhim"]);
              %>
     <script src="../Scripts/jwplayer.js" type="text/javascript"></script>
-<div style="width: 100%" align="center">
+<div style="border: thin solid #808080; background-image: url('../Img/001.png'); width: 100%;" 
+            align="center">
     <asp:Label ID="Label1" runat="server" Text="C&#7852;P NH&#7852;T THÔNG TIN PHIM" 
-    ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label></div>    
-    <br />
+    ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+    </div>  
     <div>
-
+        </br>
         <table style="width:100%; color: #FF3300;" align="center">
             <tr>
                 <td style="width: 152px">
@@ -183,4 +186,5 @@
                    {
                    }
                 %>
+                </div>
 </asp:Content>
