@@ -78,6 +78,7 @@
     <Content Include="Scripts\jwplayer.js" />
     <Content Include="thanhvien\DangKyTaiKhoan.aspx" />
     <Content Include="thanhvien\Default.aspx" />
+    <Content Include="thanhvien\DoiMatKhau.aspx" />
     <Content Include="thanhvien\TaoTaiKhoanThanhCong.aspx" />
     <Content Include="thongtin\Default.aspx" />
     <Content Include="Web.config" />
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="thanhvien\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thanhvien\DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
     </Compile>
     <Compile Include="thanhvien\TaoTaiKhoanThanhCong.aspx.cs">
       <DependentUpon>TaoTaiKhoanThanhCong.aspx</DependentUpon>
