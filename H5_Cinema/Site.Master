@@ -47,7 +47,7 @@
                         <asp:Button ID="Xl_DangXuat" runat="server" 
                 Text="&#272;&#259;ng xu&#7845;t" onclick="Xl_DangXuat_Click" 
                 Width="100px" />
-                        <%
+            <%
 }
                     else
                     {
@@ -56,7 +56,7 @@
                 onclick="Xl_DangNhap_Click" Width="100px" />
                         <asp:Button ID="Xl_DangKy" runat="server" Text="&#272;&#259;ng ký" 
                 onclick="Xl_DangKy_Click" Width="100px" />
-                        <%
+            <%
                     }
                 }
                 catch
@@ -64,6 +64,19 @@
                 }
                  %>
           </div>
+      </td>
+  </tr>
+  
+  <tr>
+    <td colspan="5" 
+          style="background-image: url('/Img/001.png'); background-repeat: repeat;">
+        <asp:TextBox ID="lb_TimKiem" runat="server" Width="186px"></asp:TextBox>
+        <asp:Button ID="bt_TimKiem" runat="server" BorderStyle="Dotted" 
+            onclick="bt_TimKiem_Click" Text="Tìm" Width="96px" />
+        <asp:Label ID="Label1" runat="server" ForeColor="#FFFF66" Text="Loại tìm kiếm:"></asp:Label>
+        <asp:DropDownList ID="ddl_LoaiTimKiem" runat="server" Font-Bold="True" 
+            ForeColor="Black" Height="20px" Width="172px">
+        </asp:DropDownList>
       </td>
   </tr>
   
