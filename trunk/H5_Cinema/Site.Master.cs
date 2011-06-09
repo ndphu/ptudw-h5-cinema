@@ -11,7 +11,12 @@ namespace H5_Cinema
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ddl_LoaiTimKiem.Items.Add("Tên phim");
+                ddl_LoaiTimKiem.Items.Add("Suất chiếu");
+                ddl_LoaiTimKiem.Items.Add("Lịch chiếu");
+            }
         }
 
         protected void Xl_DangNhap_Click(object sender, EventArgs e)
@@ -33,6 +38,27 @@ namespace H5_Cinema
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("/thanhvien/thaydoithongtintaikhoan.aspx");
+        }
+
+        protected void bt_TimKiem_Click(object sender, EventArgs e)
+        {
+            switch (ddl_LoaiTimKiem.Text)
+            {
+                case "Tên phim":
+                    {
+                        Session["TenPhimTimKiem"] = lb_TimKiem.Text;
+                        Response.Redirect("/phim/TraCuuPhim.aspx");
+                        break;
+                    }
+                case "Suất chiếu":
+                    {
+                        break;
+                    }
+                case "Lịch chiếu":
+                    {
+                        break;
+                    }
+            }
         }
     }
 }
