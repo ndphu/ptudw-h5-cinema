@@ -85,7 +85,9 @@
     <Content Include="thanhvien\TaoTaiKhoanThanhCong.aspx" />
     <Content Include="thanhvien\ThayDoiThongTinTaiKhoan.aspx" />
     <Content Include="thanhvien\ThayDoiThongTinTaiKhoanThanhCong.aspx" />
+    <Content Include="thanhvien\ThemTaiKhoanMoi.aspx" />
     <Content Include="thanhvien\YeuCauDangNhap.aspx" />
+    <Content Include="thanhvien\YeuCauQuyenAdmin.aspx" />
     <Content Include="thongtin\Default.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -233,12 +235,26 @@
     <Compile Include="thanhvien\ThayDoiThongTinTaiKhoanThanhCong.aspx.designer.cs">
       <DependentUpon>ThayDoiThongTinTaiKhoanThanhCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="thanhvien\ThemTaiKhoanMoi.aspx.cs">
+      <DependentUpon>ThemTaiKhoanMoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\ThemTaiKhoanMoi.aspx.designer.cs">
+      <DependentUpon>ThemTaiKhoanMoi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="thanhvien\YeuCauDangNhap.aspx.cs">
       <DependentUpon>YeuCauDangNhap.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="thanhvien\YeuCauDangNhap.aspx.designer.cs">
       <DependentUpon>YeuCauDangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thanhvien\YeuCauQuyenAdmin.aspx.cs">
+      <DependentUpon>YeuCauQuyenAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\YeuCauQuyenAdmin.aspx.designer.cs">
+      <DependentUpon>YeuCauQuyenAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="thongtin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
