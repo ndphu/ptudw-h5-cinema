@@ -49,7 +49,7 @@
                     <asp:LinqDataSource ID="CinemaLINQLoaiPhim" runat="server" 
                         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
                         Select="new (MaLoai, TenTheLoai)" TableName="DanhMucLoaiPhims" 
-                        Where="TinhTrang == @TinhTrang">
+                        Where="TinhTrang == @TinhTrang" onselecting="CinemaLINQLoaiPhim_Selecting">
                         <WhereParameters>
                             <asp:Parameter DefaultValue="true" Name="TinhTrang" Type="Boolean" />
                         </WhereParameters>
