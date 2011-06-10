@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
-
+using System.Drawing;
 
 namespace H5_Cinema.thanhvien
 {
@@ -54,14 +54,36 @@ namespace H5_Cinema.thanhvien
                 }
                 else
                 {
-                    Label2.Text = "Tên tài khoản đã tồn tại";
-                    Label2.Visible = true;
+                    Label3.Text = "Tên tài khoản đã tồn tại";
+                    Label3.ForeColor = Color.Red;
+                    Label3.Visible = true;
                 }
             }
             catch
             {
 
             }
+        }
+
+        protected void Check_Click(object sender, EventArgs e)
+        {
+             CinemaLINQDataContext dt = new CinemaLINQDataContext();
+
+                var query = from nguoiDung in dt.NguoiDungs
+                            where nguoiDung.TenNguoiDung.CompareTo(Th_TenTaiKhoan.Text) == 0
+                            select nguoiDung;
+                if (query.Count<NguoiDung>() == 0)
+                {
+                    Label3.Text = "Bạn có thể sử dụng tên này";
+                    Label3.ForeColor = Color.Green;
+                    Label3.Visible = true;
+                }
+                else
+                {
+                    Label3.Text = "Tên tài khoản đã tồn tại";
+                    Label3.ForeColor = Color.Red;
+                    Label3.Visible = true;
+                }
         }
     }
 }
