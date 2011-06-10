@@ -86,6 +86,7 @@
     <Content Include="thanhvien\TaoTaiKhoanThanhCong.aspx" />
     <Content Include="thanhvien\ThayDoiThongTinTaiKhoan.aspx" />
     <Content Include="thanhvien\ThayDoiThongTinTaiKhoanThanhCong.aspx" />
+    <Content Include="thanhvien\ThayDoiTinhTrangTaiKhoan.aspx" />
     <Content Include="thanhvien\ThemTaiKhoanMoi.aspx" />
     <Content Include="thanhvien\YeuCauDangNhap.aspx" />
     <Content Include="thanhvien\YeuCauQuyenAdmin.aspx" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="thanhvien\ThayDoiThongTinTaiKhoanThanhCong.aspx.designer.cs">
       <DependentUpon>ThayDoiThongTinTaiKhoanThanhCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thanhvien\ThayDoiTinhTrangTaiKhoan.aspx.cs">
+      <DependentUpon>ThayDoiTinhTrangTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\ThayDoiTinhTrangTaiKhoan.aspx.designer.cs">
+      <DependentUpon>ThayDoiTinhTrangTaiKhoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="thanhvien\ThemTaiKhoanMoi.aspx.cs">
       <DependentUpon>ThemTaiKhoanMoi.aspx</DependentUpon>

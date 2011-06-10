@@ -4,7 +4,7 @@
 <div style="border: thin solid #FF3300; width: 70%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;">
 <div style="border: thin solid #FF3300; background-image: url('../Img/001.png'); background-repeat: repeat">
     <asp:Label ID="Label1" runat="server" Text="C&#7852;P NH&#7852;T THÔNG TIN TÀI KHO&#7842;N" 
-    ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label></div>    
+    ForeColor="GreenYellow" Font-Bold="True" Font-Size="20pt"></asp:Label></div>    
     <div style="width: 100%" align="center"><asp:Label ID="Label2" runat="server" Text="C&#7853;p nh&#7853;t thông tin tài kho&#7843;n thành công" 
     ForeColor="Red" Font-Bold="True" Font-Size="Large" Visible="false"></asp:Label></div>    
     <br />
