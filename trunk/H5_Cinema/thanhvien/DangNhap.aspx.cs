@@ -37,8 +37,16 @@ namespace H5_Cinema
                 var query = (from nguoiDung in dt.NguoiDungs
                              where tenDangNhap.CompareTo(nguoiDung.TenNguoiDung) == 0 && strPassword.CompareTo(nguoiDung.MatKhau) == 0
                              select nguoiDung).Single();
-                Session["NguoiDung"] = query;
-                Response.Redirect("dangnhapthanhcong.aspx");
+                if (query.TinhTrang == 2)
+                {
+                    Label2.Text = "Tài khoản đã bị khóa, vui lòng kiểm tra lại";
+                    Label2.Visible = true;
+                }
+                else
+                {
+                    Session["NguoiDung"] = query;
+                    Response.Redirect("dangnhapthanhcong.aspx");
+                }
             }
             catch
             {

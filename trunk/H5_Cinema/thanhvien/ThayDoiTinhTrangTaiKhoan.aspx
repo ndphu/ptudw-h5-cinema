@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChinhSuaThongTinTaiKhoan.aspx.cs" Inherits="H5_Cinema.thanhvien.ChinhSuaThongTinTaiKhoan" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThayDoiTinhTrangTaiKhoan.aspx.cs" Inherits="H5_Cinema.thanhvien.ThayDoiTinhTrangTaiKhoan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div style="width: 100%" align="center">
 <div style="border: thin solid #FF3300; width: 70%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;">
 <div style="border: thin solid #FF3300; background-image: url('../Img/001.png'); background-repeat: repeat">
-    <asp:Label ID="Label1" runat="server" Text="CH&#7880;NH S&#7916;A THÔNG TIN TÀI KHO&#7842;N" 
+    <asp:Label ID="Label1" runat="server" Text="THAY &#272;&#7892;I TÌNH TR&#7840;NG TÀI KHO&#7842;N" 
     ForeColor="GreenYellow" Font-Bold="True" Font-Size="20pt"></asp:Label></div>    
     <div style="width: 100%" align="center"><asp:Label ID="Label2" runat="server" Text="Ch&#7881;nh s&#7917;a thông tin tài kho&#7843;n thành công" 
     ForeColor="Red" Font-Bold="True" Font-Size="Large" Visible="false"></asp:Label></div>    
@@ -29,45 +29,19 @@
                         ValidationExpression="^[a-zA-Z0-9]{6,32}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
-            <tr>
-                <td style="width: 152px">
-                    Email:</td>
-                <td style="width: 368px;text-align:left">
-                    <asp:TextBox ID="Th_Email" runat="server" Width="285px" ToolTip="Email ng&#432;&#7901;i dùng"></asp:TextBox>
-                    <br />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                        ErrorMessage="Email không &#273;&#432;&#7907;c &#273;&#7875; tr&#7889;ng" ControlToValidate="Th_Email" 
-                        Display="None"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                        ErrorMessage="Email không &#273;úng &#273;&#7883;nh d&#7841;ng" ControlToValidate="Th_Email" 
-                        Display="None" 
-                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 152px">
-                    &#272;&#7883;a ch&#7881;:</td>
-                <td style="width: 368px;text-align:left">
-                    <asp:TextBox ID="Th_DiaChi" runat="server" Width="285px" ToolTip="&#272;&#7883;a ch&#7881; ng&#432;&#7901;i dùng"></asp:TextBox>
-                    <br />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                        ErrorMessage="&#272;&#7883;a ch&#7881; không &#273;&#432;&#7907;c &#273;&#7875; tr&#7889;ng" ControlToValidate="Th_DiaChi" 
-                        Display="None"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
+
            <tr>
                 <td style="width: 152px">
                     Lo&#7841;i ng&#432;&#7901;i dùng:</td>
                 <td style="width: 368px;text-align:left">
-                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="CinemaLINQLoaiNguoiDung" 
-                        DataTextField="TenDanhMucNguoiDung" 
-                        DataValueField="MaDanhMucNguoiDung" Width="200px" 
-                        ToolTip="Lo&#7841;i ng&#432;&#7901;i dùng" 
-                        ondatabound="DropDownList2_DataBound">
+                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="CinemaLINQTinhTrangNguoiDung" 
+                        DataTextField="TenDanhMucTinhTrangNguoiDung" 
+                        DataValueField="MaDanhMucTinhTrangNguoDung" Width="200px" 
+                        ToolTip="Tình tr&#7841;ng ng&#432;&#7901;i dùng" >
                     </asp:DropDownList>
-                    <asp:LinqDataSource ID="CinemaLINQLoaiNguoiDung" runat="server" 
+                    <asp:LinqDataSource ID="CinemaLINQTinhTrangNguoiDung" runat="server" 
                         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
-                        Select="new (MaDanhMucNguoiDung, TenDanhMucNguoiDung)" TableName="DanhMucNguoiDungs" 
+                        Select="new (MaDanhMucTinhTrangNguoDung, TenDanhMucTinhTrangNguoiDung)" TableName="DanhMucTinhTrangNguoiDungs" 
                         Where="TinhTrang == @TinhTrang">
                         <WhereParameters>
                             <asp:Parameter DefaultValue="true" Name="TinhTrang" Type="Boolean" />
