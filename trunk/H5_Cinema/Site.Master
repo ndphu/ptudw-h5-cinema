@@ -70,14 +70,7 @@
   <tr>
     <td colspan="5" 
           style="background-image: url('/Img/001.png'); background-repeat: repeat;">
-        <asp:TextBox ID="lb_TimKiem" runat="server" Width="186px"></asp:TextBox>
-        <asp:Button ID="bt_TimKiem" runat="server" BorderStyle="Dotted" 
-            onclick="bt_TimKiem_Click" Text="Tìm" Width="96px" />
-        <asp:Label ID="Label1" runat="server" ForeColor="#FFFF66" Text="Loại tìm kiếm:"></asp:Label>
-        <asp:DropDownList ID="ddl_LoaiTimKiem" runat="server" Font-Bold="True" 
-            ForeColor="Black" Height="20px" Width="172px">
-        </asp:DropDownList>
-      </td>
+        &nbsp;</td>
   </tr>
   
   <tr>
@@ -116,8 +109,56 @@
   	<td colspan="5">
         <div style="float: left; width: 2%; height: 19px;">
         </div>
-        <div style="float: left; width: 25%;">
-            <asp:Button ID="Button2" runat="server" Text="Button" />
+        <div style="float: left; width: 25%; height: 694px; color: #6699FF;" 
+            align="center">
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:Label ID="Label1" runat="server" ForeColor="#FFFF66" 
+    Text="Ch&#7885;n lo&#7841;i tìm ki&#7871;m:" Font-Size="10pt"></asp:Label>
+                    <br />
+                    <asp:DropDownList ID="ddl_LoaiTimKiem" runat="server" AutoPostBack="True" 
+                        Font-Bold="True" ForeColor="Black" Height="20px" 
+                        onselectedindexchanged="ddl_LoaiTimKiem_SelectedIndexChanged" Width="172px">
+                    </asp:DropDownList>
+                    <br />
+                    <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                    <ProgressTemplate>&#272;ang t&#7843;i.....</ProgressTemplate>
+                    </asp:UpdateProgress>
+                    <br />
+                    <asp:Button ID="bt_TimKiemPhim" runat="server" BackColor="#FFFFCC" 
+                        BorderStyle="Dotted" onclick="bt_TimKiem_Click" Text="Tìm" Width="96px" />
+                    <br />
+                    <asp:Label ID="lb_NhapTenPhim" runat="server" Font-Size="10pt" ForeColor="Yellow" 
+                        Text="Nh&#7853;p vào tên phim:"></asp:Label>
+                    <br />
+                    <asp:TextBox ID="tb_TenPhim" runat="server" Width="209px"></asp:TextBox>
+                    <br />
+                    <asp:Label ID="lb_NgayChieu" runat="server" Font-Size="10pt" ForeColor="Yellow" 
+                        Text="Ch&#7885;n ngày chi&#7871;u:"></asp:Label>
+                    <asp:Calendar ID="cld_Lich" runat="server" BackColor="#FFFFCC" 
+                        BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" 
+                        Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" 
+                        ShowGridLines="True" Width="220px">
+                        <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
+                        <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+                        <OtherMonthDayStyle ForeColor="#CC9966" />
+                        <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+                        <SelectorStyle BackColor="#FFCC66" />
+                        <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" 
+                            ForeColor="#FFFFCC" />
+                        <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+                    </asp:Calendar>
+                    <asp:Button ID="bt_TimKiemSuatChieu" runat="server" BackColor="#FFFFCC" 
+                        BorderStyle="Dotted" Text="Tìm" Width="96px" />
+                    <br />
+                    <asp:Label ID="lb_SuatChieu" runat="server" Font-Size="10pt" ForeColor="Yellow" 
+                        Text="Ch&#7885;n su&#7845;t chi&#7871;u:"></asp:Label>
+                    <asp:DataList ID="dtl_SuatChieu" runat="server">
+                    </asp:DataList>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
         <div style="width: 73%; float: left">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

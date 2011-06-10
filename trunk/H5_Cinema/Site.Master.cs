@@ -14,8 +14,19 @@ namespace H5_Cinema
             if (!IsPostBack)
             {
                 ddl_LoaiTimKiem.Items.Add("Tên phim");
-                ddl_LoaiTimKiem.Items.Add("Suất chiếu");
                 ddl_LoaiTimKiem.Items.Add("Lịch chiếu");
+                ddl_LoaiTimKiem.Items.Add("Suất chiếu");
+
+                lb_NhapTenPhim.Visible = true;
+                tb_TenPhim.Visible = true;
+                bt_TimKiemPhim.Visible = true;
+
+                lb_NgayChieu.Visible = false;
+                cld_Lich.Visible = false;
+
+                lb_SuatChieu.Visible = false;
+                dtl_SuatChieu.Visible = false;
+                bt_TimKiemSuatChieu.Visible = false;
             }
         }
 
@@ -42,20 +53,54 @@ namespace H5_Cinema
 
         protected void bt_TimKiem_Click(object sender, EventArgs e)
         {
+            Session["TenPhimTimKiem"] = tb_TenPhim.Text;
+            Response.Redirect("/phim/TraCuuPhim.aspx");
+        }
+
+        protected void ddl_LoaiTimKiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
             switch (ddl_LoaiTimKiem.Text)
             {
                 case "Tên phim":
                     {
-                        Session["TenPhimTimKiem"] = lb_TimKiem.Text;
-                        Response.Redirect("/phim/TraCuuPhim.aspx");
-                        break;
-                    }
-                case "Suất chiếu":
-                    {
+                        lb_NhapTenPhim.Visible = true;
+                        tb_TenPhim.Visible = true;
+                        bt_TimKiemPhim.Visible = true;
+
+                        lb_NgayChieu.Visible = false;
+                        cld_Lich.Visible = false;
+
+                        lb_SuatChieu.Visible = false;
+                        dtl_SuatChieu.Visible = false;
+                        bt_TimKiemSuatChieu.Visible = false;
                         break;
                     }
                 case "Lịch chiếu":
                     {
+                        lb_NhapTenPhim.Visible = false;
+                        tb_TenPhim.Visible = false;
+                        bt_TimKiemPhim.Visible = false;
+
+                        lb_NgayChieu.Visible = true;
+                        cld_Lich.Visible = true;
+
+                        lb_SuatChieu.Visible = false;
+                        dtl_SuatChieu.Visible = false;
+                        bt_TimKiemSuatChieu.Visible = false;
+                        break;
+                    }
+                case "Suất chiếu":
+                    {
+                        lb_NhapTenPhim.Visible = false;
+                        tb_TenPhim.Visible = false;
+                        bt_TimKiemPhim.Visible = false;
+
+                        lb_NgayChieu.Visible = false;
+                        cld_Lich.Visible = false;
+
+                        lb_SuatChieu.Visible = true;
+                        dtl_SuatChieu.Visible = true;
+                        bt_TimKiemSuatChieu.Visible = true;
                         break;
                     }
             }
