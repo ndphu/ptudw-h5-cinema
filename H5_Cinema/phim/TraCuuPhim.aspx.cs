@@ -100,5 +100,10 @@ namespace H5_Cinema.phim
                 BindingData();
             }
         }
+
+        protected void dtl_pagging_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
