@@ -78,6 +78,7 @@
     <Content Include="phim\player.swf" />
     <Content Include="Scripts\jquery-1.6.js" />
     <Content Include="Scripts\jwplayer.js" />
+    <Content Include="thanhvien\ChinhSuaThongTinTaiKhoan.aspx" />
     <Content Include="thanhvien\DangKyTaiKhoan.aspx" />
     <Content Include="thanhvien\Default.aspx" />
     <Content Include="thanhvien\DoiMatKhau.aspx" />
@@ -105,6 +106,7 @@
     <Content Include="thanhvien\DangNhap.aspx" />
     <Content Include="thanhvien\DangXuat.aspx" />
     <Content Include="thanhvien\DangNhapThanhCong.aspx" />
+    <Content Include="WebForm13.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaLINQ.designer.cs">
@@ -185,6 +187,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="thanhvien\ChinhSuaThongTinTaiKhoan.aspx.cs">
+      <DependentUpon>ChinhSuaThongTinTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanhvien\ChinhSuaThongTinTaiKhoan.aspx.designer.cs">
+      <DependentUpon>ChinhSuaThongTinTaiKhoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="thanhvien\DangKyTaiKhoan.aspx.cs">
       <DependentUpon>DangKyTaiKhoan.aspx</DependentUpon>
@@ -291,6 +300,13 @@
     <Compile Include="thanhvien\DangNhapThanhCong.aspx.designer.cs">
       <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm13.aspx.cs">
+      <DependentUpon>WebForm13.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm13.aspx.designer.cs">
+      <DependentUpon>WebForm13.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,7 +337,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2194</DevelopmentServerPort>
+          <DevelopmentServerPort>24524</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
