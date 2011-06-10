@@ -47,7 +47,7 @@
             </tr>
            
         </table>
-        </br>
+        <br/>
     </div>
     <div style="width: 100%" align="center">
         <asp:Button ID="Xl_CapNhatThayDoi" runat="server" Text="C&#7853;p nh&#7853;t thay &#273;&#7893;i" 
@@ -55,11 +55,11 @@
         <asp:Button ID="Button3" runat="server" onclick="Button3_Click" 
             Text="&#272;&#7893;i m&#7853;t kh&#7849;u" Width="122px" />
     </div>
-    </br>
+    <br/>
     <div style="width: 100%">
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" 
             BackColor="#0099CC" />
     </div>
-    </br>
+    <br/>
     </div>
 </asp:Content>
