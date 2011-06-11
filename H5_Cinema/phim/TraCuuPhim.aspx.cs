@@ -47,9 +47,13 @@ namespace H5_Cinema.phim
                                   select _phim).ToList();
 
             if (_dsPhim.Count == 0)
+            {
+                lb_KetQuaTraCuu.Text = "Không tìm thấy kết quả nào";
                 return;
+            }
             else
             {
+                lb_KetQuaTraCuu.Text = "Kết quả tra cứu";
                 PagedDataSource pds = new PagedDataSource();
                 pds.DataSource = _dsPhim;
                 pds.AllowPaging = true;
@@ -58,14 +62,6 @@ namespace H5_Cinema.phim
 
                 Th_KetQuaTraCuu.DataSource = pds;
                 Th_KetQuaTraCuu.DataBind();
-
-                int _count = 0;
-                foreach (Phim _subPhim in pds)
-                {
-                    Label _lb = (Label)Th_KetQuaTraCuu.Items[_count].FindControl("lb_TheLoai");
-                    _lb.Text = _subPhim.DanhMucTheLoaiPhim.TenDanhMucTheLoaiPhim;
-                    _count++;
-                }
 
                 Pagging_CountPage(_dsPhim.Count);
             }
@@ -102,7 +98,7 @@ namespace H5_Cinema.phim
 
         protected void dtl_pagging_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
