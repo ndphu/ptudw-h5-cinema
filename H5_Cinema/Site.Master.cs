@@ -19,16 +19,27 @@ namespace H5_Cinema
                 ddl_LoaiTimKiem.Items.Add("Lịch chiếu");
                 ddl_LoaiTimKiem.Items.Add("Suất chiếu");
 
-                lb_NhapTenPhim.Visible = true;
-                tb_TenPhim.Visible = true;
-                bt_TimKiemPhim.Visible = true;
+                CinemaLINQDataContext dt = new CinemaLINQDataContext();
+                List<DanhMucSuatChieu> _dsDMSC = (from _dmsc in dt.DanhMucSuatChieus
+                                                 orderby _dmsc.ThoiGianBatDau ascending
+                                                 select _dmsc).ToList();
 
-                lb_NgayChieu.Visible = false;
-                cld_Lich.Visible = false;
+                dtl_SuatChieu.DataSource = _dsDMSC;
+                dtl_SuatChieu.DataBind();
 
-                lb_SuatChieu.Visible = false;
-                dtl_SuatChieu.Visible = false;
-                bt_TimKiemSuatChieu.Visible = false;
+                if (_dsDMSC.Count > 0)
+                {
+                    int _count = 0;
+                    foreach (DanhMucSuatChieu _dmsc in _dsDMSC)
+                    {
+                        ((LinkButton)dtl_SuatChieu.Items[_count].FindControl("lbt_SuatChieu")).Text = _dsDMSC[_count].ThoiGianBatDau.ToString("HH:mm");
+                        _count++;
+                    }
+                }
+
+                if (Session["SearchMode"] == null)
+                    Session["SearchMode"] = "Tên phim";
+                Display_SearchMode(Session["SearchMode"].ToString());
 
                 NguoiDung nd = (NguoiDung)Session["NguoiDung"];
 
@@ -76,10 +87,16 @@ namespace H5_Cinema
 
         protected void ddl_LoaiTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (ddl_LoaiTimKiem.Text)
+            Display_SearchMode(ddl_LoaiTimKiem.Text);
+        }
+
+        public void Display_SearchMode(string _searchMode)
+        {
+            switch (_searchMode)
             {
                 case "Tên phim":
                     {
+                        Session["SearchMode"] = "Tên phim";
                         lb_NhapTenPhim.Visible = true;
                         tb_TenPhim.Visible = true;
                         bt_TimKiemPhim.Visible = true;
@@ -89,11 +106,13 @@ namespace H5_Cinema
 
                         lb_SuatChieu.Visible = false;
                         dtl_SuatChieu.Visible = false;
-                        bt_TimKiemSuatChieu.Visible = false;
+
+                        ddl_LoaiTimKiem.SelectedIndex = 0;
                         break;
                     }
                 case "Lịch chiếu":
                     {
+                        Session["SearchMode"] = "Lịch chiếu";
                         lb_NhapTenPhim.Visible = false;
                         tb_TenPhim.Visible = false;
                         bt_TimKiemPhim.Visible = false;
@@ -103,11 +122,13 @@ namespace H5_Cinema
 
                         lb_SuatChieu.Visible = false;
                         dtl_SuatChieu.Visible = false;
-                        bt_TimKiemSuatChieu.Visible = false;
+
+                        ddl_LoaiTimKiem.SelectedIndex = 1;
                         break;
                     }
                 case "Suất chiếu":
                     {
+                        Session["SearchMode"] = "Suất chiếu";
                         lb_NhapTenPhim.Visible = false;
                         tb_TenPhim.Visible = false;
                         bt_TimKiemPhim.Visible = false;
@@ -117,9 +138,19 @@ namespace H5_Cinema
 
                         lb_SuatChieu.Visible = true;
                         dtl_SuatChieu.Visible = true;
-                        bt_TimKiemSuatChieu.Visible = true;
+
+                        ddl_LoaiTimKiem.SelectedIndex = 2;
                         break;
                     }
+            }
+        }
+
+        public void cld_Lich_SelectionChanged(object sender, EventArgs e)
+        {
+            if (Session["SearchMode"].ToString() == "Lịch chiếu")
+            {
+                Session["ThoiGianTimKiem"] = cld_Lich.SelectedDate;
+                Response.Redirect("/lichchieu/TraCuuLichChieu.aspx");
             }
         }
 
@@ -146,8 +177,8 @@ namespace H5_Cinema
                              select nguoiDung).Single();
                 if (query.TinhTrang == 2)
                 {
-                    Th_ThongBaoDangNhap.Text = "Tài khoản đã bị khóa, vui lòng kiểm tra lại";
-                    Th_ThongBaoDangNhap.Visible = true;
+                    Label2.Text = "Tài khoản đã bị khóa, vui lòng kiểm tra lại";
+                    Label2.Visible = true;
                 }
                 else
                 {
@@ -157,8 +188,8 @@ namespace H5_Cinema
             }
             catch
             {
-                Th_ThongBaoDangNhap.Text = "Sai tên đăng nhập hoặc mật khẩu";
-                Th_ThongBaoDangNhap.Visible = true;
+                Label2.Text = "Sai tên đăng nhập hoặc mật khẩu";
+                Label2.Visible = true;
             }
         }
 

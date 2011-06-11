@@ -112,15 +112,6 @@ namespace H5_Cinema {
         protected global::System.Web.UI.WebControls.Calendar cld_Lich;
         
         /// <summary>
-        /// bt_TimKiemSuatChieu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_TimKiemSuatChieu;
-        
-        /// <summary>
         /// lb_SuatChieu control.
         /// </summary>
         /// <remarks>
@@ -209,15 +200,6 @@ namespace H5_Cinema {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink Hp_DangKy;
-        
-        /// <summary>
-        /// Th_ThongBaoDangNhap control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Th_ThongBaoDangNhap;
         
         /// <summary>
         /// panel_NguoiDung control.
