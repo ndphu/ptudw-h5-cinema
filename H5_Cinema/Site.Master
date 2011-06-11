@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="H5_Cinema.SiteMaster" %>
+Ôªø<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="H5_Cinema.SiteMaster" %>
 <%@ Import Namespace="H5_Cinema" %>
 <%@ Import Namespace="System.Linq" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -75,7 +75,7 @@
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <asp:Label ID="Label1" runat="server" ForeColor="#FFFF66" 
-    Text="Ch&#7885;n lo&#7841;i tÏm ki&#7871;m:" Font-Size="10pt"></asp:Label>
+    Text="Ch&#7885;n lo&#7841;i t√¨m ki&#7871;m:" Font-Size="10pt"></asp:Label>
                     <br />
                     <asp:DropDownList ID="ddl_LoaiTimKiem" runat="server" AutoPostBack="True" 
                         Font-Bold="True" ForeColor="Black" Height="20px" 
@@ -88,16 +88,16 @@
                     </asp:UpdateProgress>
                     <br />
                     <asp:Button ID="bt_TimKiemPhim" runat="server" BackColor="#FFFFCC" 
-                        BorderStyle="Dotted" onclick="bt_TimKiem_Click" Text="TÏm" Width="96px" 
+                        BorderStyle="Dotted" onclick="bt_TimKiem_Click" Text="T√¨m" Width="96px" 
                         CausesValidation="False" />
                     <br />
                     <asp:Label ID="lb_NhapTenPhim" runat="server" Font-Size="10pt" ForeColor="Yellow" 
-                        Text="Nh&#7853;p v‡o tÍn phim:"></asp:Label>
+                        Text="Nh&#7853;p v√†o t√™n phim:"></asp:Label>
                     <br />
                     <asp:TextBox ID="tb_TenPhim" runat="server" Width="209px"></asp:TextBox>
                     <br />
                     <asp:Label ID="lb_NgayChieu" runat="server" Font-Size="10pt" ForeColor="Yellow" 
-                        Text="Ch&#7885;n ng‡y chi&#7871;u:"></asp:Label>
+                        Text="Ch&#7885;n ng√†y chi&#7871;u:"></asp:Label>
                     <asp:Calendar ID="cld_Lich" runat="server" BackColor="#FFFFCC" 
                         BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" 
                         Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" 
@@ -112,7 +112,7 @@
                         <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
                     </asp:Calendar>
                     <asp:Button ID="bt_TimKiemSuatChieu" runat="server" BackColor="#FFFFCC" 
-                        BorderStyle="Dotted" Text="TÏm" Width="96px" CausesValidation="False" />
+                        BorderStyle="Dotted" Text="T√¨m" Width="96px" CausesValidation="False" />
                     <br />
                     <asp:Label ID="lb_SuatChieu" runat="server" Font-Size="10pt" ForeColor="Yellow" 
                         Text="Ch&#7885;n su&#7845;t chi&#7871;u:"></asp:Label>
@@ -132,7 +132,7 @@
                     <div align="left" 
                         style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px;">
                         <asp:Label ID="Lb_TenDangNhap" runat="server" Font-Size="9pt" ForeColor="Yellow" 
-                            Text="TÍn &#273;&#259;ng nh&#7853;p:"></asp:Label>
+                            Text="T√™n &#273;&#259;ng nh&#7853;p:"></asp:Label>
                     <br />
                     <asp:TextBox ID="Th_TenDangNhap" runat="server" Width="220px"></asp:TextBox>
                     
@@ -150,8 +150,10 @@
                         CausesValidation="False" onclick="Xl_DangNhap__Click" />
                     <br />
                     <asp:HyperLink ID="Hp_DangKy" runat="server" Font-Size="Small" 
-                        NavigateUrl="~/thanhvien/DangKyTaiKhoan.aspx">&#272;&#259;ng k˝...</asp:HyperLink>
+                        NavigateUrl="~/thanhvien/DangKyTaiKhoan.aspx">&#272;&#259;ng k√Ω...</asp:HyperLink>
                     <br />
+                    <asp:Label ID="Th_ThongBaoDangNhap" runat="server" Font-Size="Small" 
+                        ForeColor="Red" Visible="False"></asp:Label>
                     <br />
                 </div>
             </asp:Panel>  
@@ -159,19 +161,17 @@
             <br />
             <div style="border-top-style: groove; border-width: thin; border-color: #FFCC00;">
                 <asp:Panel ID="panel_NguoiDung" runat="server">
-                    <asp:Label ID="lb_XinChao" runat="server" Text="Xin ch‡o "></asp:Label>
+                    <asp:Label ID="lb_XinChao" runat="server" Text="Xin ch√†o "></asp:Label>
                     <asp:Label ID="lb_TenNguoiDung" runat="server" Text="" ForeColor="Yellow"></asp:Label>
-                    <br />
                     <br />
                     <asp:Button ID="Xl_DangXuat_" runat="server" Text="&#272;&#259;ng xu&#7845;t" 
                         onclick="Xl_DangXuat__Click" />
-                    <br />
                     <br />
                     <asp:HyperLink ID="HyperLink1" runat="server" Font-Size="Small" 
                         NavigateUrl="~/thanhvien/DoiMatKhau.aspx">&#272;&#7893;i m&#7853;t kh&#7849;u...</asp:HyperLink>
                     <br />
                     <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="Small" 
-                        NavigateUrl="~/thanhvien/ThayDoiThongTinTaiKhoan.aspx">&#272;&#7893;i thÙng tin c· nh‚n...</asp:HyperLink>
+                        NavigateUrl="~/thanhvien/ThayDoiThongTinTaiKhoan.aspx">&#272;&#7893;i th√¥ng tin c√° nh√¢n...</asp:HyperLink>
                     <br />
                 </asp:Panel>    
             </div> 

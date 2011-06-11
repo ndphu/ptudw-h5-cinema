@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DangNhapThanhCong.aspx.cs" Inherits="H5_Cinema.WebForm12" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<script type="text/javascript">
+    <script type="text/javascript">
     function delayedRedirect() {
         window.location = "/default.aspx"
     }
 </script>
-<body onload="setTimeout('delayedRedirect()', 3000)">
+<body>
     <div align="center" style="height: 335px" >
         <div style="border: thin solid #FF3300;width: 70%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;">
             <div style="border: thin solid #FF3300;background-image: url('../Img/001.png'); background-repeat: repeat">

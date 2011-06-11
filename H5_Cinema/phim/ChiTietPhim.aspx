@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChiTietPhim.aspx.cs" Inherits="H5_Cinema.WebForm3"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChiTietPhim.aspx.cs" Inherits="H5_Cinema.WebForm3" %>
 <%@ Import Namespace="System.Linq" %>
 <%@ Import Namespace="H5_Cinema" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -68,8 +68,9 @@
                 Th&#7901;i l&#432;&#7907;ng:<asp:Label ID="Th_ThoiLuong" runat="server" ForeColor="#00CCFF" 
                     Text='<%# Eval("ThoiLuong") %>'></asp:Label>
                 <br />
-                &#272;i&#7875;m &#273;ánh giá:<asp:Label ID="Th_DiemDanhGia" runat="server" ForeColor="#00CCFF" 
-                    Text='<%# Eval("DiemDanhGia") %>'></asp:Label>
+                <span class="style1">&#272;i&#7875;m &#273;ánh giá:</span><asp:Label ID="Th_DiemDanhGia" 
+                    runat="server" ForeColor="#00CCFF" Text='<%# Eval("DiemDanhGia") %>'></asp:Label>
+                <br />
             </div>
             <div style="border: thin groove #666666; padding: 10px; margin: 10px; background-image: url('/Img/001.png'); background-repeat: repeat; width: 90%;" 
             align="center"><asp:TextBox ID="Th_NoiDungPhim" runat="server" TextMode="MultiLine" 
@@ -81,7 +82,8 @@
     </div>
         <div align="left" 
             
-            style="padding: 10px; margin: 10px; width: 40%; background-image: url('/Img/001.png');">  
+            
+            style="padding: 10px; margin: 10px; width: 76%; background-image: url('/Img/001.png');">  
             <div>      
             <asp:Label runat="server" Text="&#272;i&#7875;m c&#7911;a b&#7841;n:" 
                 ForeColor="#00CCFF" ID="Lb_DiemCuaBan"></asp:Label>
