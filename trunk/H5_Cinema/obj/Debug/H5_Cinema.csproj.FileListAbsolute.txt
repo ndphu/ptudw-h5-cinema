@@ -1,40 +1,5 @@
-c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\bin\H5_Cinema.dll
-c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\bin\H5_Cinema.pdb
-c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
-c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\obj\Debug\H5_Cinema.dll
-c:\users\ndphu\documents\visual studio 2010\Projects\H5_Cinema\H5_Cinema\obj\Debug\H5_Cinema.pdb
-C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\bin\H5_Cinema.dll
-C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\bin\H5_Cinema.pdb
-C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\obj\Debug\H5_Cinema.dll
-C:\Users\NDPhu\Desktop\LTWEB\H5_Cinema\obj\Debug\H5_Cinema.pdb
-C:\Users\HUYNHQUANG\Desktop\CINEMA H5\H5_Cinema\bin\H5_Cinema.dll
-C:\Users\HUYNHQUANG\Desktop\CINEMA H5\H5_Cinema\bin\H5_Cinema.pdb
-C:\Users\HUYNHQUANG\Desktop\CINEMA H5\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\HUYNHQUANG\Desktop\CINEMA H5\H5_Cinema\obj\Debug\H5_Cinema.dll
-C:\Users\HUYNHQUANG\Desktop\CINEMA H5\H5_Cinema\obj\Debug\H5_Cinema.pdb
-C:\Users\MinhQuan\Desktop\Check out web\09-06\H5_Cinema\bin\H5_Cinema.dll
-C:\Users\MinhQuan\Desktop\Check out web\09-06\H5_Cinema\bin\H5_Cinema.pdb
-C:\Users\MinhQuan\Desktop\Check out web\09-06\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\MinhQuan\Desktop\Check out web\09-06\H5_Cinema\obj\Debug\H5_Cinema.dll
-C:\Users\MinhQuan\Desktop\Check out web\09-06\H5_Cinema\obj\Debug\H5_Cinema.pdb
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 3\H5_Cinema\bin\H5_Cinema.dll
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 3\H5_Cinema\bin\H5_Cinema.pdb
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 3\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 3\H5_Cinema\obj\Debug\H5_Cinema.dll
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 3\H5_Cinema\obj\Debug\H5_Cinema.pdb
 C:\Users\NDPhu\Desktop\LT WEB\H5_Cinema\bin\H5_Cinema.dll
 C:\Users\NDPhu\Desktop\LT WEB\H5_Cinema\bin\H5_Cinema.pdb
 C:\Users\NDPhu\Desktop\LT WEB\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\NDPhu\Desktop\LT WEB\H5_Cinema\obj\Debug\H5_Cinema.dll
 C:\Users\NDPhu\Desktop\LT WEB\H5_Cinema\obj\Debug\H5_Cinema.pdb
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 4\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 4\H5_Cinema\obj\Debug\H5_Cinema.dll
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 4\H5_Cinema\obj\Debug\H5_Cinema.pdb
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 4\H5_Cinema\bin\H5_Cinema.dll
-C:\Users\MinhQuan\Desktop\Check out web\10-06 ver 4\H5_Cinema\bin\H5_Cinema.pdb
-C:\Users\MinhQuan\Desktop\Check out web\11-06 - Fix conflict\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\MinhQuan\Desktop\Check out web\11-06 - Fix conflict\H5_Cinema\obj\Debug\H5_Cinema.dll
-C:\Users\MinhQuan\Desktop\Check out web\11-06 - Fix conflict\H5_Cinema\obj\Debug\H5_Cinema.pdb
-C:\Users\MinhQuan\Desktop\Check out web\11-06 - Fix conflict\H5_Cinema\bin\H5_Cinema.dll
-C:\Users\MinhQuan\Desktop\Check out web\11-06 - Fix conflict\H5_Cinema\bin\H5_Cinema.pdb

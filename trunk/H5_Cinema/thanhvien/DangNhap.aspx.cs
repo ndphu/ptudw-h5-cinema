@@ -37,7 +37,7 @@ namespace H5_Cinema
                 var query = (from nguoiDung in dt.NguoiDungs
                              where tenDangNhap.CompareTo(nguoiDung.TenNguoiDung) == 0 && strPassword.CompareTo(nguoiDung.MatKhau) == 0
                              select nguoiDung).Single();
-                if (query.TinhTrang == dt.DanhMucTinhTrangNguoiDungs.Where(ttnd => ttnd.TenDanhMucTinhTrangNguoiDung.CompareTo("Tạm khóa") == 0).Select(ttnd => ttnd.MaDanhMucTinhTrangNguoDung).Single())
+                if (query.TinhTrang == dt.DanhMucTinhTrangNguoiDungs.Where(ttnd=> ttnd.TenDanhMucTinhTrangNguoiDung.CompareTo("Tạm khóa") == 0).Select(ttnd=> ttnd.MaDanhMucTinhTrangNguoDung).Single())
                 {
                     Label2.Text = "Tài khoản đã bị khóa, vui lòng kiểm tra lại";
                     Label2.Visible = true;

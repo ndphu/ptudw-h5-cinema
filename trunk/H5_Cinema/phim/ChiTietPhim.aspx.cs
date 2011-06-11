@@ -56,7 +56,7 @@ namespace H5_Cinema
                 bl.MaPhim = ((Phim)Session["CurrentPhim"]).MaPhim;
                 bl.NoiDungBinhLuan = Th_BinhLuanMoi.Text;
                 bl.MaNguoiDung = ((NguoiDung)Session["NguoiDung"]).MaNguoiDung;
-                bl.TinhTrang = dt.DanhMucTinhTrangBinhLuans.Where(ttbl=> ttbl.TenTinhTrang.CompareTo("Bình thường") == 0).Select(ttbl=>ttbl.MaTinhTrang).Single();
+                bl.TinhTrang = dt.DanhMucTinhTrangBinhLuans.Where(ttbl => ttbl.TenTinhTrang.CompareTo("Bình thường")==0).Select(ttbl => ttbl.MaTinhTrang).Single();
                 bl.ThoiGianBinhLuan = DateTime.Now;
                 dt.BinhLuans.InsertOnSubmit(bl);
 
@@ -100,7 +100,7 @@ namespace H5_Cinema
             CinemaLINQDataContext dt = new CinemaLINQDataContext();
             NguoiDung nguoiDung = ((NguoiDung)Session["NguoiDung"]);
             var query = from binhLuan in dt.BinhLuans
-                        where binhLuan.MaPhim == ((Phim)Session["CurrentPhim"]).MaPhim && binhLuan.TinhTrang == dt.DanhMucTinhTrangBinhLuans.Where(ttbl=> ttbl.TenTinhTrang.CompareTo("Bình thường") == 0).Select(ttbl=>ttbl.MaTinhTrang).Single()
+                        where binhLuan.MaPhim == ((Phim)Session["CurrentPhim"]).MaPhim && binhLuan.TinhTrang == dt.DanhMucTinhTrangBinhLuans.Where(ttbl => ttbl.TenTinhTrang.CompareTo("Bình thường")==0).Select(ttbl => ttbl.MaTinhTrang).Single()
                         select binhLuan;
 
             DataList1.DataSource = query;
@@ -109,7 +109,7 @@ namespace H5_Cinema
             int _count = 0;
             foreach (BinhLuan _bl in query)
             {
-                if (nguoiDung != null && (nguoiDung.MaDanhMucNguoiDung == 1 || nguoiDung.MaNguoiDung == _bl.MaNguoiDung))
+                if (nguoiDung != null && (nguoiDung.MaDanhMucNguoiDung == dt.DanhMucNguoiDungs.Where(dmnd=> dmnd.TenDanhMucNguoiDung.CompareTo("Admin") == 0).Select(dmnd=>dmnd.MaDanhMucNguoiDung).Single() || nguoiDung.MaNguoiDung == _bl.MaNguoiDung))
                 {
                     ((TextBox)DataList1.Items[_count].FindControl("Th_NoiDungBinhLuan")).ReadOnly = false;
                     DataList1.Items[_count].FindControl("Xl_Sua").Visible = true;
