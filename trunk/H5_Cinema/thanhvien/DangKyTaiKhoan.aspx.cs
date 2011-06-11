@@ -45,8 +45,8 @@ namespace H5_Cinema.thanhvien
                     nd.MatKhau = strPassword;
                     nd.Email = Th_Email.Text;
                     nd.DiaChi = Th_DiaChi.Text;
-                    nd.MaDanhMucNguoiDung = 3;
-                    nd.TinhTrang = 1;
+                    nd.MaDanhMucNguoiDung = dt.DanhMucNguoiDungs.Where(dmnd => dmnd.TenDanhMucNguoiDung.CompareTo("Member") == 0).Select(dmnd => dmnd.MaDanhMucNguoiDung).Single();
+                    nd.TinhTrang = dt.DanhMucTinhTrangNguoiDungs.Where(ttnd => ttnd.TenDanhMucTinhTrangNguoiDung.CompareTo("Bình thường") == 0).Select(ttnd => ttnd.MaDanhMucTinhTrangNguoDung).Single();
                     dt.NguoiDungs.InsertOnSubmit(nd);
 
                     dt.SubmitChanges();
