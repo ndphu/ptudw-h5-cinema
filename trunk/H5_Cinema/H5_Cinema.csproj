@@ -71,6 +71,8 @@
     <Content Include="Img\thongtin.png" />
     <Content Include="Img\thongtin_n.png" />
     <Content Include="lichchieu\Default.aspx" />
+    <Content Include="lichchieu\TraCuuLichChieu.aspx" />
+    <Content Include="lichchieu\TraCuuSuatChieu.aspx" />
     <Content Include="phim\TraCuuPhim.aspx" />
     <Content Include="phim\UCBinhLuan.ascx" />
     <Content Include="phim\Global.asax" />
@@ -130,6 +132,20 @@
     </Compile>
     <Compile Include="lichchieu\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lichchieu\TraCuuLichChieu.aspx.cs">
+      <DependentUpon>TraCuuLichChieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lichchieu\TraCuuLichChieu.aspx.designer.cs">
+      <DependentUpon>TraCuuLichChieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lichchieu\TraCuuSuatChieu.aspx.cs">
+      <DependentUpon>TraCuuSuatChieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lichchieu\TraCuuSuatChieu.aspx.designer.cs">
+      <DependentUpon>TraCuuSuatChieu.aspx</DependentUpon>
     </Compile>
     <Compile Include="phim\TraCuuPhim.aspx.cs">
       <DependentUpon>TraCuuPhim.aspx</DependentUpon>

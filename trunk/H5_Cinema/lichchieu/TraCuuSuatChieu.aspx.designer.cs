@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace H5_Cinema.phim {
+namespace H5_Cinema.lichchieu {
     
     
-    public partial class TraCuuPhim {
-        
-        /// <summary>
-        /// lb_KetQuaTraCuu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_KetQuaTraCuu;
+    public partial class TraCuuSuatChieu {
         
         /// <summary>
         /// UpdatePanel2 control.
@@ -31,21 +22,48 @@ namespace H5_Cinema.phim {
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
-        /// dtl_pagging control.
+        /// lb_SuatChieuChon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtl_pagging;
+        protected global::System.Web.UI.WebControls.Label lb_SuatChieuChon;
         
         /// <summary>
-        /// Th_KetQuaTraCuu control.
+        /// lb_ChonNgayChieu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList Th_KetQuaTraCuu;
+        protected global::System.Web.UI.WebControls.Label lb_ChonNgayChieu;
+        
+        /// <summary>
+        /// Calendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        
+        /// <summary>
+        /// lb_DanhSachPhimChieu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_DanhSachPhimChieu;
+        
+        /// <summary>
+        /// DataList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList DataList1;
     }
 }

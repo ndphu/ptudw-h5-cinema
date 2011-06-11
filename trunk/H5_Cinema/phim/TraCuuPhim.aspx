@@ -11,11 +11,11 @@
         }
 </script>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div align="center" style="height: 1228px; width: auto;" id="div_main" 
+    <div align="center" style="height: 1477px; width: auto;" id="div_main" 
         dir="ltr">
-        <asp:Label ID="Label2" runat="server" ForeColor="#CC99FF" 
+        <asp:Label ID="lb_KetQuaTraCuu" runat="server" ForeColor="#FFFFCC" 
             style="font-size: x-large; font-weight: 700;" 
-            Text="K&#7870;T QU&#7842; TÌM KI&#7870;M"></asp:Label>
+            Text="K&#7870;T QU&#7842; TÌM KI&#7870;M" Font-Size="20pt"></asp:Label>
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
             <ContentTemplate>
                 <asp:DataList ID="dtl_pagging" runat="server" Height="38px" 
@@ -25,10 +25,10 @@
                     <ItemTemplate>
                         <asp:LinkButton ID="lbt_PageIndex" runat="server" 
                             CommandArgument='<%# Eval("PageIndex") %>' CommandName="lbt_PageIndex" 
-                            ForeColor="#33CC33" Text='<%# Eval("PageText") %>'></asp:LinkButton>
+                            ForeColor="Lime" Text='<%# Eval("PageText") %>'></asp:LinkButton>
                     </ItemTemplate>
                 </asp:DataList>
-                <asp:DataList ID="Th_KetQuaTraCuu" runat="server" Height="1126px" Width="651px">
+                <asp:DataList ID="Th_KetQuaTraCuu" runat="server" Height="200px" Width="651px">
                     <HeaderTemplate>
                         <span style="color: #66FF33">
                         _____________________________________________________________________________</span>
@@ -37,7 +37,7 @@
                         <table style="width: 100%">
                             <tr>
                                 <td align="left" colspan="2">
-                                    <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="20pt" 
+                                    <asp:Label ID="Label3" runat="server" Font-Bold="False" Font-Size="20pt" 
                                         ForeColor="Red" Text='<%# Eval("TenPhim") %>'></asp:Label>
                                 </td>
                             </tr>
@@ -48,7 +48,8 @@
                                 </td>
                                 <td align="left">
                                     <asp:Label ID="Label4" runat="server" CssClass="style1" Text="Th&#7875; lo&#7841;i:"></asp:Label>
-                                    <asp:Label ID="lb_TheLoai" runat="server" ForeColor="#0099FF" Text="The loai"></asp:Label>
+                                    <asp:Label ID="lb_TheLoai" runat="server" ForeColor="#0099FF" 
+                                        Text='<%# Eval("DanhMucTheLoaiPhim.TenDanhMucTheLoaiPhim") %>'></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -98,6 +99,8 @@
                                     &nbsp;</td>
                             </tr>
                         </table>
+                        <br />
+                        <br />
                     </ItemTemplate>
                 </asp:DataList>
                 <br />
