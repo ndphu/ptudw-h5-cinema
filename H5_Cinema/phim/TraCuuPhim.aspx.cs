@@ -10,7 +10,6 @@ namespace H5_Cinema.phim
 {
     public partial class TraCuuPhim : System.Web.UI.Page
     {
-        int _currentIndex;
 
         public int CurrentIndex
         {

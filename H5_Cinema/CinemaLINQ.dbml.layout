@@ -2,257 +2,277 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 20.5" name="CinemaLINQ">
   <DataContextMoniker Name="/CinemaLINQDataContext" />
   <nestedChildShapes>
-    <classShape Id="3e2b4423-dde2-402c-8292-3e7d2de29d74" absoluteBounds="9, 14, 2, 1.7708968098958344">
+    <classShape Id="7d9f961b-87fc-4c54-be6e-6d28f77ee90f" absoluteBounds="9, 13.875, 2, 1.9631982421874987">
       <DataClassMoniker Name="/CinemaLINQDataContext/BinhLuan" />
       <nestedChildShapes>
-        <elementListCompartment Id="95221524-e3bc-4431-bbbd-df7cc0038d80" absoluteBounds="9.015, 14.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="11b40f7c-ffa9-484b-a16b-6b0ea32d8e84" absoluteBounds="9.015, 14.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ba9c213c-907a-433b-9072-c572233b715a" absoluteBounds="11.75, 2.625, 2, 1.1939925130208335">
+    <classShape Id="e8d703ee-a986-4bff-aac9-b69c4597c67e" absoluteBounds="11.75, 2.625, 2, 1.1939925130208335">
       <DataClassMoniker Name="/CinemaLINQDataContext/Ve" />
       <nestedChildShapes>
-        <elementListCompartment Id="a055b32c-59fd-4718-9b7f-58dbcbd082d0" absoluteBounds="11.765, 3.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1e138216-51b3-4092-b85c-9ac7b97612f9" absoluteBounds="11.765, 3.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f545556b-1a74-4255-a147-b67b19fcd998" absoluteBounds="3.5, 1.125, 2, 1.5785953776041666">
+    <classShape Id="ade6912c-d1fe-45da-911d-a50b8a30183a" absoluteBounds="3.5, 1.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/CinemaLINQDataContext/DanhMucGhe" />
       <nestedChildShapes>
-        <elementListCompartment Id="4b5bdd35-933b-4e6d-848b-4be1e766297f" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1de105d1-67d3-4c9d-aac9-84700cf07368" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5a6b9665-464f-48f3-a7f2-9ce340fed4f7" absoluteBounds="0.75, 18.625, 2, 1.5785953776041666">
+    <classShape Id="a53f8f31-96ee-40b8-988b-12aee2f56554" absoluteBounds="0.75, 18.625, 2, 1.5785953776041666">
       <DataClassMoniker Name="/CinemaLINQDataContext/DanhMucLoaiPhim" />
       <nestedChildShapes>
-        <elementListCompartment Id="9e0c0604-4bc6-4c96-bff7-0766fb0506eb" absoluteBounds="0.765, 19.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a5f0ab4a-ed46-40e7-b12f-d4cb9c23120c" absoluteBounds="0.765, 19.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="21c5eed5-e368-4f36-9d0b-8e82d5ef3240" absoluteBounds="8.75, 6.125, 2, 1.7708968098958327">
+    <classShape Id="a160e010-b93d-4a79-a254-b825a2a57214" absoluteBounds="8.75, 6.125, 2, 1.7708968098958327">
       <DataClassMoniker Name="/CinemaLINQDataContext/DanhMucNgayTrongTuan" />
       <nestedChildShapes>
-        <elementListCompartment Id="eb7abd63-9089-4630-83ff-2ab13165a80d" absoluteBounds="8.765, 6.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6538f1cc-3f16-4500-adb1-7828508f238d" absoluteBounds="8.765, 6.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bf86c977-da38-471b-9060-163486538553" absoluteBounds="3.5, 7.125, 2, 1.3862939453125005">
+    <classShape Id="d3c7b329-8ae9-4e58-85a1-1b98f02e31b9" absoluteBounds="3.5, 7.125, 2, 1.3862939453125005">
       <DataClassMoniker Name="/CinemaLINQDataContext/DanhMucNguoiDung" />
       <nestedChildShapes>
-        <elementListCompartment Id="455137b0-8d9a-4a63-8269-0f6ff236299e" absoluteBounds="3.515, 7.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fb737835-6cc6-4066-b420-7102c22b8561" absoluteBounds="3.515, 7.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1d083027-0bed-4f38-8450-a716dd75396d" absoluteBounds="3.5, 14.125, 2, 1.5785953776041666">
+    <classShape Id="e4bf39de-855b-4f00-b5db-307cfe0b2877" absoluteBounds="3.5, 14.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/CinemaLINQDataContext/DanhMucSuatChieu" />
       <nestedChildShapes>
-        <elementListCompartment Id="6dc11658-0328-4768-b801-c0fe4a87087d" absoluteBounds="3.515, 14.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="06282aaa-9f86-4709-878f-cb7669b9226d" absoluteBounds="3.515, 14.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1f886bc1-3fd5-42e2-b394-6e43f69ce9f9" absoluteBounds="0.75, 16.375, 2, 1.3862939453125023">
+    <classShape Id="bb34e01f-cdd9-4da9-bead-35d5a8a7b2f9" absoluteBounds="0.75, 16.375, 2, 1.3862939453125023">
       <DataClassMoniker Name="/CinemaLINQDataContext/DanhMucTheLoaiPhim" />
       <nestedChildShapes>
-        <elementListCompartment Id="8ef006fc-5530-440f-9b3c-2d9763aef9e7" absoluteBounds="0.765, 16.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ca57994a-2fc2-4f22-8c44-b60cdb51ff8d" absoluteBounds="0.765, 16.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="dc1168e4-a124-48d5-96f6-f79aefc1ae6e" absoluteBounds="6.25, 14.25, 2, 1.3862939453124987">
+    <classShape Id="8cdd5784-8789-4648-b93e-4292c880ce6d" absoluteBounds="6.25, 14.25, 2, 1.3862939453124987">
       <DataClassMoniker Name="/CinemaLINQDataContext/DanhMucTinhTrangBinhLuan" />
       <nestedChildShapes>
-        <elementListCompartment Id="8abf9a84-db47-4d54-8315-58f92a23fe42" absoluteBounds="6.265, 14.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d79d21ae-1c3c-4037-b55a-043b29f48b50" absoluteBounds="6.265, 14.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="95ec72ef-4d12-47dd-88ab-65623809b0ce" absoluteBounds="3.5, 9.25, 2, 1.3862939453124987">
+    <classShape Id="4e788948-89a5-4e87-9ed3-e02bd0f563ff" absoluteBounds="3.5, 9.25, 2, 1.3862939453124987">
       <DataClassMoniker Name="/CinemaLINQDataContext/DanhMucTinhTrangNguoiDung" />
       <nestedChildShapes>
-        <elementListCompartment Id="8dd96c94-224d-415d-9f04-57d7ad61d2f8" absoluteBounds="3.515, 9.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="82bbd500-74f5-4318-b6fc-2c8309c497dd" absoluteBounds="3.515, 9.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c0bdd10a-043d-4329-8a7f-1bc705c73219" absoluteBounds="9, 2, 2, 2.3478011067708335">
+    <classShape Id="2c6b49ea-1cfb-41ec-8e05-d58637678bf7" absoluteBounds="9, 2, 2, 2.3478011067708335">
       <DataClassMoniker Name="/CinemaLINQDataContext/DatVe" />
       <nestedChildShapes>
-        <elementListCompartment Id="dc156a88-4cfe-4705-80b5-9bb5357a25f9" absoluteBounds="9.015, 2.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c794463a-712b-4558-b86e-77fba9ae52df" absoluteBounds="9.015, 2.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a561491a-935c-4501-a68b-30f25ff9753e" absoluteBounds="6.25, 0.75, 2, 2.1554996744791666">
+    <classShape Id="e34fd010-2c06-471a-94a0-43b16a5b9b92" absoluteBounds="6.25, 0.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/CinemaLINQDataContext/Ghe" />
       <nestedChildShapes>
-        <elementListCompartment Id="c12ba2e6-7621-4d91-a69b-682b30cc7f87" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0b396c63-fbe5-4aaa-bccb-a4c15dbde241" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ed85632a-c7f6-4b7b-b9c7-505dc4eba9af" absoluteBounds="3.5, 12, 2, 1.3862939453124987">
+    <classShape Id="1dcf20d1-4783-42a6-a290-a9769246a6c2" absoluteBounds="3.5, 12, 2, 1.3862939453124987">
       <DataClassMoniker Name="/CinemaLINQDataContext/LichChieuPhim" />
       <nestedChildShapes>
-        <elementListCompartment Id="435663a7-8eef-4837-bf96-e6e44fef6155" absoluteBounds="3.515, 12.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ad3038a2-f7d4-476b-b9ca-1fb1bd22c8f5" absoluteBounds="3.515, 12.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="768f87c7-bd72-4841-bc86-7b52b77469e1" absoluteBounds="9, 10.375, 2, 2.1554996744791666">
+    <classShape Id="ff86c43c-b4ab-4ec5-a964-c98f7a69c73e" absoluteBounds="9, 10.5, 2, 2.1554996744791666">
       <DataClassMoniker Name="/CinemaLINQDataContext/LichSuNguoiDung" />
       <nestedChildShapes>
-        <elementListCompartment Id="791650f1-74c0-4c49-91a1-82562fac9fd2" absoluteBounds="9.015, 10.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6872a6cf-fa45-48c6-8169-9e2dd2d185c2" absoluteBounds="9.015, 10.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="66480bf6-9732-45be-908a-e65e8e5dd172" absoluteBounds="6.25, 7.875, 2, 2.1554996744791666">
+    <classShape Id="2b957301-9465-4e41-b2c4-07cb95bf1f98" absoluteBounds="6.25, 7.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/CinemaLINQDataContext/NguoiDung" />
       <nestedChildShapes>
-        <elementListCompartment Id="b5a778d2-c2f0-4608-9853-6b8b0824f29e" absoluteBounds="6.265, 8.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="500e5c50-1d72-4f4d-bc2c-69fc76f3bc2e" absoluteBounds="6.265, 8.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5c386338-f558-4a8c-97e3-86335ff571e0" absoluteBounds="3.5, 16.625, 2, 3.3093082682291666">
+    <classShape Id="4233e587-3745-4f64-a723-66571d6f714f" absoluteBounds="3.5, 16.625, 2, 3.3093082682291666">
       <DataClassMoniker Name="/CinemaLINQDataContext/Phim" />
       <nestedChildShapes>
-        <elementListCompartment Id="50d1bf38-cf58-4cc1-ba9b-7a57d61e790c" absoluteBounds="3.515, 17.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="38ace4f4-3ace-478e-8370-eb2fdb00de37" absoluteBounds="3.515, 17.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6d7f92a1-5cb6-4f18-9965-1cc7cbec77ba" absoluteBounds="3.5, 4, 2, 1.7708968098958327">
+    <classShape Id="19761011-768a-451b-a7c9-441218ec6b28" absoluteBounds="3.5, 4, 2, 1.7708968098958327">
       <DataClassMoniker Name="/CinemaLINQDataContext/PhongChieuPhim" />
       <nestedChildShapes>
-        <elementListCompartment Id="841cec1a-ee8e-4ac5-bbff-5c10fe90a538" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a98e341c-71a4-4318-873c-7a30b96e314e" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="924e2b3c-3647-4237-b191-b39b66992974" absoluteBounds="0.75, 3.75, 2, 2.1554996744791666">
+    <classShape Id="c771d36e-7672-4754-a90b-76136768b197" absoluteBounds="0.75, 3.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/CinemaLINQDataContext/RapChieuPhim" />
       <nestedChildShapes>
-        <elementListCompartment Id="1fe0b935-a359-4620-a1bb-f1c8d0ad5c5c" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9654c5a8-bfe0-4338-a953-9230c5af0f8d" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d9ab6903-a180-42d6-ab56-ae62fc4a0723" absoluteBounds="6.25, 4, 2, 1.7708968098958327">
+    <classShape Id="56aacd1f-8085-4094-9a3f-b4a3943e770f" absoluteBounds="6.25, 4, 2, 1.7708968098958327">
       <DataClassMoniker Name="/CinemaLINQDataContext/SuatChieu" />
       <nestedChildShapes>
-        <elementListCompartment Id="fde9b7a6-aed0-4a28-88ec-2f2e7e48379d" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="63d490d5-1d6f-4da7-8518-fb1a484bb25d" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="71a6e5dc-baed-490d-b9ed-1b59329c314d" absoluteBounds="11.75, 5.125, 2, 1.7708968098958327">
+    <classShape Id="449bed70-fad0-4a25-9f9b-168879228c64" absoluteBounds="11.75, 5.125, 2, 1.7708968098958327">
       <DataClassMoniker Name="/CinemaLINQDataContext/ThamSo" />
       <nestedChildShapes>
-        <elementListCompartment Id="1dc48219-39a8-4f59-93b3-505c3bd4fbad" absoluteBounds="11.765, 5.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5c536ff5-c10f-4168-a643-c6f89333b690" absoluteBounds="11.765, 5.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.25 : 14.9431469726562); (9 : 14.9431469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 14.9431469726562); (9 : 14.9431469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/DanhMucTinhTrangBinhLuan/DanhMucTinhTrangBinhLuan_BinhLuan" />
       <nodes>
-        <classShapeMoniker Id="dc1168e4-a124-48d5-96f6-f79aefc1ae6e" />
-        <classShapeMoniker Id="3e2b4423-dde2-402c-8292-3e7d2de29d74" />
+        <classShapeMoniker Id="8cdd5784-8789-4648-b93e-4292c880ce6d" />
+        <classShapeMoniker Id="7d9f961b-87fc-4c54-be6e-6d28f77ee90f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11 : 3.22199625651042); (11.75 : 3.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11 : 3.22199625651042); (11.75 : 3.22199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/DatVe/DatVe_Ve" />
       <nodes>
-        <classShapeMoniker Id="c0bdd10a-043d-4329-8a7f-1bc705c73219" />
-        <classShapeMoniker Id="ba9c213c-907a-433b-9072-c572233b715a" />
+        <classShapeMoniker Id="2c6b49ea-1cfb-41ec-8e05-d58637678bf7" />
+        <classShapeMoniker Id="e8d703ee-a986-4bff-aac9-b69c4597c67e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 2.45274983723958); (9 : 2.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 2.45274983723958); (9 : 2.45274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/Ghe/Ghe_DatVe" />
       <nodes>
-        <classShapeMoniker Id="a561491a-935c-4501-a68b-30f25ff9753e" />
-        <classShapeMoniker Id="c0bdd10a-043d-4329-8a7f-1bc705c73219" />
+        <classShapeMoniker Id="e34fd010-2c06-471a-94a0-43b16a5b9b92" />
+        <classShapeMoniker Id="2c6b49ea-1cfb-41ec-8e05-d58637678bf7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.91429768880208); (5.79166666666667 : 1.91429768880208 : JumpStart); (5.95833333333333 : 1.91429768880208 : JumpEnd); (6.25 : 1.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.91429768880208); (5.79166666666667 : 1.91429768880208 : JumpStart); (5.95833333333333 : 1.91429768880208 : JumpEnd); (6.25 : 1.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/DanhMucGhe/DanhMucGhe_Ghe" />
       <nodes>
-        <classShapeMoniker Id="f545556b-1a74-4255-a147-b67b19fcd998" />
-        <classShapeMoniker Id="a561491a-935c-4501-a68b-30f25ff9753e" />
+        <classShapeMoniker Id="ade6912c-d1fe-45da-911d-a50b8a30183a" />
+        <classShapeMoniker Id="e34fd010-2c06-471a-94a0-43b16a5b9b92" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 10.0304996744792); (8.625 : 10.4054996744792); (8.625 : 14.4403214863281); (9 : 14.4403214863281)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 10.0304996744792); (8.625 : 10.4054996744792); (8.625 : 14.3778214863281); (9 : 14.3778214863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/NguoiDung/NguoiDung_BinhLuan" />
       <nodes>
-        <classShapeMoniker Id="66480bf6-9732-45be-908a-e65e8e5dd172" />
-        <classShapeMoniker Id="3e2b4423-dde2-402c-8292-3e7d2de29d74" />
+        <classShapeMoniker Id="2b957301-9465-4e41-b2c4-07cb95bf1f98" />
+        <classShapeMoniker Id="7d9f961b-87fc-4c54-be6e-6d28f77ee90f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 8.9631957421875); (10.90625 : 8.9631957421875); (10.90625 : 4.34780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 8.9631957421875); (10.90625 : 8.9631957421875); (10.90625 : 4.34780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/NguoiDung/NguoiDung_DatVe" />
       <nodes>
-        <classShapeMoniker Id="66480bf6-9732-45be-908a-e65e8e5dd172" />
-        <classShapeMoniker Id="c0bdd10a-043d-4329-8a7f-1bc705c73219" />
+        <classShapeMoniker Id="2b957301-9465-4e41-b2c4-07cb95bf1f98" />
+        <classShapeMoniker Id="2c6b49ea-1cfb-41ec-8e05-d58637678bf7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 9.49684770833333); (10.859375 : 9.49684770833333); (10.859375 : 10.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 9.49684770833333); (10.859375 : 9.49684770833333); (10.859375 : 10.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/NguoiDung/NguoiDung_LichSuNguoiDung" />
       <nodes>
-        <classShapeMoniker Id="66480bf6-9732-45be-908a-e65e8e5dd172" />
-        <classShapeMoniker Id="768f87c7-bd72-4841-bc86-7b52b77469e1" />
+        <classShapeMoniker Id="2b957301-9465-4e41-b2c4-07cb95bf1f98" />
+        <classShapeMoniker Id="ff86c43c-b4ab-4ec5-a964-c98f7a69c73e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.19314697265625); (5.79166666666667 : 8.19314697265625 : JumpStart); (6.14583333333333 : 8.19314697265625 : JumpEnd); (6.25 : 8.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 8.19314697265625); (5.79166666666667 : 8.19314697265625 : JumpStart); (6.14583333333333 : 8.19314697265625 : JumpEnd); (6.25 : 8.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/DanhMucNguoiDung/DanhMucNguoiDung_NguoiDung" />
       <nodes>
-        <classShapeMoniker Id="bf86c977-da38-471b-9060-163486538553" />
-        <classShapeMoniker Id="66480bf6-9732-45be-908a-e65e8e5dd172" />
+        <classShapeMoniker Id="d3c7b329-8ae9-4e58-85a1-1b98f02e31b9" />
+        <classShapeMoniker Id="2b957301-9465-4e41-b2c4-07cb95bf1f98" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 9.64024983723958); (5.79166666666667 : 9.64024983723958 : JumpStart); (6.14583333333333 : 9.64024983723958 : JumpEnd); (6.25 : 9.64024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 9.64024983723958); (5.79166666666667 : 9.64024983723958 : JumpStart); (6.14583333333333 : 9.64024983723958 : JumpEnd); (6.25 : 9.64024983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/DanhMucTinhTrangNguoiDung/DanhMucTinhTrangNguoiDung_NguoiDung" />
       <nodes>
-        <classShapeMoniker Id="95ec72ef-4d12-47dd-88ab-65623809b0ce" />
-        <classShapeMoniker Id="66480bf6-9732-45be-908a-e65e8e5dd172" />
+        <classShapeMoniker Id="4e788948-89a5-4e87-9ed3-e02bd0f563ff" />
+        <classShapeMoniker Id="2b957301-9465-4e41-b2c4-07cb95bf1f98" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 18.2796541341146); (10 : 18.2796541341146); (10 : 15.7708968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 18.2796541341146); (10 : 18.2796541341146); (10 : 15.8381982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/Phim/Phim_BinhLuan" />
       <nodes>
-        <classShapeMoniker Id="5c386338-f558-4a8c-97e3-86335ff571e0" />
-        <classShapeMoniker Id="3e2b4423-dde2-402c-8292-3e7d2de29d74" />
+        <classShapeMoniker Id="4233e587-3745-4f64-a723-66571d6f714f" />
+        <classShapeMoniker Id="7d9f961b-87fc-4c54-be6e-6d28f77ee90f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 19.2796541341146); (3.5 : 19.2796541341146)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 19.2796541341146); (3.5 : 19.2796541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/DanhMucLoaiPhim/DanhMucLoaiPhim_Phim" />
       <nodes>
-        <classShapeMoniker Id="5a6b9665-464f-48f3-a7f2-9ce340fed4f7" />
-        <classShapeMoniker Id="5c386338-f558-4a8c-97e3-86335ff571e0" />
+        <classShapeMoniker Id="a53f8f31-96ee-40b8-988b-12aee2f56554" />
+        <classShapeMoniker Id="4233e587-3745-4f64-a723-66571d6f714f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 17.1931469726563); (3.5 : 17.1931469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 17.1931469726563); (2.85416916666667 : 17.1931469726563 : JumpStart); (3.02083583333333 : 17.1931469726563 : JumpEnd); (3.5 : 17.1931469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/DanhMucTheLoaiPhim/DanhMucTheLoaiPhim_Phim" />
       <nodes>
-        <classShapeMoniker Id="1f886bc1-3fd5-42e2-b394-6e43f69ce9f9" />
-        <classShapeMoniker Id="5c386338-f558-4a8c-97e3-86335ff571e0" />
+        <classShapeMoniker Id="bb34e01f-cdd9-4da9-bead-35d5a8a7b2f9" />
+        <classShapeMoniker Id="4233e587-3745-4f64-a723-66571d6f714f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4); (5.875 : 3.625); (5.875 : 1.30089684440104); (6.25 : 1.30089684440104)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4); (5.875 : 3.625); (5.875 : 1.82774983723958); (6.25 : 1.82774983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/CinemaLINQDataContext/PhongChieuPhim/PhongChieuPhim_Ghe" />
       <nodes>
-        <classShapeMoniker Id="6d7f92a1-5cb6-4f18-9965-1cc7cbec77ba" />
-        <classShapeMoniker Id="a561491a-935c-4501-a68b-30f25ff9753e" />
+        <classShapeMoniker Id="19761011-768a-451b-a7c9-441218ec6b28" />
+        <classShapeMoniker Id="e34fd010-2c06-471a-94a0-43b16a5b9b92" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.88544840494792); (3.5 : 4.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.88544840494792); (2.82291666666667 : 4.88544840494792 : JumpStart); (3.02083583333333 : 4.88544840494792 : JumpEnd); (3.5 : 4.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/CinemaLINQDataContext/RapChieuPhim/RapChieuPhim_PhongChieuPhim" />
       <nodes>
-        <classShapeMoniker Id="924e2b3c-3647-4237-b191-b39b66992974" />
-        <classShapeMoniker Id="6d7f92a1-5cb6-4f18-9965-1cc7cbec77ba" />
+        <classShapeMoniker Id="c771d36e-7672-4754-a90b-76136768b197" />
+        <classShapeMoniker Id="19761011-768a-451b-a7c9-441218ec6b28" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 5.09060145833333); (9.9218725 : 5.09060145833333); (9.9218725 : 4.34780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 5.09060145833333); (9.9218725 : 5.09060145833333); (9.9218725 : 4.34780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/SuatChieu/SuatChieu_DatVe" />
       <nodes>
-        <classShapeMoniker Id="d9ab6903-a180-42d6-ab56-ae62fc4a0723" />
-        <classShapeMoniker Id="c0bdd10a-043d-4329-8a7f-1bc705c73219" />
+        <classShapeMoniker Id="56aacd1f-8085-4094-9a3f-b4a3943e770f" />
+        <classShapeMoniker Id="2c6b49ea-1cfb-41ec-8e05-d58637678bf7" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 14.125); (5.875 : 13.75); (5.875 : 4.88544840494792); (6.25 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/CinemaLINQDataContext/DanhMucSuatChieu/DanhMucSuatChieu_SuatChieu" />
       <nodes>
-        <classShapeMoniker Id="1d083027-0bed-4f38-8450-a716dd75396d" />
-        <classShapeMoniker Id="d9ab6903-a180-42d6-ab56-ae62fc4a0723" />
+        <classShapeMoniker Id="e4bf39de-855b-4f00-b5db-307cfe0b2877" />
+        <classShapeMoniker Id="56aacd1f-8085-4094-9a3f-b4a3943e770f" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 12.0618490375601); (5.81607443490112 : 11.745774602659 : JumpStart); (5.99642556509888 : 11.5654234724612 : JumpEnd); (6.0625 : 11.4993490375601); (6.0625 : 5.35942460742187); (6.25 : 5.35942460742187)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/CinemaLINQDataContext/LichChieuPhim/LichChieuPhim_SuatChieu" />
       <nodes>
-        <classShapeMoniker Id="ed85632a-c7f6-4b7b-b9c7-505dc4eba9af" />
-        <classShapeMoniker Id="d9ab6903-a180-42d6-ab56-ae62fc4a0723" />
+        <classShapeMoniker Id="1dcf20d1-4783-42a6-a290-a9769246a6c2" />
+        <classShapeMoniker Id="56aacd1f-8085-4094-9a3f-b4a3943e770f" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 16.6865374615385); (5.9375 : 16.2490374615385); (5.9375 : 4.41147220247396); (6.25 : 4.41147220247396)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/CinemaLINQDataContext/Phim/Phim_SuatChieu" />
       <nodes>
-        <classShapeMoniker Id="5c386338-f558-4a8c-97e3-86335ff571e0" />
-        <classShapeMoniker Id="d9ab6903-a180-42d6-ab56-ae62fc4a0723" />
+        <classShapeMoniker Id="4233e587-3745-4f64-a723-66571d6f714f" />
+        <classShapeMoniker Id="56aacd1f-8085-4094-9a3f-b4a3943e770f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.62766070865885); (5.79166666666667 : 5.62766070865885 : JumpStart); (6.14583333333333 : 5.62766070865885 : JumpEnd); (6.25 : 5.62766070865885)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.62766070865885); (5.79166666666667 : 5.62766070865885 : JumpStart); (6.14583333333333 : 5.62766070865885 : JumpEnd); (6.25 : 5.62766070865885)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CinemaLINQDataContext/PhongChieuPhim/PhongChieuPhim_SuatChieu" />
       <nodes>
-        <classShapeMoniker Id="6d7f92a1-5cb6-4f18-9965-1cc7cbec77ba" />
-        <classShapeMoniker Id="d9ab6903-a180-42d6-ab56-ae62fc4a0723" />
+        <classShapeMoniker Id="19761011-768a-451b-a7c9-441218ec6b28" />
+        <classShapeMoniker Id="56aacd1f-8085-4094-9a3f-b4a3943e770f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f538880c-711e-4ae9-bbcf-4c43059d290b" absoluteBounds="1, 1.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CinemaLINQDataContext/ChamDiem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5399fe72-4fb7-47b6-91d3-2c00a95a5ca7" absoluteBounds="1.0150000000000001, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.25 : 8.88064697265625); (6.14583333333333 : 8.88064697265625 : JumpStart); (5.79166666666667 : 8.88064697265625 : JumpEnd); (2.90625 : 8.88064697265625); (2.90625 : 2.95359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CinemaLINQDataContext/NguoiDung/NguoiDung_ChamDiem" />
+      <nodes>
+        <classShapeMoniker Id="2b957301-9465-4e41-b2c4-07cb95bf1f98" />
+        <classShapeMoniker Id="f538880c-711e-4ae9-bbcf-4c43059d290b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 18.1931469726563); (2.9375025 : 18.1931469726563); (2.9375025 : 2.95359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CinemaLINQDataContext/Phim/Phim_ChamDiem" />
+      <nodes>
+        <classShapeMoniker Id="4233e587-3745-4f64-a723-66571d6f714f" />
+        <classShapeMoniker Id="f538880c-711e-4ae9-bbcf-4c43059d290b" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Cinema1" Class="CinemaLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=HUYNHQUANG-PC;Initial Catalog=Cinema1;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Cinema1ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NDPHU-PC;Initial Catalog=Cinema1;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Cinema1ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BinhLuan" Member="BinhLuans">
     <Type Name="BinhLuan">
       <Column Name="MaBinhLuan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -7,6 +7,7 @@
       <Column Name="MaPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NoiDungBinhLuan" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="TinhTrang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianBinhLuan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="DanhMucTinhTrangBinhLuan_BinhLuan" Member="DanhMucTinhTrangBinhLuan" ThisKey="TinhTrang" OtherKey="MaTinhTrang" Type="DanhMucTinhTrangBinhLuan" IsForeignKey="true" />
       <Association Name="NguoiDung_BinhLuan" Member="NguoiDung" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NguoiDung" IsForeignKey="true" />
       <Association Name="Phim_BinhLuan" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
@@ -149,6 +150,7 @@
       <Association Name="NguoiDung_BinhLuan" Member="BinhLuans" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="BinhLuan" />
       <Association Name="NguoiDung_DatVe" Member="DatVes" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="DatVe" />
       <Association Name="NguoiDung_LichSuNguoiDung" Member="LichSuNguoiDungs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="LichSuNguoiDung" />
+      <Association Name="NguoiDung_ChamDiem" Member="ChamDiems" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="ChamDiem" />
       <Association Name="DanhMucNguoiDung_NguoiDung" Member="DanhMucNguoiDung" ThisKey="MaDanhMucNguoiDung" OtherKey="MaDanhMucNguoiDung" Type="DanhMucNguoiDung" IsForeignKey="true" />
       <Association Name="DanhMucTinhTrangNguoiDung_NguoiDung" Member="DanhMucTinhTrangNguoiDung" ThisKey="TinhTrang" OtherKey="MaDanhMucTinhTrangNguoDung" Type="DanhMucTinhTrangNguoiDung" IsForeignKey="true" />
     </Type>
@@ -170,6 +172,7 @@
       <Column Name="LoaiPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Phim_BinhLuan" Member="BinhLuans" ThisKey="MaPhim" OtherKey="MaPhim" Type="BinhLuan" />
       <Association Name="Phim_SuatChieu" Member="SuatChieus" ThisKey="MaPhim" OtherKey="MaPhim" Type="SuatChieu" />
+      <Association Name="Phim_ChamDiem" Member="ChamDiems" ThisKey="MaPhim" OtherKey="MaPhim" Type="ChamDiem" />
       <Association Name="DanhMucLoaiPhim_Phim" Member="DanhMucLoaiPhim" ThisKey="LoaiPhim" OtherKey="MaLoai" Type="DanhMucLoaiPhim" IsForeignKey="true" />
       <Association Name="DanhMucTheLoaiPhim_Phim" Member="DanhMucTheLoaiPhim" ThisKey="TheLoai" OtherKey="MaDanhMucTheLoaiPhim" Type="DanhMucTheLoaiPhim" IsForeignKey="true" />
     </Type>
@@ -219,6 +222,16 @@
       <Column Name="Kieu" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="GiaTri" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChamDiem" Member="ChamDiems">
+    <Type Name="ChamDiem">
+      <Column Name="MaChamDiem" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoDiem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NguoiDung_ChamDiem" Member="NguoiDung" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+      <Association Name="Phim_ChamDiem" Member="Phim" ThisKey="MaPhim" OtherKey="MaPhim" Type="Phim" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

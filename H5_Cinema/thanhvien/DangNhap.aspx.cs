@@ -21,7 +21,7 @@ namespace H5_Cinema
             try
             {
                 CinemaLINQDataContext dt = new CinemaLINQDataContext();
-
+                Session["PreviousUrl"] = Request.Url;
                 string tenDangNhap = Th_TenDangNhap.Text;
                 string matKhau = Th_MatKhau.Text;
                 MD5 md5Hasher = MD5.Create();
