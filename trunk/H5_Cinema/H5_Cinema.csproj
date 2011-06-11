@@ -111,6 +111,7 @@
     <Content Include="thanhvien\DangNhap.aspx" />
     <Content Include="thanhvien\DangXuat.aspx" />
     <Content Include="thanhvien\DangNhapThanhCong.aspx" />
+    <Content Include="admin\Default.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaLINQ.designer.cs">
@@ -311,6 +312,13 @@
     <Compile Include="thanhvien\DangNhapThanhCong.aspx.designer.cs">
       <DependentUpon>DangNhapThanhCong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,12 +329,14 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="CinemaLINQ.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>CinemaLINQ.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CinemaLINQ.dbml.layout">

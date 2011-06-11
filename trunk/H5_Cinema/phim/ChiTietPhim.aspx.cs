@@ -90,9 +90,9 @@ namespace H5_Cinema
         {
             CinemaLINQDataContext dt = new CinemaLINQDataContext();
             var query = (from binhLuan in dt.BinhLuans
-                         where binhLuan.MaBinhLuan == int.Parse(((Button)sender).CommandName)
+                         where binhLuan.MaBinhLuan == int.Parse(((Button)sender).CommandArgument)
                          select binhLuan).Single();
-            //query.NoiDungBinhLuan = Th_NoiDungBinhLuan.Text;
+            query.NoiDungBinhLuan = ((TextBox)DataList1.Items[int.Parse(((Button)sender).CommandName)].FindControl("Th_NoiDungBinhLuan")).Text;
             dt.SubmitChanges();
         }
         protected void UpdatePanel1_PreRender(object sender, EventArgs e)

@@ -50,7 +50,7 @@ namespace H5_Cinema.thanhvien
                     nd.Email = Th_Email.Text;
                     nd.DiaChi = Th_DiaChi.Text;
                     nd.MaDanhMucNguoiDung = int.Parse(DropDownList2.SelectedItem.Value);
-                    nd.TinhTrang = dt.DanhMucTinhTrangNguoiDungs.Where(ttnd=> ttnd.TenDanhMucTinhTrangNguoiDung.CompareTo("Bình thường") == 0).Select(ttnd=> ttnd.MaDanhMucTinhTrangNguoDung).Single();
+                    nd.TinhTrang = dt.DanhMucTinhTrangNguoiDungs.Where(ttnd=> ttnd.TenDanhMucTinhTrangNguoiDung.CompareTo("Bình thường") == 0).Select(ttnd=> ttnd.MaDanhMucTinhTrangNguoiDung).Single();
                     dt.NguoiDungs.InsertOnSubmit(nd);
 
                     dt.SubmitChanges();
