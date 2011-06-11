@@ -56,7 +56,7 @@ namespace H5_Cinema
                 bl.MaPhim = ((Phim)Session["CurrentPhim"]).MaPhim;
                 bl.NoiDungBinhLuan = Th_BinhLuanMoi.Text;
                 bl.MaNguoiDung = ((NguoiDung)Session["NguoiDung"]).MaNguoiDung;
-                bl.TinhTrang = 3;
+                bl.TinhTrang = dt.DanhMucTinhTrangBinhLuans.Where(ttbl=> ttbl.TenTinhTrang.CompareTo("Bình thường") == 0).Select(ttbl=>ttbl.MaTinhTrang).Single();
                 bl.ThoiGianBinhLuan = DateTime.Now;
                 dt.BinhLuans.InsertOnSubmit(bl);
 
@@ -82,7 +82,7 @@ namespace H5_Cinema
             var query = (from binhLuan in dt.BinhLuans
                          where binhLuan.MaBinhLuan == int.Parse(((Button)sender).CommandArgument)
                          select binhLuan).Single();
-            query.TinhTrang = 1;
+            query.TinhTrang = dt.DanhMucTinhTrangBinhLuans.Where(ttbl => ttbl.TenTinhTrang.CompareTo("Đã xóa") == 0).Select(ttbl => ttbl.MaTinhTrang).Single(); ;
             dt.SubmitChanges();
         }
 
@@ -100,7 +100,7 @@ namespace H5_Cinema
             CinemaLINQDataContext dt = new CinemaLINQDataContext();
             NguoiDung nguoiDung = ((NguoiDung)Session["NguoiDung"]);
             var query = from binhLuan in dt.BinhLuans
-                        where binhLuan.MaPhim == ((Phim)Session["CurrentPhim"]).MaPhim && binhLuan.TinhTrang == 3
+                        where binhLuan.MaPhim == ((Phim)Session["CurrentPhim"]).MaPhim && binhLuan.TinhTrang == dt.DanhMucTinhTrangBinhLuans.Where(ttbl=> ttbl.TenTinhTrang.CompareTo("Bình thường") == 0).Select(ttbl=>ttbl.MaTinhTrang).Single()
                         select binhLuan;
 
             DataList1.DataSource = query;
@@ -124,8 +124,6 @@ namespace H5_Cinema
                 Button temp = (Button)DataList1.Items[_count].FindControl("Xl_Sua");
                 temp.CommandName = _count.ToString();
                 _count++;
-                
-
             }
             if (nguoiDung == null)
             {
@@ -200,7 +198,5 @@ namespace H5_Cinema
                 Lb_DaChoDiem.Text = "Bạn cần đăng nhập để chấm điểm cho phim";
             }
         }
-
-       
     }
 }
