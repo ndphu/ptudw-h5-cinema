@@ -1,4 +1,4 @@
-ï»¿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="H5_Cinema.SiteMaster" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="H5_Cinema.SiteMaster" %>
 <%@ Import Namespace="H5_Cinema" %>
 <%@ Import Namespace="System.Linq" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -16,6 +16,11 @@
         color: #FFFFFF;
     }
 
+    .style2
+    {
+        width: 313px;
+    }
+
 </style>
 <script type="text/javascript" >
         
@@ -26,53 +31,7 @@
     <form id="form2" runat="server" 
     style="font-family: Tahoma; background-image: url('/Img/background_022.gif'); background-repeat: repeat;">
 <table width="829" border="0" align="center" >
-  <tr>
-    <td colspan="5">
-      <label></label>
-        <label></label>
-        
-        <div align="right" 
-            style="background-image: url('/Img/001.png'); background-repeat: repeat">
-            <%
-                try
-                {
-                    NguoiDung nguoiDung = (NguoiDung)Session["NguoiDung"];
-                    if (nguoiDung != null)
-                    {
-                        %>
-                        <p style="color: #CCFFFF">Xin chÃ o <span style="color: #FFFF00"><%=nguoiDung.TenNguoiDung %></span> </p>
-                        <asp:Button ID="Button1" runat="server" 
-                Text="Thay &#273;&#7893;i thÃ´ng tin" 
-                Width="150px" onclick="Button1_Click" />
-                        <asp:Button ID="Xl_DangXuat" runat="server" 
-                Text="&#272;&#259;ng xu&#7845;t" onclick="Xl_DangXuat_Click" 
-                Width="100px" />
-            <%
-}
-                    else
-                    {
-                        %>
-                        <asp:Button ID="Xl_DangNhap" runat="server" Text="&#272;&#259;ng nh&#7853;p" 
-                onclick="Xl_DangNhap_Click" Width="100px" />
-                        <asp:Button ID="Xl_DangKy" runat="server" Text="&#272;&#259;ng kÃ½" 
-                onclick="Xl_DangKy_Click" Width="100px" />
-            <%
-                    }
-                }
-                catch
-                {
-                }
-                 %>
-          </div>
-      </td>
-  </tr>
-  
-  <tr>
-    <td colspan="5" 
-          style="background-image: url('/Img/001.png'); background-repeat: repeat;">
-        &nbsp;</td>
-  </tr>
-  
+    
   <tr>
     <td colspan="5" 
           style="background-image: url('/Img/001.png'); background-repeat: repeat;">
@@ -105,18 +64,18 @@
         </a>
     </td>
   </tr>
-  <tr style="background-image: url('http://localhost:2194/Img/001.png'); background-repeat: repeat">
+  <tr style="background-image: url('/Img/001.png'); background-repeat: repeat">
   	<td colspan="5">
-        <div style="float: left; width: 2%; height: 19px;">
-        </div>
-        <div style="float: left; width: 25%; height: 694px; color: #6699FF;" 
-            align="center">
+    <div style="padding: 10px">
+        <div style="padding: 10px; border: thin groove #FF9933; float: left; width: 25%; color: #6699FF; background-image: url('/Img/001.png');" 
+            align="left">
+            <div>
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <asp:Label ID="Label1" runat="server" ForeColor="#FFFF66" 
-    Text="Ch&#7885;n lo&#7841;i tÃ¬m ki&#7871;m:" Font-Size="10pt"></asp:Label>
+    Text="Ch&#7885;n lo&#7841;i tìm ki&#7871;m:" Font-Size="10pt"></asp:Label>
                     <br />
                     <asp:DropDownList ID="ddl_LoaiTimKiem" runat="server" AutoPostBack="True" 
                         Font-Bold="True" ForeColor="Black" Height="20px" 
@@ -124,19 +83,21 @@
                     </asp:DropDownList>
                     <br />
                     <asp:UpdateProgress ID="UpdateProgress1" runat="server">
-                    <ProgressTemplate>&#272;ang t&#7843;i.....</ProgressTemplate>
+                    <ProgressTemplate>
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Img/loading.gif" /></ProgressTemplate>
                     </asp:UpdateProgress>
                     <br />
                     <asp:Button ID="bt_TimKiemPhim" runat="server" BackColor="#FFFFCC" 
-                        BorderStyle="Dotted" onclick="bt_TimKiem_Click" Text="TÃ¬m" Width="96px" />
+                        BorderStyle="Dotted" onclick="bt_TimKiem_Click" Text="Tìm" Width="96px" 
+                        CausesValidation="False" />
                     <br />
                     <asp:Label ID="lb_NhapTenPhim" runat="server" Font-Size="10pt" ForeColor="Yellow" 
-                        Text="Nh&#7853;p vÃ o tÃªn phim:"></asp:Label>
+                        Text="Nh&#7853;p vào tên phim:"></asp:Label>
                     <br />
                     <asp:TextBox ID="tb_TenPhim" runat="server" Width="209px"></asp:TextBox>
                     <br />
                     <asp:Label ID="lb_NgayChieu" runat="server" Font-Size="10pt" ForeColor="Yellow" 
-                        Text="Ch&#7885;n ngÃ y chi&#7871;u:"></asp:Label>
+                        Text="Ch&#7885;n ngày chi&#7871;u:"></asp:Label>
                     <asp:Calendar ID="cld_Lich" runat="server" BackColor="#FFFFCC" 
                         BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" 
                         Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" 
@@ -151,7 +112,7 @@
                         <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
                     </asp:Calendar>
                     <asp:Button ID="bt_TimKiemSuatChieu" runat="server" BackColor="#FFFFCC" 
-                        BorderStyle="Dotted" Text="TÃ¬m" Width="96px" />
+                        BorderStyle="Dotted" Text="Tìm" Width="96px" CausesValidation="False" />
                     <br />
                     <asp:Label ID="lb_SuatChieu" runat="server" Font-Size="10pt" ForeColor="Yellow" 
                         Text="Ch&#7885;n su&#7845;t chi&#7871;u:"></asp:Label>
@@ -159,19 +120,81 @@
                     </asp:DataList>
                 </ContentTemplate>
             </asp:UpdatePanel>
+            </div>
+            <br />
+            <asp:Panel ID="panel_DangNhap" runat="server">
+                <div id="DangNhap" align="center" 
+                    style="border-top-style: groove; border-width: thin; border-color: #FFCC00; width: 100%;">
+                    <br />
+                <asp:Label ID="Label2" runat="server" Text="&#272;&#258;NG NH&#7852;P" 
+                        Font-Bold="True" Font-Size="X-Large"></asp:Label>
+                
+                    <div align="left" 
+                        style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px;">
+                        <asp:Label ID="Lb_TenDangNhap" runat="server" Font-Size="9pt" ForeColor="Yellow" 
+                            Text="Tên &#273;&#259;ng nh&#7853;p:"></asp:Label>
+                    <br />
+                    <asp:TextBox ID="Th_TenDangNhap" runat="server" Width="220px"></asp:TextBox>
+                    
+          
+                        <br />
+                    
+          
+                        <asp:Label ID="Lb_MatKhau" runat="server" Font-Size="9pt" ForeColor="Yellow" 
+                            Text="M&#7853;t kh&#7849;u:"></asp:Label>
+                        <br />
+                    <asp:TextBox ID="Th_MatKhau" runat="server" TextMode="Password" Width="220px"></asp:TextBox>
+                        <br />
+                </div>
+                <asp:Button ID="Xl_DangNhap_" runat="server" Text="&#272;&#259;ng nh&#7853;p" 
+                        CausesValidation="False" onclick="Xl_DangNhap__Click" />
+                    <br />
+                    <asp:HyperLink ID="Hp_DangKy" runat="server" Font-Size="Small" 
+                        NavigateUrl="~/thanhvien/DangKyTaiKhoan.aspx">&#272;&#259;ng ký...</asp:HyperLink>
+                    <br />
+                    <br />
+                </div>
+            </asp:Panel>  
+            
+            <br />
+            <div style="border-top-style: groove; border-width: thin; border-color: #FFCC00;">
+                <asp:Panel ID="panel_NguoiDung" runat="server">
+                    <asp:Label ID="lb_XinChao" runat="server" Text="Xin chào "></asp:Label>
+                    <asp:Label ID="lb_TenNguoiDung" runat="server" Text="" ForeColor="Yellow"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Button ID="Xl_DangXuat_" runat="server" Text="&#272;&#259;ng xu&#7845;t" 
+                        onclick="Xl_DangXuat__Click" />
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink1" runat="server" Font-Size="Small" 
+                        NavigateUrl="~/thanhvien/DoiMatKhau.aspx">&#272;&#7893;i m&#7853;t kh&#7849;u...</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="Small" 
+                        NavigateUrl="~/thanhvien/ThayDoiThongTinTaiKhoan.aspx">&#272;&#7893;i thông tin cá nhân...</asp:HyperLink>
+                    <br />
+                </asp:Panel>    
+            </div> 
         </div>
-        <div style="width: 73%; float: left">
+        <div style="width: 70%; float: left">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             
         </asp:ContentPlaceHolder>
+        </div>
         </div>
       </td>
   </tr>
   <tr>
     <td colspan="5">
-        <div align="center" class="style1" 
-            
+        <div align="center" class="style1"             
             style="background-image: url('/Img/001.png'); background-repeat: repeat;"><br />
-        <span class="style1">H5 GROUP    </form>
+            <span class="style1">H5 GROUP</span>
+        </div>
+    </td>
+    </tr>
+    </table>
+
+    </form>
+  
 </body>
 </html>

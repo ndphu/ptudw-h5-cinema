@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace H5_Cinema
 {
@@ -27,6 +29,21 @@ namespace H5_Cinema
                 lb_SuatChieu.Visible = false;
                 dtl_SuatChieu.Visible = false;
                 bt_TimKiemSuatChieu.Visible = false;
+
+                NguoiDung nd = (NguoiDung)Session["NguoiDung"];
+
+                if (nd == null)
+                {
+                    panel_DangNhap.Visible = true;
+                    panel_NguoiDung.Visible = false;
+                }
+                else
+                {
+                    panel_DangNhap.Visible = false;
+                    panel_NguoiDung.Visible = true;
+                    lb_TenNguoiDung.Text = nd.TenNguoiDung;
+                }
+
             }
         }
 
@@ -104,6 +121,51 @@ namespace H5_Cinema
                         break;
                     }
             }
+        }
+
+        protected void Xl_DangNhap__Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CinemaLINQDataContext dt = new CinemaLINQDataContext();
+                Session["PreviousUrl"] = Request.Url.AbsolutePath;
+                string tenDangNhap = Th_TenDangNhap.Text;
+                string matKhau = Th_MatKhau.Text;
+                MD5 md5Hasher = MD5.Create();
+                byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(matKhau));
+
+                StringBuilder sBuilder = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+                string strPassword = sBuilder.ToString();
+
+                var query = (from nguoiDung in dt.NguoiDungs
+                             where tenDangNhap.CompareTo(nguoiDung.TenNguoiDung) == 0 && strPassword.CompareTo(nguoiDung.MatKhau) == 0
+                             select nguoiDung).Single();
+                if (query.TinhTrang == 2)
+                {
+                    Label2.Text = "Tài khoản đã bị khóa, vui lòng kiểm tra lại";
+                    Label2.Visible = true;
+                }
+                else
+                {
+                    Session["NguoiDung"] = query;
+                    Response.Redirect(Request.Url.AbsolutePath);
+                }
+            }
+            catch
+            {
+                Label2.Text = "Sai tên đăng nhập hoặc mật khẩu";
+                Label2.Visible = true;
+            }
+        }
+
+        protected void Xl_DangXuat__Click(object sender, EventArgs e)
+        {
+            Session["NguoiDung"] = null;
+            Response.Redirect(Request.Url.AbsolutePath);
         }
     }
 }
