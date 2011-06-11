@@ -146,8 +146,8 @@ namespace H5_Cinema
                              select nguoiDung).Single();
                 if (query.TinhTrang == 2)
                 {
-                    Label2.Text = "Tài khoản đã bị khóa, vui lòng kiểm tra lại";
-                    Label2.Visible = true;
+                    Th_ThongBaoDangNhap.Text = "Tài khoản đã bị khóa, vui lòng kiểm tra lại";
+                    Th_ThongBaoDangNhap.Visible = true;
                 }
                 else
                 {
@@ -157,8 +157,8 @@ namespace H5_Cinema
             }
             catch
             {
-                Label2.Text = "Sai tên đăng nhập hoặc mật khẩu";
-                Label2.Visible = true;
+                Th_ThongBaoDangNhap.Text = "Sai tên đăng nhập hoặc mật khẩu";
+                Th_ThongBaoDangNhap.Visible = true;
             }
         }
 

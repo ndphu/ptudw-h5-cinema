@@ -13,19 +13,20 @@ namespace H5_Cinema
         {
             CinemaLINQDataContext dt = new CinemaLINQDataContext();
                     
-            Phim currentPhim = ((Phim)Session["CurrentPhim"]);
-
+            
+            KiemTraQuyenBinhLuan(dt);
+            LoadThongTinPhim(dt, ((Phim)Session["CurrentPhim"]));
             if (!IsPostBack)
             {
                 try
                 {
                     //Th_HinhAnh.ImageUrl = ((Phim)Session["CurrentPhim"]).AnhPhim;
-                    KiemTraQuyenBinhLuan(dt);
-                    FormView_Phim.DataSource = from phim in dt.Phims
-                                               where phim.MaPhim == currentPhim.MaPhim
-                                               select phim;
-                    FormView_Phim.DataBind();
-
+                    //KiemTraQuyenBinhLuan(dt);
+                    //FormView_Phim.DataSource = from phim in dt.Phims
+                    //                           where phim.MaPhim == currentPhim.MaPhim
+                    //                           select phim;
+                    //FormView_Phim.DataBind();
+                    
                 }
                 catch
                 {
@@ -36,6 +37,14 @@ namespace H5_Cinema
             {
                 
             }
+        }
+
+        private void LoadThongTinPhim(CinemaLINQDataContext dt, Phim currentPhim)
+        {
+            FormView_Phim.DataSource = from phim in dt.Phims
+                                       where phim.MaPhim == currentPhim.MaPhim
+                                       select phim;
+            FormView_Phim.DataBind();
         }
         protected void Xl_ThemBinhLuan_Click(object sender, EventArgs e)
         {
@@ -144,7 +153,19 @@ namespace H5_Cinema
 
             dt.SubmitChanges();
 
+            var query = (from phim in dt.Phims
+                         where phim.MaPhim == ((Phim)Session["CurrentPhim"]).MaPhim
+                         select phim).Single();
+            var query1 = from cd_ in dt.ChamDiems
+                         where cd_.MaPhim == ((Phim)Session["CurrentPhim"]).MaPhim
+                         select cd_.SoDiem;
+
+            query.DiemDanhGia = (float)query1.Sum() / (float)query1.Count();
+                
+            dt.SubmitChanges();
+
             KiemTraQuyenBinhLuan(dt);
+            LoadThongTinPhim(dt, ((Phim)Session["CurrentPhim"]));
         }
 
         private void KiemTraQuyenBinhLuan(CinemaLINQDataContext dt)
