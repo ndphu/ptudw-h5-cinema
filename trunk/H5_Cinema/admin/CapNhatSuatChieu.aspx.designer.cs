@@ -22,6 +22,15 @@ namespace H5_Cinema {
         protected global::System.Web.UI.WebControls.Label lb_CapNhatSuatChieu;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// dl_SuatChieuHienTai control.
         /// </summary>
         /// <remarks>

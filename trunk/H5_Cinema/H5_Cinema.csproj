@@ -125,7 +125,6 @@
     <Content Include="admin\ThemSuatChieu.aspx" />
     <Content Include="admin\CapNhatSuatChieu.aspx" />
     <Content Include="admin\ThemPhongThanhCong.aspx" />
-    <Content Include="admin\CapNhatDanhMucSuatChieu.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaLINQ.designer.cs">
@@ -367,13 +366,6 @@
     </Compile>
     <Compile Include="admin\ThemPhongThanhCong.aspx.designer.cs">
       <DependentUpon>ThemPhongThanhCong.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\CapNhatDanhMucSuatChieu.aspx.cs">
-      <DependentUpon>CapNhatDanhMucSuatChieu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\CapNhatDanhMucSuatChieu.aspx.designer.cs">
-      <DependentUpon>CapNhatDanhMucSuatChieu.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

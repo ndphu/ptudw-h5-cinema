@@ -13,5 +13,16 @@ namespace H5_Cinema
         {
 
         }
+
+        protected void dl_SuatChieuHienTai_PreRender(object sender, EventArgs e)
+        {
+            CinemaLINQDataContext dt = new CinemaLINQDataContext();
+
+            var dsSuatChieu = from dmsc in dt.DanhMucSuatChieus
+                              where dmsc.TinhTrang == true
+                              select dmsc;
+            dl_SuatChieuHienTai.DataSource = dsSuatChieu;
+            dl_SuatChieuHienTai.DataBind();
+        }
     }
 }
