@@ -109,23 +109,9 @@
       <Column Name="DaThanhToan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="MaSuatChieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="DatVe_Ve" Member="Ves" ThisKey="MaDatVe" OtherKey="MaDatVe" Type="Ve" />
-      <Association Name="Ghe_DatVe" Member="Ghe" ThisKey="MaGhe" OtherKey="MaGhe" Type="Ghe" IsForeignKey="true" />
       <Association Name="NguoiDung_DatVe" Member="NguoiDung" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NguoiDung" IsForeignKey="true" />
       <Association Name="SuatChieu_DatVe" Member="SuatChieu" ThisKey="MaSuatChieu" OtherKey="MaSuatChieu" Type="SuatChieu" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Ghe" Member="Ghes">
-    <Type Name="Ghe">
-      <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaPhongChieuPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenGhe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MaDanhMucGhe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TinhTrang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Hang" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="SoThuTu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Ghe_DatVe" Member="DatVes" ThisKey="MaGhe" OtherKey="MaGhe" Type="DatVe" />
-      <Association Name="DanhMucGhe_Ghe" Member="DanhMucGhe" ThisKey="MaDanhMucGhe" OtherKey="MaDanhMucGhe" Type="DanhMucGhe" IsForeignKey="true" />
-      <Association Name="PhongChieuPhim_Ghe" Member="PhongChieuPhim" ThisKey="MaPhongChieuPhim" OtherKey="MaPhongChieuPhim" Type="PhongChieuPhim" IsForeignKey="true" />
+      <Association Name="Ghe_DatVe" Member="Ghe" ThisKey="MaGhe" OtherKey="MaGhe" Type="Ghe" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LichChieuPhim" Member="LichChieuPhims">
@@ -194,8 +180,10 @@
       <Column Name="TenPhongChieuPhim" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="TongSoLuongGhe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="PhongChieuPhim_Ghe" Member="Ghes" ThisKey="MaPhongChieuPhim" OtherKey="MaPhongChieuPhim" Type="Ghe" />
+      <Column Name="SoHang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoGheTrenHang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="PhongChieuPhim_SuatChieu" Member="SuatChieus" ThisKey="MaPhongChieuPhim" OtherKey="MaPhong" Type="SuatChieu" />
+      <Association Name="PhongChieuPhim_Ghe" Member="Ghes" ThisKey="MaPhongChieuPhim" OtherKey="MaPhongChieuPhim" Type="Ghe" />
       <Association Name="RapChieuPhim_PhongChieuPhim" Member="RapChieuPhim" ThisKey="MaRapChieuPhim" OtherKey="MaRapChieuPhim" Type="RapChieuPhim" IsForeignKey="true" />
     </Type>
   </Table>
@@ -232,6 +220,20 @@
       <Column Name="Kieu" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="GiaTri" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ghe" Member="Ghes">
+    <Type Name="Ghe">
+      <Column Name="MaGhe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaPhongChieuPhim" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenGhe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaDanhMucGhe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoThuTu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Ghe_DatVe" Member="DatVes" ThisKey="MaGhe" OtherKey="MaGhe" Type="DatVe" />
+      <Association Name="DanhMucGhe_Ghe" Member="DanhMucGhe" ThisKey="MaDanhMucGhe" OtherKey="MaDanhMucGhe" Type="DanhMucGhe" IsForeignKey="true" />
+      <Association Name="PhongChieuPhim_Ghe" Member="PhongChieuPhim" ThisKey="MaPhongChieuPhim" OtherKey="MaPhongChieuPhim" Type="PhongChieuPhim" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

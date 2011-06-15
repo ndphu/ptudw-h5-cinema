@@ -198,5 +198,10 @@ namespace H5_Cinema
             Session["NguoiDung"] = null;
             Response.Redirect(Request.Url.AbsolutePath);
         }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("/admin/default.aspx");
+        }
     }
 }
