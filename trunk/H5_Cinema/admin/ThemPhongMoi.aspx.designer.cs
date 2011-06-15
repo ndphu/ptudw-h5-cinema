@@ -10,34 +10,16 @@
 namespace H5_Cinema {
     
     
-    public partial class SiteMaster {
+    public partial class WebForm14 {
         
         /// <summary>
-        /// form2 control.
+        /// lb_ThemPhongMoi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label lb_ThemPhongMoi;
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -49,237 +31,219 @@ namespace H5_Cinema {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Label1 control.
+        /// lb_TenPhong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lb_TenPhong;
         
         /// <summary>
-        /// ddl_LoaiTimKiem control.
+        /// tb_TenPhong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_LoaiTimKiem;
+        protected global::System.Web.UI.WebControls.TextBox tb_TenPhong;
         
         /// <summary>
-        /// UpdateProgress1 control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgress1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// bt_TimKiemPhim control.
+        /// lb_Rap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_TimKiemPhim;
+        protected global::System.Web.UI.WebControls.Label lb_Rap;
         
         /// <summary>
-        /// lb_NhapTenPhim control.
+        /// cbb_RapPhim control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_NhapTenPhim;
+        protected global::System.Web.UI.WebControls.DropDownList cbb_RapPhim;
         
         /// <summary>
-        /// tb_TenPhim control.
+        /// CinemaLINQRap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_TenPhim;
+        protected global::System.Web.UI.WebControls.LinqDataSource CinemaLINQRap;
         
         /// <summary>
-        /// lb_NgayChieu control.
+        /// lb_SoHangGhe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_NgayChieu;
+        protected global::System.Web.UI.WebControls.Label lb_SoHangGhe;
         
         /// <summary>
-        /// cld_Lich control.
+        /// tb_SoHangGhe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar cld_Lich;
+        protected global::System.Web.UI.WebControls.TextBox tb_SoHangGhe;
         
         /// <summary>
-        /// lb_SuatChieu control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_SuatChieu;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// dtl_SuatChieu control.
+        /// RangeValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtl_SuatChieu;
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
         
         /// <summary>
-        /// panel_DangNhap control.
+        /// lb_SoGheTrenHang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panel_DangNhap;
+        protected global::System.Web.UI.WebControls.Label lb_SoGheTrenHang;
         
         /// <summary>
-        /// Label2 control.
+        /// tb_SoGheTrenHang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.TextBox tb_SoGheTrenHang;
         
         /// <summary>
-        /// Lb_TenDangNhap control.
+        /// RequiredFieldValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lb_TenDangNhap;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// Th_TenDangNhap control.
+        /// RangeValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Th_TenDangNhap;
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator2;
         
         /// <summary>
-        /// Lb_MatKhau control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lb_MatKhau;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// Th_MatKhau control.
+        /// Xl_XemSoDoGhe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Th_MatKhau;
+        protected global::System.Web.UI.WebControls.Button Xl_XemSoDoGhe;
         
         /// <summary>
-        /// Xl_DangNhap_ control.
+        /// img_manchieu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Xl_DangNhap_;
+        protected global::System.Web.UI.WebControls.Image img_manchieu;
         
         /// <summary>
-        /// Hp_DangKy control.
+        /// dl_SoDoGhe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Hp_DangKy;
+        protected global::System.Web.UI.WebControls.DataList dl_SoDoGhe;
         
         /// <summary>
-        /// Th_ThongBaoDangNhap control.
+        /// img_GheThuong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Th_ThongBaoDangNhap;
+        protected global::System.Web.UI.WebControls.Image img_GheThuong;
         
         /// <summary>
-        /// panel_NguoiDung control.
+        /// lb_GheThuong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panel_NguoiDung;
+        protected global::System.Web.UI.WebControls.Label lb_GheThuong;
         
         /// <summary>
-        /// lb_XinChao control.
+        /// img_GheVip control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_XinChao;
+        protected global::System.Web.UI.WebControls.Image img_GheVip;
         
         /// <summary>
-        /// lb_TenNguoiDung control.
+        /// lb_GheVip control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_TenNguoiDung;
+        protected global::System.Web.UI.WebControls.Label lb_GheVip;
         
         /// <summary>
-        /// Xl_DangXuat_ control.
+        /// lb_HuongDan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Xl_DangXuat_;
+        protected global::System.Web.UI.WebControls.Label lb_HuongDan;
         
         /// <summary>
-        /// HyperLink1 control.
+        /// btn_ThemPhongMoi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
-        
-        /// <summary>
-        /// HyperLink2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
-        
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btn_ThemPhongMoi;
     }
 }

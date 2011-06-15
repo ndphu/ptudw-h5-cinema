@@ -60,9 +60,15 @@
     <Content Include="Img\cinema2.jpg" />
     <Content Include="Img\datve.png" />
     <Content Include="Img\datve_n.png" />
+    <Content Include="Img\ghe.jpg" />
+    <Content Include="Img\ghecuaban.jpg" />
+    <Content Include="Img\ghedadat.jpg" />
+    <Content Include="Img\ghethuong.jpg" />
+    <Content Include="Img\ghevip.jpg" />
     <Content Include="Img\lichchieu.png" />
     <Content Include="Img\lichchieu_n.png" />
     <Content Include="Img\loading.gif" />
+    <Content Include="Img\manchieu.png" />
     <Content Include="Img\phim.png" />
     <Content Include="Img\phim_n.png" />
     <Content Include="Img\subtlecolor.jpg" />
@@ -95,7 +101,9 @@
     <Content Include="thanhvien\YeuCauDangNhap.aspx" />
     <Content Include="thanhvien\YeuCauQuyenAdmin.aspx" />
     <Content Include="thongtin\Default.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -112,6 +120,12 @@
     <Content Include="thanhvien\DangXuat.aspx" />
     <Content Include="thanhvien\DangNhapThanhCong.aspx" />
     <Content Include="admin\Default.aspx" />
+    <Content Include="admin\ThemPhongMoi.aspx" />
+    <Content Include="admin\CapNhatPhong.aspx" />
+    <Content Include="admin\ThemSuatChieu.aspx" />
+    <Content Include="admin\CapNhatSuatChieu.aspx" />
+    <Content Include="admin\ThemPhongThanhCong.aspx" />
+    <Content Include="admin\CapNhatDanhMucSuatChieu.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaLINQ.designer.cs">
@@ -318,6 +332,48 @@
     </Compile>
     <Compile Include="admin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ThemPhongMoi.aspx.cs">
+      <DependentUpon>ThemPhongMoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ThemPhongMoi.aspx.designer.cs">
+      <DependentUpon>ThemPhongMoi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\CapNhatPhong.aspx.cs">
+      <DependentUpon>CapNhatPhong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\CapNhatPhong.aspx.designer.cs">
+      <DependentUpon>CapNhatPhong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ThemSuatChieu.aspx.cs">
+      <DependentUpon>ThemSuatChieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ThemSuatChieu.aspx.designer.cs">
+      <DependentUpon>ThemSuatChieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\CapNhatSuatChieu.aspx.cs">
+      <DependentUpon>CapNhatSuatChieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\CapNhatSuatChieu.aspx.designer.cs">
+      <DependentUpon>CapNhatSuatChieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ThemPhongThanhCong.aspx.cs">
+      <DependentUpon>ThemPhongThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ThemPhongThanhCong.aspx.designer.cs">
+      <DependentUpon>ThemPhongThanhCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\CapNhatDanhMucSuatChieu.aspx.cs">
+      <DependentUpon>CapNhatDanhMucSuatChieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\CapNhatDanhMucSuatChieu.aspx.designer.cs">
+      <DependentUpon>CapNhatDanhMucSuatChieu.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

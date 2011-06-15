@@ -5,7 +5,7 @@
         window.location = "/default.aspx"
     }
 </script>
-<body>
+<body onload="setTimeout('delayedRedirect()', 3000)">
     <div align="center" style="height: 335px" >
         <div style="border: thin solid #FF3300;width: 70%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;">
             <div style="border: thin solid #FF3300;background-image: url('../Img/001.png'); background-repeat: repeat">
