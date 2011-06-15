@@ -78,10 +78,6 @@ namespace H5_Cinema
                     _count++;
                 }
             }
-            else
-            {
-                Response.Redirect("/admin/default.aspx");
-            }
         }
 
         protected void btn_Chuyen_Click(object sender, EventArgs e)
