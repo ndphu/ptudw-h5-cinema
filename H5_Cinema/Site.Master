@@ -193,7 +193,7 @@
                 </asp:Panel>    
             </div> 
         </div>
-        <div style="width: 70%; float: left">
+        <div style="width: 73%; float: left">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
         </div>
