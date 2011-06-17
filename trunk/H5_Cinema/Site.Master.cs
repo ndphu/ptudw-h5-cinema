@@ -53,6 +53,10 @@ namespace H5_Cinema
                     panel_DangNhap.Visible = false;
                     panel_NguoiDung.Visible = true;
                     lb_TenNguoiDung.Text = nd.TenNguoiDung;
+                    if (nd.DanhMucNguoiDung.TenDanhMucNguoiDung.CompareTo("Admin") == 0)
+                        hp_Admin.Visible = true;
+                    else
+                        hp_Admin.Visible = false;
                 }
 
             }
@@ -159,7 +163,6 @@ namespace H5_Cinema
             try
             {
                 CinemaLINQDataContext dt = new CinemaLINQDataContext();
-                Session["PreviousUrl"] = Request.Url.AbsolutePath;
                 string tenDangNhap = Th_TenDangNhap.Text;
                 string matKhau = Th_MatKhau.Text;
                 MD5 md5Hasher = MD5.Create();
@@ -179,17 +182,20 @@ namespace H5_Cinema
                 {
                     Th_ThongBaoDangNhap.Text = "Tài khoản đã bị khóa, vui lòng kiểm tra lại";
                     Th_ThongBaoDangNhap.Visible = true;
+                    hp_Admin.Visible = false;
                 }
                 else
                 {
                     Session["NguoiDung"] = query;
                     Response.Redirect(Request.Url.AbsolutePath);
+                    
                 }
             }
             catch
             {
                 Th_ThongBaoDangNhap.Text = "Sai tên đăng nhập hoặc mật khẩu";
                 Th_ThongBaoDangNhap.Visible = true;
+                hp_Admin.Visible = false;
             }
         }
 
@@ -197,6 +203,7 @@ namespace H5_Cinema
         {
             Session["NguoiDung"] = null;
             Response.Redirect(Request.Url.AbsolutePath);
+            hp_Admin.Visible = false;
         }
 
         protected void Button1_Click1(object sender, EventArgs e)

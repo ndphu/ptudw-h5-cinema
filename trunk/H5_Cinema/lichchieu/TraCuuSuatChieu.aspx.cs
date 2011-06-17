@@ -55,7 +55,7 @@ namespace H5_Cinema.lichchieu
             }
 
             List<SuatChieu> _dsSuatChieu = (from _sc in dt.SuatChieus
-                                           where _sc.LichChieuPhim.NgayChieu == _selectionDate && _sc.MaDanhMucSuatChieu == int.Parse(Session["SuatChieuTimKiem"].ToString())
+                                            where _sc.LichChieuPhim.NgayChieu == _selectionDate && _sc.MaDanhMucSuatChieu == int.Parse(Session["SuatChieuTimKiem"].ToString()) && _sc.TinhTrang == true
                                            orderby _sc.MaPhim
                                            select _sc).ToList();
 

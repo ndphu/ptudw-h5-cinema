@@ -2,8 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div align="center">
 <div style="border: thin solid #FF3300; width: 79%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
+        <div>
 <div style="border: thin solid #FF3300; background-image: url('../Img/001.png'); background-repeat: repeat">
-    <asp:Label ID="Label1" runat="server" Text="THÊM TÀI KHOẢN MỚI" 
+    <asp:Label ID="Label1" runat="server" Text="THÊM TÀI KHO&#7842;N M&#7898;I" 
     ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label>  </div>
     <div>
         <table style="width:100%; color: #FF3300;" align="center">
@@ -12,8 +15,6 @@
                     Tên tài kho&#7843;n:</td>
                 <td style="width: 358px;text-align:left">
                     <asp:TextBox ID="Th_TenTaiKhoan" runat="server" Width="285px" ToolTip="Tên tài kho&#7843;n &#273;&#259;ng ký"></asp:TextBox>
-                    <asp:Label ID="Label4" runat="server" Text="" />
-                    <asp:Button ID="Check" runat="server" Text="Check" onclick="Check_Click" CausesValidation="false" />
                     <br />
                     <asp:Label ID="Label3" runat="server" ForeColor="Red" Visible="False"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
@@ -88,7 +89,7 @@
                 <td style="width: 358px;text-align:left">
                     <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="CinemaLINQLoaiNguoiDung" 
                         DataTextField="TenDanhMucNguoiDung" 
-                        DataValueField="MaDanhMucNguoiDung" Width="200px" ToolTip="Loại người dùng">
+                        DataValueField="MaDanhMucNguoiDung" Width="200px" ToolTip="Lo&#7841;i ng&#432;&#7901;i dùng">
                     </asp:DropDownList>
                     <asp:LinqDataSource ID="CinemaLINQLoaiNguoiDung" runat="server" 
                         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
@@ -107,7 +108,9 @@
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" 
         BackColor="#0099CC" />
         <br/>
-      
+        </div>
+    </ContentTemplate>
+    </asp:UpdatePanel>
         <br/>
         </div>
         <br/>

@@ -6,24 +6,34 @@
 <div style="border: thin solid #FF3300; background-image: url('../Img/001.png'); background-repeat: repeat">
     <asp:Label ID="Label1" runat="server" Text="&#272;&#258;NG KÝ TÀI KHO&#7842;N" 
     ForeColor="GreenYellow" Font-Bold="True" Font-Size="XX-Large"></asp:Label>  </div>
+    <br />
     <div>
-        <table style="width:100%; color: #FF3300;" align="center">
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
+        <div>
+        
+        <table style="padding: 5px; margin: 5px; width:100%; color: #FF3300;" 
+                align="center">
             <tr>
                 <td style="width: 152px">
                     Tên tài kho&#7843;n:</td>
                 <td style="width: 358px;text-align:left">
-                    <asp:TextBox ID="Th_TenTaiKhoan" runat="server" Width="285px" ToolTip="Tên tài kho&#7843;n &#273;&#259;ng ký"></asp:TextBox>
-                    <asp:Label runat="server" Text="" />
-                    <asp:Button ID="Check" runat="server" Text="Check" onclick="Check_Click" CausesValidation="false" />
-                    <br />
-                    <asp:Label ID="Label3" runat="server" ForeColor="Red" Visible="False"></asp:Label>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                        ErrorMessage="Tên tài kho&#7843;n không &#273;&#432;&#7907;c &#273;&#7875; tr&#7889;ng" ControlToValidate="Th_TenTaiKhoan" 
-                        Display="None"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                        ErrorMessage="Tài kho&#7843;n ph&#7843;i t&#7915; 6-32 ký t&#7921; và không ch&#7913;a ký t&#7921; &#273;&#7863;c bi&#7879;t" ControlToValidate="Th_TenTaiKhoan" 
-                        Display="None" 
-                        ValidationExpression="^[a-zA-Z0-9]{6,32}$"></asp:RegularExpressionValidator>
+                    <div>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                                <asp:TextBox ID="Th_TenTaiKhoan" runat="server" Width="285px" ToolTip="Tên tài kho&#7843;n &#273;&#259;ng ký"></asp:TextBox>
+                                <br />
+                                <asp:Label ID="Label3" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                    ErrorMessage="Tên tài kho&#7843;n không &#273;&#432;&#7907;c &#273;&#7875; tr&#7889;ng" ControlToValidate="Th_TenTaiKhoan" 
+                                    Display="None"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                                    ErrorMessage="Tài kho&#7843;n ph&#7843;i t&#7915; 6-32 ký t&#7921; và không ch&#7913;a ký t&#7921; &#273;&#7863;c bi&#7879;t" ControlToValidate="Th_TenTaiKhoan" 
+                                    Display="None" 
+                                    ValidationExpression="^[a-zA-Z0-9]{6,32}$"></asp:RegularExpressionValidator>
+                        </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>                    
                 </td>
             </tr>
             <tr>
@@ -90,7 +100,9 @@
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" 
         BackColor="#0099CC" />
         <br/>
-        
+        </div>
+        </ContentTemplate>
+        </asp:UpdatePanel>
         <br/>
         </div>
         <br/>

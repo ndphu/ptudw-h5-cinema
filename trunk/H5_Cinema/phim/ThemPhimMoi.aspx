@@ -24,17 +24,14 @@
                 <td style="width: 152px">
                     Th&#7875; lo&#7841;i:</td>
                 <td style="width: 338px">
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="CinemaLINQ" 
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="CinemaLINQTheLoai" 
                         DataTextField="TenDanhMucTheLoaiPhim" 
-                        DataValueField="MaDanhMucTheLoaiPhim" Width="200px" ToolTip="Th&#7875; lo&#7841;i phim">
+                        DataValueField="MaDanhMucTheLoaiPhim" Width="200px" 
+                        ToolTip="Th&#7875; lo&#7841;i phim">
                     </asp:DropDownList>
-                    <asp:LinqDataSource ID="CinemaLINQ" runat="server" 
+                    <asp:LinqDataSource ID="CinemaLINQTheLoai" runat="server" 
                         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
-                        Select="new (MaDanhMucTheLoaiPhim,TenDanhMucTheLoaiPhim, TinhTrang)" TableName="DanhMucTheLoaiPhims" 
-                        Where="TinhTrang == @TinhTrang">
-                        <WhereParameters>
-                            <asp:Parameter DefaultValue="true" Name="TinhTrang" Type="Boolean" />
-                        </WhereParameters>
+                        TableName="DanhMucTheLoaiPhims">
                     </asp:LinqDataSource>
                 </td>
             </tr>
@@ -48,11 +45,7 @@
                     </asp:DropDownList>
                     <asp:LinqDataSource ID="CinemaLINQLoaiPhim" runat="server" 
                         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
-                        Select="new (MaLoai, TenTheLoai)" TableName="DanhMucLoaiPhims" 
-                        Where="TinhTrang == @TinhTrang" onselecting="CinemaLINQLoaiPhim_Selecting">
-                        <WhereParameters>
-                            <asp:Parameter DefaultValue="true" Name="TinhTrang" Type="Boolean" />
-                        </WhereParameters>
+                        TableName="DanhMucLoaiPhims">
                     </asp:LinqDataSource>
                 </td>
             </tr>

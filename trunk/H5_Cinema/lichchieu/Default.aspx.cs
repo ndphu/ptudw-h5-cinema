@@ -22,7 +22,7 @@ namespace H5_Cinema
             CinemaLINQDataContext dt = new CinemaLINQDataContext();
 
             List<SuatChieu> _dsSuatChieu = (from _sc in dt.SuatChieus
-                                           where _sc.LichChieuPhim.NgayChieu.Date >= DateTime.Now.Date
+                                           where _sc.LichChieuPhim.NgayChieu.Date >= DateTime.Now.Date && _sc.TinhTrang == true
                                             orderby _sc.MaPhim ascending
                                            select _sc).ToList();
             if (_dsSuatChieu.Count == 0)

@@ -36,7 +36,7 @@ namespace H5_Cinema.lichchieu
 
             lb_KetQuaTraCuu.Text = "Lịch chiếu ngày " + _dateSelected.Day.ToString() + "/" + _dateSelected.Month.ToString() + "/" + _dateSelected.Year.ToString();
             List<SuatChieu> _dsSuatChieu = (from _suatChieu in dt.SuatChieus
-                                            where _suatChieu.MaLichChieu == _dsLichChieu[0].MaLichChieuPhim
+                                            where _suatChieu.MaLichChieu == _dsLichChieu[0].MaLichChieuPhim && _suatChieu.TinhTrang == true
                                             orderby _suatChieu.MaPhim ascending
                                             select _suatChieu).ToList();
 
