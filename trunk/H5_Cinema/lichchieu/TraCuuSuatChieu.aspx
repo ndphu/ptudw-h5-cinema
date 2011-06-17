@@ -48,23 +48,39 @@
                 </asp:Calendar>
                 <br />
                 <br />
-                <asp:Label ID="lb_DanhSachPhimChieu" runat="server" Font-Size="25pt" 
-                    ForeColor="#00CCFF" Text="Danh sách phim chi&#7871;u trong ngày" Visible="False"></asp:Label>
                 <br />
-                <asp:DataList ID="DataList1" runat="server">
-                    <ItemTemplate>
-                        <asp:LinkButton ID="lbt_TenPhimChieu" runat="server" Font-Size="20pt" 
-                            ForeColor="Lime" CommandArgument='<%# Eval("Phim.MaPhim") %>' 
-                            OnClick = "LBT_Click_ChiTietPhim"
-                            Text='<%# Eval("Phim.TenPhim") %>'></asp:LinkButton>
-                        <br />
-                        <asp:LinkButton ID="lbt_DatVe" runat="server" Font-Size="12pt" ForeColor="Red" 
-                        OnClick = "LBT_Click_DatVe"
-                            CommandArgument='<%# Eval("MaSuatChieu") %>'>&#272;&#7863;t vé</asp:LinkButton>
-                        <br />
-                        <br />
-                    </ItemTemplate>
-                </asp:DataList>
+                <table border="Ridge" style="width: 100%">
+                    <tr>
+                        <td>
+                            <div align="center">
+                                <asp:Label ID="lb_DanhSachPhimChieu" runat="server" Font-Size="15pt" 
+                                    ForeColor="#00CCFF" Text="Danh sách phim chi&#7871;u trong ngày" 
+                                    Visible="False"></asp:Label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div align="center">
+                                <asp:DataList ID="DataList1" runat="server">
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <asp:LinkButton ID="lbt_TenPhimChieu" runat="server" 
+                                                CommandArgument='<%# Eval("Phim.MaPhim") %>' Font-Size="18pt" ForeColor="Lime" 
+                                                OnClick="LBT_Click_ChiTietPhim" Text='<%# Eval("Phim.TenPhim") %>'></asp:LinkButton>
+                                        </div>
+                                        <div align="center">
+                                            <asp:LinkButton ID="lbt_DatVe" runat="server" 
+                                                CommandArgument='<%# Eval("MaSuatChieu") %>' Font-Size="12pt" ForeColor="Red" 
+                                                OnClick="LBT_Click_DatVe">&#272;&#7863;t vé</asp:LinkButton>
+                                        </div>
+                                        <br />
+                                    </ItemTemplate>
+                                </asp:DataList>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
                 <br />
                 <br />
             </ContentTemplate>

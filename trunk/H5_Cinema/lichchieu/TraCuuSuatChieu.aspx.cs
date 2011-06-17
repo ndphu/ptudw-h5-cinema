@@ -62,7 +62,7 @@ namespace H5_Cinema.lichchieu
             if (_dsSuatChieu.Count == 0)
             {
                 lb_DanhSachPhimChieu.Visible = true;
-                lb_DanhSachPhimChieu.Text = "Hiện tại chưa có phim nào được chiếu vào ngày " +
+                lb_DanhSachPhimChieu.Text = "Hiện chưa có phim được chiếu vào ngày " +
                     _selectionDate.Day.ToString() + "/" + _selectionDate.Month.ToString() + "/" + _selectionDate.Year.ToString() +
                     ", suất: " + _loaiSuatChieu.ThoiGianBatDau.ToString("HH:mm");
                 List<SuatChieu> _dsSuatChieuRong = new List<SuatChieu>();
@@ -70,6 +70,7 @@ namespace H5_Cinema.lichchieu
                 DataList1.DataBind();
                 return;
             }
+
             lb_DanhSachPhimChieu.Visible = true;
             lb_DanhSachPhimChieu.Text = "Danh sách phim chiếu vào ngày " +
                     _selectionDate.Day.ToString() + "/" + _selectionDate.Month.ToString() + "/" + _selectionDate.Year.ToString() +
