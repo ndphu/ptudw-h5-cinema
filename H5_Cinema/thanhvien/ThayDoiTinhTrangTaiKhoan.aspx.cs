@@ -24,14 +24,22 @@ namespace H5_Cinema.thanhvien
             try
             {
                 CinemaLINQDataContext dt = new CinemaLINQDataContext();
-                var query = (from nd in dt.NguoiDungs
+                var query = from nd in dt.NguoiDungs
                              where nd.TenNguoiDung == Th_TenTaiKhoan.Text
-                             select nd).Single();
+                             select nd;
+                if (query.Count<NguoiDung>() == 0)
+                {
+                    Label3.Text = "Tài khoản không tồn tại";
+                    Label3.ForeColor = Color.Red;
+                    Label3.Visible = true;
+                }
+                else
+                {
+                    query.Single().TinhTrang = int.Parse(DropDownList2.SelectedItem.Value);
+                    dt.SubmitChanges();
 
-                query.TinhTrang = int.Parse(DropDownList2.SelectedItem.Value);
-                dt.SubmitChanges();
-
-                Response.Redirect("ThayDoiThongTinTaiKhoanThanhCong.aspx");
+                    Response.Redirect("ThayDoiThongTinTaiKhoanThanhCong.aspx");
+                }
 
             }
             catch
@@ -55,9 +63,10 @@ namespace H5_Cinema.thanhvien
             }
             else
             {
-                Label3.Text = "Hiển thị thông tin thành công";
-                Label3.ForeColor = Color.Green;
-                Label3.Visible = true;
+                //Label3.Text = "Hiển thị thông tin thành công";
+                //Label3.ForeColor = Color.Green;
+                //Label3.Visible = true;
+                Xl_CapNhatThayDoi.Enabled = true;
                 var query1 = (from nd in dt.NguoiDungs
                               where nd.TenNguoiDung == Th_TenTaiKhoan.Text
                               select nd).Single();

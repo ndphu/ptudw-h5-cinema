@@ -45,9 +45,7 @@
   <tr>
     <td colspan="5" 
           style="background-image: url('/Img/001.png'); background-repeat: repeat;">
-        <img alt="" align="right" class="style2" src="/Img/banner-img.png" /><asp:Button 
-            ID="Button1" runat="server" onclick="Button1_Click1" Text="Button" />
-      </td>
+        <img alt="" align="right" class="style2" src="/Img/banner-img.png" /></td>
   </tr>
 
   <tr style="background-image: url('/Img/001.png'); background-repeat: repeat">
@@ -190,6 +188,9 @@
                     <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="Small" 
                         NavigateUrl="~/thanhvien/ThayDoiThongTinTaiKhoan.aspx">&#272;&#7893;i thông tin cá nhân...</asp:HyperLink>
                     <br />
+                    <asp:HyperLink ID="hp_Admin" runat="server" Font-Size="Small" 
+                        NavigateUrl="~/admin/default.aspx" Visible="False">Ch&#7913;c n&#259;ng admin...</asp:HyperLink>
+                    <br />
                 </asp:Panel>    
             </div> 
         </div>
@@ -204,8 +205,7 @@
     <td colspan="5">
         <div align="center" class="style1"             
             style="background-image: url('/Img/001.png'); background-repeat: repeat;"><br />
-            <span class="style1">H5 GROUP</span>
-        </div>
+            <span class="style1">H5 GROUP      </div>
     </td>
     </tr>
     </table>

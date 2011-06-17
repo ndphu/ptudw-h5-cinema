@@ -8,7 +8,7 @@
         int _maPhim = int.Parse(((LinkButton)sender).CommandArgument.ToString());
         CinemaLINQDataContext dt = new CinemaLINQDataContext();
         List<SuatChieu> _dsSuatChieu = (from _sc in dt.SuatChieus
-                                        where _sc.LichChieuPhim.NgayChieu.Date >= DateTime.Now.Date && _sc.MaPhim == _maPhim
+                                        where _sc.LichChieuPhim.NgayChieu.Date >= DateTime.Now.Date && _sc.MaPhim == _maPhim && _sc.TinhTrang == true
                                         orderby _sc.MaLichChieu ascending
                                         select _sc).ToList();
         List<LichChieuPhim> _dsLichChieu = new List<LichChieuPhim>();
@@ -48,9 +48,9 @@
     {
         CinemaLINQDataContext dt = new CinemaLINQDataContext();
         List<SuatChieu> _dsSuatChieu = (from _sc in dt.SuatChieus
-                                        where _sc.MaPhim == _maPhim && _sc.LichChieuPhim.MaLichChieuPhim == _maLichChieu
+                                        where _sc.MaPhim == _maPhim && _sc.LichChieuPhim.MaLichChieuPhim == _maLichChieu && _sc.TinhTrang == true
                                         orderby _sc.MaDanhMucSuatChieu ascending
-                                        select _sc).ToList();
+                                        select _sc).OrderBy(_sc => _sc.DanhMucSuatChieu.ThoiGianBatDau).ToList();
 
         List<SuatChieu> _dsSuatChieuTheoSuat = new List<SuatChieu>();
         int _currentSuatChieu = -1;

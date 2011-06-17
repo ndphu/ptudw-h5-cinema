@@ -1,22 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThayDoiTinhTrangTaiKhoan.aspx.cs" Inherits="H5_Cinema.thanhvien.ThayDoiTinhTrangTaiKhoan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div style="width: 100%" align="center">
-<div style="border: thin solid #FF3300; width: 70%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;">
-<div style="border: thin solid #FF3300; background-image: url('../Img/001.png'); background-repeat: repeat">
+<div style="border: thin solid #FF3300; width: 70%; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;" align="center">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
+    
+    <div style="border: thin solid #FF3300; background-image: url('../Img/001.png'); background-repeat: repeat">
     <asp:Label ID="Label1" runat="server" Text="THAY &#272;&#7892;I TÌNH TR&#7840;NG TÀI KHO&#7842;N" 
-    ForeColor="GreenYellow" Font-Bold="True" Font-Size="20pt"></asp:Label></div>    
-    <div style="width: 100%" align="center"><asp:Label ID="Label2" runat="server" Text="Ch&#7881;nh s&#7917;a thông tin tài kho&#7843;n thành công" 
-    ForeColor="Red" Font-Bold="True" Font-Size="Large" Visible="false"></asp:Label></div>    
+    ForeColor="GreenYellow" Font-Bold="True" Font-Size="16pt"></asp:Label></div>    
+    <div style="width: 100%" align="center">
+        <asp:Label ID="Label2" runat="server" Text="Ch&#7881;nh s&#7917;a thông tin tài kho&#7843;n thành công" 
+    ForeColor="Red" Font-Bold="True" Font-Size="Medium" Visible="False"></asp:Label></div>    
     <br />
     <div>
-
-        <table style="width:100%; color: #FF3300;" align="center">
+        <table style="width:113%; color: #FF3300;" align="center">
             <tr>
                 <td style="width: 152px">
                     Tên tài kho&#7843;n:</td>
                 <td style="width: 368px;text-align:left">
-                    <asp:TextBox ID="Th_TenTaiKhoan" runat="server" Width="285px" ToolTip="Tên tài kho&#7843;n &#273;&#259;ng ký"></asp:TextBox>
-                    <asp:Label ID="Label4" runat="server" Text="" />
+                    <asp:TextBox ID="Th_TenTaiKhoan" runat="server" Width="239px" 
+                        ToolTip="Tên tài kho&#7843;n &#273;&#259;ng ký"></asp:TextBox>
                     <asp:Button ID="Check" runat="server" Text="Check" onclick="Check_Click" CausesValidation="false" />
                     <br />
                     <asp:Label ID="Label3" runat="server" ForeColor="Red" Visible="False"></asp:Label>
@@ -32,16 +35,16 @@
 
            <tr>
                 <td style="width: 152px">
-                    Lo&#7841;i ng&#432;&#7901;i dùng:</td>
+                    Tr&#7841;ng thái tài kho&#7843;n:</td>
                 <td style="width: 368px;text-align:left">
                     <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="CinemaLINQTinhTrangNguoiDung" 
                         DataTextField="TenDanhMucTinhTrangNguoiDung" 
-                        DataValueField="MaDanhMucTinhTrangNguoDung" Width="200px" 
+                        DataValueField="MaDanhMucTinhTrangNguoiDung" Width="200px" 
                         ToolTip="Tình tr&#7841;ng ng&#432;&#7901;i dùng" >
                     </asp:DropDownList>
                     <asp:LinqDataSource ID="CinemaLINQTinhTrangNguoiDung" runat="server" 
                         ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
-                        Select="new (MaDanhMucTinhTrangNguoDung, TenDanhMucTinhTrangNguoiDung)" TableName="DanhMucTinhTrangNguoiDungs" 
+                        Select="new (MaDanhMucTinhTrangNguoiDung, TenDanhMucTinhTrangNguoiDung)" TableName="DanhMucTinhTrangNguoiDungs" 
                         Where="TinhTrang == @TinhTrang">
                         <WhereParameters>
                             <asp:Parameter DefaultValue="true" Name="TinhTrang" Type="Boolean" />
@@ -54,7 +57,8 @@
     </div>
     <div style="width: 100%" align="center">
         <asp:Button ID="Xl_CapNhatThayDoi" runat="server" Text="C&#7853;p nh&#7853;t thay &#273;&#7893;i" 
-            style="text-align: center" onclick="Xl_CapNhatThayDoi_Click"/>
+            style="text-align: center" onclick="Xl_CapNhatThayDoi_Click" 
+            Enabled="False"/>
         
     </div>
     <br/>
@@ -62,6 +66,8 @@
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" 
             BackColor="#0099CC" />
     </div>
+    </ContentTemplate>
+    </asp:UpdatePanel>
     <br/>
     </div>
 </asp:Content>

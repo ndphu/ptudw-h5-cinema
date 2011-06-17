@@ -13,7 +13,7 @@
             if (Session["ThoiGianTimKiem"] != null)
             {
                 List<SuatChieu> _dsSuatChieu = (from _suatChieu in dt.SuatChieus
-                                               where _suatChieu.MaPhim == _maPhim && _suatChieu.LichChieuPhim.NgayChieu == (DateTime)Session["ThoiGianTimKiem"]
+                                               where _suatChieu.MaPhim == _maPhim && _suatChieu.LichChieuPhim.NgayChieu == (DateTime)Session["ThoiGianTimKiem"] && _suatChieu.TinhTrang == true
                                                orderby _suatChieu.MaDanhMucSuatChieu ascending
                                                select _suatChieu).ToList();
 

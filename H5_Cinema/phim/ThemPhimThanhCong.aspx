@@ -10,9 +10,7 @@
         Thêm phim m&#7899;i thành công
         <p><asp:Button ID="Button1" runat="server" Text="Xem danh sách phim" 
                 onclick="Button1_Click" /><asp:Button ID="Button2" runat="server" 
-                Text="Thêm phim khác" onclick="Button2_Click" /><asp:Button ID="Button3" 
-                runat="server" Text="Xem phim v&#7915;a thêm vào" onclick="Button3_Click" /></p>
-          
+                Text="Thêm phim khác" onclick="Button2_Click" />          
         </div>
         </div>
 </div>  

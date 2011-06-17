@@ -11,7 +11,10 @@ namespace H5_Cinema
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CinemaLINQDataContext dt = new CinemaLINQDataContext();
+            NguoiDung nd = (NguoiDung)Session["NguoiDung"];
+            if (nd == null || nd.DanhMucNguoiDung.TenDanhMucNguoiDung != "Admin")
+                Response.Redirect("/thanhvien/yeucauquyenadmin.aspx");
         }
     }
 }

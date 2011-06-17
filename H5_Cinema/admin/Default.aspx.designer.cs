@@ -13,6 +13,24 @@ namespace H5_Cinema {
     public partial class WebForm13 {
         
         /// <summary>
+        /// lb_QuanLyPhim control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_QuanLyPhim;
+        
+        /// <summary>
+        /// hp_ThemPhimMoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hp_ThemPhimMoi;
+        
+        /// <summary>
         /// lb_QuanLyPhong control.
         /// </summary>
         /// <remarks>
@@ -49,15 +67,6 @@ namespace H5_Cinema {
         protected global::System.Web.UI.WebControls.Label lb_QuanLySuatChieu;
         
         /// <summary>
-        /// hp_ThemSuatChieu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hp_ThemSuatChieu;
-        
-        /// <summary>
         /// hp_CapNhatSuatChieu control.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,50 @@ namespace H5_Cinema {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hp_CapNhatSuatChieu;
+        
+        /// <summary>
+        /// HyperLink1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        
+        /// <summary>
+        /// lb_QuanLyTaiKhoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_QuanLyTaiKhoan;
+        
+        /// <summary>
+        /// hp_ThemTaiKhoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hp_ThemTaiKhoan;
+        
+        /// <summary>
+        /// hp_ThayDoiThongTinTaiKhoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hp_ThayDoiThongTinTaiKhoan;
+        
+        /// <summary>
+        /// hp_ThayDoiTinhTrangTaiKhoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hp_ThayDoiTinhTrangTaiKhoan;
     }
 }
