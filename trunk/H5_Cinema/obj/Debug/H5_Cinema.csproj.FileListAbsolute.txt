@@ -13,3 +13,8 @@ C:\Users\MinhQuan\Desktop\Check out web\16-06\H5_Cinema\bin\H5_Cinema.pdb
 C:\Users\MinhQuan\Desktop\Check out web\16-06\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\MinhQuan\Desktop\Check out web\16-06\H5_Cinema\obj\Debug\H5_Cinema.dll
 C:\Users\MinhQuan\Desktop\Check out web\16-06\H5_Cinema\obj\Debug\H5_Cinema.pdb
+C:\Users\MinhQuan\Desktop\Check out web\17-06\H5_Cinema\bin\H5_Cinema.dll
+C:\Users\MinhQuan\Desktop\Check out web\17-06\H5_Cinema\bin\H5_Cinema.pdb
+C:\Users\MinhQuan\Desktop\Check out web\17-06\H5_Cinema\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\MinhQuan\Desktop\Check out web\17-06\H5_Cinema\obj\Debug\H5_Cinema.dll
+C:\Users\MinhQuan\Desktop\Check out web\17-06\H5_Cinema\obj\Debug\H5_Cinema.pdb

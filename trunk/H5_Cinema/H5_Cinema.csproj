@@ -76,6 +76,7 @@
     <Content Include="Img\thanhvien_n.png" />
     <Content Include="Img\thongtin.png" />
     <Content Include="Img\thongtin_n.png" />
+    <Content Include="lichchieu\CapNhatLichChieu.aspx" />
     <Content Include="lichchieu\Default.aspx" />
     <Content Include="lichchieu\TraCuuLichChieu.aspx" />
     <Content Include="lichchieu\TraCuuSuatChieu.aspx" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="datve\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lichchieu\CapNhatLichChieu.aspx.cs">
+      <DependentUpon>CapNhatLichChieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lichchieu\CapNhatLichChieu.aspx.designer.cs">
+      <DependentUpon>CapNhatLichChieu.aspx</DependentUpon>
     </Compile>
     <Compile Include="lichchieu\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
