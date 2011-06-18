@@ -6,12 +6,12 @@
     void LBT_Click_CapNhat (object sender, EventArgs e)
     {
         //Neu nhu session nguoi dung bi mat cho nay thi bat dang nhap lai
-        /*if (Session["NguoiDung"] == null)
+        if (Session["NguoiDung"] == null)
         {
             Response.Redirect("/thanhvien/DangNhap.aspx");
             return; 
         }
-        */
+        
         int _itemIndex = int.Parse(((LinkButton)sender).CommandArgument);
         Panel temp = (Panel)DataList1.Items[_itemIndex].FindControl("pn_CapNhat");
 
@@ -61,31 +61,39 @@
                 {
                     List<SuatChieu> _temp = (from _sc in dt.SuatChieus
                                                  where _sc.MaPhong == _suatChieuCapNhat.MaPhong && _sc.MaLichChieu == _suatChieuCapNhat.MaLichChieu && _sc.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay > _dmsc.ThoiGianBatDau.TimeOfDay
-                                                 orderby _sc.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay
+                                                 orderby _sc.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay ascending
                                                  select _sc).ToList();
-                    
-                    if (_dmsc.ThoiGianBatDau.TimeOfDay < _suatChieuCapNhat.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay)
+
+                    List<SuatChieu> _temp2 = (from _sc in dt.SuatChieus
+                                              where _sc.MaPhong == _suatChieuCapNhat.MaPhong && _sc.MaLichChieu == _suatChieuCapNhat.MaLichChieu && _sc.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay < _dmsc.ThoiGianBatDau.TimeOfDay
+                                              orderby _sc.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay descending
+                                              select _sc).ToList();
+
+                    if (_temp2.Count == 0 || _temp2[0].DanhMucSuatChieu.ThoiGianBatDau.AddMinutes(_temp2[0].Phim.ThoiLuong).TimeOfDay < _dmsc.ThoiGianBatDau.TimeOfDay)
                     {
-                        SuatChieu _minDuoi = _temp[0];
-                        if (_dmsc.ThoiGianBatDau.AddMinutes(_phim.ThoiLuong).TimeOfDay < _minDuoi.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay)
-                        {
-                            _TH_dsSuatMoi.Items.Add(_dmsc.ThoiGianBatDau.ToString("HH:mm"));
-                        }             
-                    }
-                    else
-                    {
-                        if (_temp.Count == 0)
-                        {
-                            _TH_dsSuatMoi.Items.Add(_dmsc.ThoiGianBatDau.ToString("HH:mm"));
-                        }   
-                        else
+                        if (_dmsc.ThoiGianBatDau.TimeOfDay < _suatChieuCapNhat.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay)
                         {
                             SuatChieu _minDuoi = _temp[0];
                             if (_dmsc.ThoiGianBatDau.AddMinutes(_phim.ThoiLuong).TimeOfDay < _minDuoi.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay)
                             {
                                 _TH_dsSuatMoi.Items.Add(_dmsc.ThoiGianBatDau.ToString("HH:mm"));
                             }
-                        }               
+                        }
+                        else
+                        {
+                            if (_temp.Count == 0)
+                            {
+                                _TH_dsSuatMoi.Items.Add(_dmsc.ThoiGianBatDau.ToString("HH:mm"));
+                            }
+                            else
+                            {
+                                SuatChieu _minDuoi = _temp[0];
+                                if (_dmsc.ThoiGianBatDau.AddMinutes(_phim.ThoiLuong).TimeOfDay < _minDuoi.DanhMucSuatChieu.ThoiGianBatDau.TimeOfDay)
+                                {
+                                    _TH_dsSuatMoi.Items.Add(_dmsc.ThoiGianBatDau.ToString("HH:mm"));
+                                }
+                            }
+                        }
                     }
                 }
             }
