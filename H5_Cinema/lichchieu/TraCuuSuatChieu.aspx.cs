@@ -89,6 +89,14 @@ namespace H5_Cinema.lichchieu
 
             DataList1.DataSource = _dsSuatChieuTheoPhim;
             DataList1.DataBind();
+
+            if (_selectionDate.Date < DateTime.Now.Date || (_selectionDate.Date == DateTime.Now.Date && _loaiSuatChieu.ThoiGianBatDau.AddHours(-2).TimeOfDay < DateTime.Now.TimeOfDay))
+            {
+                for (int i = 0; i < _dsSuatChieuTheoPhim.Count; i++)
+                {
+                    ((LinkButton)DataList1.Items[i].FindControl("lbt_DatVe")).Visible = false;
+                }
+            }
         }
     }
 }

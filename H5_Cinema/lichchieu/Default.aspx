@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="H5_Cinema.WebForm7" %>
 <%@ Import Namespace="H5_Cinema" %>
 <%@ Import Namespace="System.Linq" %>
+<%@ Import Namespace="System.Drawing" %>
 
 <script language="C#" runat="Server">
     void LBT_Click_XemLichChieu(object sender, EventArgs e)
@@ -32,7 +33,7 @@
         int _count = 0;
         foreach (LichChieuPhim _lcp in _dsLichChieu)
         {
-            if (((NguoiDung)Session["NguoiDung"]) == null || ((NguoiDung)Session["NguoiDung"]).MaDanhMucNguoiDung == 1)
+            if (((NguoiDung)Session["NguoiDung"]) == null || ((NguoiDung)Session["NguoiDung"]).MaDanhMucNguoiDung != 1)
             {
                 dtl_DanhSachNgayChieu.Items[_count].FindControl("lbt_CapNhatLichChieu").Visible = false;
             }
@@ -45,6 +46,11 @@
             foreach (SuatChieu _sc in _dsSuatChieuTrongNgay)
             {
                 ((LinkButton)_dsSuatChieuTH.Items[_count2].FindControl("lbt_SuatChieu")).Text = _sc.DanhMucSuatChieu.ThoiGianBatDau.ToString("HH:mm");
+                if (_dsLichChieu[_count].NgayChieu.Date == DateTime.Now.Date && _sc.DanhMucSuatChieu.ThoiGianBatDau.AddHours(-2).TimeOfDay < DateTime.Now.TimeOfDay)
+                {
+                    ((LinkButton)_dsSuatChieuTH.Items[_count2].FindControl("lbt_SuatChieu")).ForeColor = Color.White;
+                    ((LinkButton)_dsSuatChieuTH.Items[_count2].FindControl("lbt_SuatChieu")).Enabled = false;
+                }
                 _count2++;
             }
             _count++;
@@ -82,6 +88,7 @@
         
         if (Session["CNLC-MaPhimDuocChon"] == null)
             return;
+        
         Session["CNLC-MaLichChieuDuocChon"] = int.Parse(((LinkButton)sender).CommandArgument.ToString());
         Response.Redirect("/lichchieu/CapNhatLichChieu.aspx");
     }

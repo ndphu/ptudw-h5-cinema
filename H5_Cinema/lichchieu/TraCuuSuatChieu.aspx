@@ -15,7 +15,15 @@
 
     void LBT_Click_DatVe(object sender, EventArgs e)
     {
-
+        CinemaLINQDataContext dt = new CinemaLINQDataContext(); 
+        var suatchieu = from _suatchieu in dt.SuatChieus 
+                        where _suatchieu.MaSuatChieu == int.Parse(((LinkButton)sender).CommandArgument)
+                        select _suatchieu; 
+        if (suatchieu.Count<SuatChieu>() == 1)
+        {
+            Session["SuatChieu"] = suatchieu.Single();
+            Response.Redirect("/datve/datve.aspx");
+        }
     }
 </script>
 

@@ -1,106 +1,147 @@
 ﻿<%@ Page Title="Phim" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="H5_Cinema.WebForm2" %>
 <%@ Import Namespace="H5_Cinema" %>
+<script language="C#" runat="Server">
+        void LinkButton_Click (object sender, EventArgs e)
+        {
+            CinemaLINQDataContext dt = new CinemaLINQDataContext();
+            Session["CurrentPhim"] = (from _phim in dt.Phims
+                                 where _phim.MaPhim == int.Parse(((LinkButton)sender).CommandArgument)
+                                 select _phim).Single();
+            Response.Redirect("/phim/ChiTietPhim.aspx");
+        }
+    
+    void LBT_Click_ChinhSua (object sender, EventArgs e)
+    {
+        int _maPhimChinhSua  = int.Parse(((LinkButton)sender).CommandArgument.ToString());
+        
+        CinemaLINQDataContext dt = new CinemaLINQDataContext();
+        Phim _phimChinhSua = (from _ph in dt.Phims
+                              where _ph.MaPhim == _maPhimChinhSua
+                              select _ph).Single();
+
+        Session["CurrentPhim"] = _phimChinhSua;
+        Response.Redirect("/phim/ChinhSuaPhim.aspx");
+    }
+    
+    void LBT_Click_XemLichChieu (object sender, EventArgs e)
+    {
+        Session["XLC-MaPhim"] = ((LinkButton)sender).CommandArgument.ToString();
+        Response.Redirect("/lichchieu/XemLichChieuTheoPhim.aspx");
+    }
+</script>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="width: 100%" align="center">
-    <asp:Label ID="Label1" runat="server" Text="DANH SÁCH PHIM" ForeColor="GreenYellow" 
-            Font-Bold="True" Font-Size="XX-Large" Font-Names="Tahoma"></asp:Label>
-    <br />
-        <asp:ListView ID="Th_DanhSachPhim" runat="server" DataSourceID="CinemaLINQ" 
-        GroupItemCount="3" style="text-align: left" 
-        onselectedindexchanged="ListView1_SelectedIndexChanged">
-        <EmptyDataTemplate>
-            <table id="Table1" runat="server" 
-                style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
-                <tr>
-                    <td>
-                        No data was returned.</td>
-                </tr>
-            </table>
-        </EmptyDataTemplate>
-        <EmptyItemTemplate>
-            <td id="Td1" runat="server" />
-        </EmptyItemTemplate>
-        <GroupTemplate>
-            <tr ID="itemPlaceholderContainer" runat="server">
-                <td ID="itemPlaceholder" runat="server">
+    <div style="height: auto;" align="center">
+        <table border="Rigde" style="width: 100%">
+            <tr>
+                <td align="center">
+    <asp:Label ID="Label1" runat="server" Text="DANH SÁCH PHIM &#272;ANG CHI&#7870;U" ForeColor="GreenYellow" 
+            Font-Bold="True" Font-Size="30pt" Font-Names="Tahoma"></asp:Label>
                 </td>
             </tr>
-        </GroupTemplate>
-        <ItemTemplate>
-            <td id="Td2" runat="server" 
-                style="border: thick ridge #FF9900; width: 400px; background-image: url('../Img/browndirt.jpg'); background-repeat: repeat;" 
-                align="char" bgcolor="Black" valign="top">
-                <div style="background-image: url('../Img/001.png'); height: 90px">                
-                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("TenPhim") %>' 
-                    ForeColor="Blue" Font-Size="Small"/>
-                    <br />
-                <asp:Label runat="server" Text="Th&#7875; lo&#7841;i:" ForeColor="Lime" 
-                    Font-Size="Small"></asp:Label>
-                <asp:Label ID="TypeLabel" runat="server" 
-                    Text='<%# Eval("DanhMucTheLoaiPhim.TenDanhMucTheLoaiPhim") %>' 
-                    ForeColor="Lime" Font-Size="Small" />                    
-                    <br />
-                    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="#FF6600" 
-                        Text="Th&#7901;i l&#432;&#7907;ng:"></asp:Label>
-                    <asp:Label ID="LengthLabel" runat="server" Font-Size="Small" 
-                        ForeColor="#FF6600" Text='<%# Eval("ThoiLuong") %>'></asp:Label>
-                </div>
-                <div style="height: 250px; vertical-align: middle; text-align: center; background-image: url('../Img/001.png') ; top: 5px; position: relative;">
-                    <asp:Image ID="PlaybillAddLabel" runat="server" Width="150px"
-                    ImageUrl='<%# Eval("AnhPhim") %>'/></div>
-                <br />
-                <asp:Button runat="server" OnClick="ChiTiet_Click" Text="Chi ti&#7871;t" 
-                    CommandName='<%# Eval("MaPhim") %>' Width="100px" 
-                    ToolTip="Xem chi ti&#7871;t b&#7897; phim"> </asp:Button>
-                    <% 
-                        NguoiDung nguoiDung = (NguoiDung)Session["NguoiDung"];
-                        if (nguoiDung != null && (nguoiDung.MaDanhMucNguoiDung == 1 || nguoiDung.MaDanhMucNguoiDung == 2))
-                        {
-                        %>
-
-                <asp:Button runat="server" OnClick="ChinhSua_Click" Text="Ch&#7881;nh s&#7917;a" 
-                    CommandName='<%# Eval("MaPhim") %>' Width="100px" 
-                    ToolTip="Ch&#7881;nh s&#7917;a các thông tin liên quan &#273;&#7871;n phim này"> </asp:Button>
-                    <%
-                        }   
-                    %>
-                <br />
-            </td>
-        </ItemTemplate>
-        <LayoutTemplate>
-            <table id="Table2" runat="server">
-                <tr id="Tr1" runat="server">
-                    <td id="Td3" runat="server">
-                        <table ID="groupPlaceholderContainer" runat="server" border="1" 
-                            style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
-                            <tr ID="groupPlaceholder" runat="server">
+            <tr>
+                <td align="center">
+                <asp:DataList ID="dtl_pagging" runat="server" Height="38px" 
+                    onitemcommand="dtl_pagging_ItemCommand" 
+                    onselectedindexchanged="dtl_pagging_SelectedIndexChanged" 
+                    RepeatDirection="Horizontal" Width="88px">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lbt_PageIndex" runat="server" 
+                            CommandArgument='<%# Eval("PageIndex") %>' CommandName="lbt_PageIndex" 
+                            ForeColor="Lime" Text='<%# Eval("PageText") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:DataList>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                <asp:DataList ID="Th_KetQuaTraCuu" runat="server" Height="200px" Width="651px">
+                    <HeaderTemplate>
+                        <span style="color: #66FF33">
+                        _____________________________________________________________________________</span>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <table style="width: 100%">
+                            <tr>
+                                <td align="left" colspan="2">
+                                    <asp:Label ID="Label3" runat="server" Font-Bold="False" Font-Size="20pt" 
+                                        ForeColor="Red" Text='<%# Eval("TenPhim") %>'></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="8" style="width: 156px">
+                                    <asp:Image ID="Image1" runat="server" Height="181px" 
+                                        ImageUrl='<%# Eval("AnhPhim") %>' Width="175px" />
+                                </td>
+                                <td align="left">
+                                    <asp:Label ID="Label4" runat="server" CssClass="style1" 
+                                        Text="Th&#7875; lo&#7841;i:"></asp:Label>
+                                    <asp:Label ID="lb_TheLoai" runat="server" ForeColor="#0099FF" 
+                                        Text='<%# Eval("DanhMucTheLoaiPhim.TenDanhMucTheLoaiPhim") %>'></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <asp:Label ID="Label5" runat="server" CssClass="style1" 
+                                        Text="&#272;&#7841;o di&#7877;n:"></asp:Label>
+                                    <asp:Label ID="Label10" runat="server" ForeColor="#0099FF" 
+                                        Text='<%# Eval("DaoDien") %>'></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <asp:Label ID="Label6" runat="server" CssClass="style1" Text="Di&#7877;n viên:"></asp:Label>
+                                    <asp:Label ID="Label11" runat="server" ForeColor="#0099FF" 
+                                        Text='<%# Eval("DienVienThamGia") %>'></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <asp:Label ID="Label7" runat="server" CssClass="style1" Text="Ngôn ng&#7919;:"></asp:Label>
+                                    <asp:Label ID="Label12" runat="server" ForeColor="#0099FF" 
+                                        Text='<%# Eval("NgonNgu") %>'></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <asp:Label ID="Label8" runat="server" CssClass="style1" 
+                                        Text="Th&#7901;i l&#432;&#7907;ng:"></asp:Label>
+                                    <asp:Label ID="Label13" runat="server" ForeColor="#0099FF" 
+                                        Text='<%# Eval("ThoiLuong") %>'></asp:Label>
+                                    <asp:Label ID="Label15" runat="server" Font-Bold="True" Font-Size="10pt" 
+                                        ForeColor="#0099FF" Text=" phút"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <asp:LinkButton ID="lbt_ChiTietPhim" runat="server" 
+                                        CommandArgument='<%# Eval("MaPhim") %>' ForeColor="#66FF33" 
+                                        OnClick="LinkButton_Click">Xem chi ti&#7871;t phim...</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <asp:LinkButton ID="lbt_XemLichChieu" runat="server" 
+                                        CommandArgument='<%# Eval("MaPhim") %>' ForeColor="#0099FF" 
+                                        OnClick="LBT_Click_XemLichChieu">Xem l&#7883;ch chi&#7871;u hi&#7879;n t&#7841;i...</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <asp:LinkButton ID="lbt_ChinhSuaPhim" runat="server" 
+                                        CommandArgument='<%# Eval("MaPhim") %>' ForeColor="Yellow" 
+                                        OnClick="LBT_Click_ChinhSua">Ch&#7881;nh s&#7917;a phim</asp:LinkButton>
+                                </td>
                             </tr>
                         </table>
-                    </td>
-                </tr>
-                <tr id="Tr2" runat="server">
-                    <td id="Td4" runat="server" 
-                        style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF">
-                        <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
-                            <Fields>
-                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" 
-                                    ShowLastPageButton="True" />
-                            </Fields>
-                        </asp:DataPager>
-                    </td>
-                </tr>
-            </table>
-        </LayoutTemplate>
-    </asp:ListView>
-    <asp:Button runat="server" Text="Thêm phim m&#7899;i" ID="Xl_ThemPhimMoi" 
-        onclick="Xl_ThemPhimMoi_Click" ToolTip="Thêm m&#7897;t phim m&#7899;i vào CSDL" />
-    <asp:LinqDataSource ID="CinemaLINQ" runat="server" 
-        ContextTypeName="H5_Cinema.CinemaLINQDataContext" EntityTypeName="" 
-        Select="new (TenPhim, MaPhim, DanhMucTheLoaiPhim, AnhPhim, ThoiLuong, DienVienThamGia, DaoDien)" 
-        TableName="Phims" Where="TinhTrang == @TinhTrang">
-        <WhereParameters>
-            <asp:Parameter DefaultValue="True" Name="TinhTrang" Type="Boolean" />
-        </WhereParameters>
-    </asp:LinqDataSource>
+                        <br />
+                        <br />
+                    </ItemTemplate>
+                </asp:DataList>
+                </td>
+            </tr>
+        </table>
+        <br />
+    <br />
     </div>
     </asp:Content>

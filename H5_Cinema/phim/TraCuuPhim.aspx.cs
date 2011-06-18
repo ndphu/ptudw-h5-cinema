@@ -44,6 +44,7 @@ namespace H5_Cinema.phim
             CinemaLINQDataContext dt = new CinemaLINQDataContext();
             List<Phim> _dsPhim = (from _phim in dt.Phims
                                   where _phim.TenPhim.Contains(Session["TenPhimTimKiem"].ToString())
+                                  orderby _phim.TenPhim ascending
                                   select _phim).ToList();
 
             if (_dsPhim.Count == 0)
@@ -63,14 +64,14 @@ namespace H5_Cinema.phim
                 Th_KetQuaTraCuu.DataSource = pds;
                 Th_KetQuaTraCuu.DataBind();
 
-                int _temp = _dsPhim.Count - (CurrentIndex * _pageSize);
-                int _itemCount = 0;
-                if (_temp >= _pageSize)
-                    _itemCount = _pageSize;
-                else
-                    _itemCount = _temp;
                 if (Session["NguoiDung"] == null || ((NguoiDung)Session["NguoiDung"]).MaDanhMucNguoiDung != 1)
                 {
+                    int _temp = _dsPhim.Count - (CurrentIndex * _pageSize);
+                    int _itemCount = 0;
+                    if (_temp >= _pageSize)
+                        _itemCount = _pageSize;
+                    else
+                        _itemCount = _temp;
                     for (int i = 0; i < _itemCount; i++)
                     {
                         ((LinkButton)Th_KetQuaTraCuu.Items[i].FindControl("lbt_ChinhSuaPhim")).Visible = false;
@@ -86,7 +87,13 @@ namespace H5_Cinema.phim
             DataTable dt = new DataTable();
             dt.Columns.Add("PageIndex");
             dt.Columns.Add("PageText");
-            for (int i = 0; i < ((int)_rowCount / _pageSize) + 1; i++)
+
+            int _pageCount = _rowCount / _pageSize;
+            int _temp = _rowCount % _pageSize;
+            if (_temp > 0)
+                _pageCount++;
+
+            for (int i = 0; i < _pageCount; i++)
             {
                 DataRow dr = dt.NewRow();
                 dr[0] = i.ToString();
