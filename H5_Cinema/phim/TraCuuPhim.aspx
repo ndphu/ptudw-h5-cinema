@@ -9,6 +9,19 @@
                                  select _phim).Single();
             Response.Redirect("/phim/ChiTietPhim.aspx");
         }
+    
+    void LBT_Click_ChinhSua (object sender, EventArgs e)
+    {
+        int _maPhimChinhSua  = int.Parse(((LinkButton)sender).CommandArgument.ToString());
+        
+        CinemaLINQDataContext dt = new CinemaLINQDataContext();
+        Phim _phimChinhSua = (from _ph in dt.Phims
+                              where _ph.MaPhim == _maPhimChinhSua
+                              select _ph).Single();
+
+        Session["CurrentPhim"] = _phimChinhSua;
+        Response.Redirect("/phim/ChinhSuaPhim.aspx");
+    }
 </script>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div align="center" style="height: 1477px; width: auto;" id="div_main" 
@@ -42,9 +55,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td rowspan="8" style="width: 191px">
+                                <td rowspan="8" style="width: 156px">
                                     <asp:Image ID="Image1" runat="server" Height="181px" 
-                                        ImageUrl='<%# Eval("AnhPhim") %>' Width="190px" />
+                                        ImageUrl='<%# Eval("AnhPhim") %>' Width="175px" />
                                 </td>
                                 <td align="left">
                                     <asp:Label ID="Label4" runat="server" CssClass="style1" Text="Th&#7875; lo&#7841;i:"></asp:Label>
@@ -91,7 +104,9 @@
                             </tr>
                             <tr>
                                 <td align="left">
-                                    <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="Yellow">Xem l&#7883;ch chi&#7871;u...</asp:LinkButton>
+                                    <asp:LinkButton ID="lbt_ChinhSuaPhim" runat="server" 
+                                        OnClick = "LBT_Click_ChinhSua" ForeColor="Yellow" 
+                                        CommandArgument='<%# Eval("MaPhim") %>'>Ch&#7881;nh s&#7917;a phim</asp:LinkButton>
                                 </td>
                             </tr>
                             <tr>

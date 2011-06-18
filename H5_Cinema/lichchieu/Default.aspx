@@ -6,11 +6,15 @@
     void LBT_Click_XemLichChieu(object sender, EventArgs e)
     {
         int _maPhim = int.Parse(((LinkButton)sender).CommandArgument.ToString());
+        
         CinemaLINQDataContext dt = new CinemaLINQDataContext();
         List<SuatChieu> _dsSuatChieu = (from _sc in dt.SuatChieus
                                         where _sc.LichChieuPhim.NgayChieu.Date >= DateTime.Now.Date && _sc.MaPhim == _maPhim && _sc.TinhTrang == true
                                         orderby _sc.MaLichChieu ascending
                                         select _sc).ToList();
+        
+        Session["CNLC-MaPhimDuocChon"] = _maPhim;
+        
         List<LichChieuPhim> _dsLichChieu = new List<LichChieuPhim>();
         int _currentLichChieu = -1;
         for (int i = 0; i < _dsSuatChieu.Count; i++)
@@ -28,6 +32,10 @@
         int _count = 0;
         foreach (LichChieuPhim _lcp in _dsLichChieu)
         {
+            if (((NguoiDung)Session["NguoiDung"]) == null || ((NguoiDung)Session["NguoiDung"]).MaDanhMucNguoiDung == 1)
+            {
+                dtl_DanhSachNgayChieu.Items[_count].FindControl("lbt_CapNhatLichChieu").Visible = false;
+            }
             ((Label)dtl_DanhSachNgayChieu.Items[_count].FindControl("lb_NgayChieu")).Text = _dsLichChieu[_count].NgayChieu.Date.ToString("dd/MM/yyyy");
             List<SuatChieu> _dsSuatChieuTrongNgay = LaySuatChieuTheoLichChieuVaPhim(_maPhim, _dsLichChieu[_count].MaLichChieuPhim);
             DataList _dsSuatChieuTH = (DataList)dtl_DanhSachNgayChieu.Items[_count].FindControl("dtl_DanhSachSuatChieu");
@@ -41,7 +49,6 @@
             }
             _count++;
         }
-        
     }
 
     List<SuatChieu> LaySuatChieuTheoLichChieuVaPhim(int _maPhim, int _maLichChieu)
@@ -64,7 +71,21 @@
         }
         return _dsSuatChieuTheoSuat;
     }
-                                                    
+
+    void LBT_Click_CapNhatLichChieu(object sender, EventArgs e)
+    {
+        if (Session["NguoiDung"] == null)
+        {
+            Response.Redirect("/thanhvien/DangNhap.aspx");
+            return;
+        }
+        
+        if (Session["CNLC-MaPhimDuocChon"] == null)
+            return;
+        Session["CNLC-MaLichChieuDuocChon"] = int.Parse(((LinkButton)sender).CommandArgument.ToString());
+        Response.Redirect("/lichchieu/CapNhatLichChieu.aspx");
+    }
+                                                   
 </script>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div align="left" style="height: 847px; width: 700px">
@@ -107,11 +128,14 @@
                             <asp:DataList ID="dtl_DanhSachSuatChieu" runat="server" 
                                 RepeatDirection="Horizontal">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lbt_SuatChieu" runat="server" Font-Size="11pt" 
+                                    <asp:LinkButton ID="lbt_SuatChieu" runat="server" Font-Size="11pt"
                                         ForeColor="#99FF33" CommandArgument='<%# Eval("MaSuatChieu") %>'>LinkButton</asp:LinkButton>
                                     &nbsp;&nbsp;&nbsp;
                                 </ItemTemplate>
                             </asp:DataList>
+                            <asp:LinkButton ID="lbt_CapNhatLichChieu" runat="server" Font-Size="10pt" OnClick = "LBT_Click_CapNhatLichChieu"
+                                ForeColor="Yellow" CommandArgument='<%# Eval("MaLichChieuPhim") %>'>C&#7853;p nh&#7853;t l&#7883;ch chi&#7871;u...</asp:LinkButton>
+                            <br />
                             <br />
                         </ItemTemplate>
                     </asp:DataList>

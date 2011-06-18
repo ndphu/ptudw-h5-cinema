@@ -19,7 +19,7 @@ namespace H5_Cinema.phim
                     return 0;
                 else
                 {
-                    string temp = this.ViewState["CurrentPageIndex"].ToString();
+                    //string temp = this.ViewState["CurrentPageIndex"].ToString();
                     return int.Parse(this.ViewState["CurrentPageIndex"].ToString());
                 }
             }
@@ -62,6 +62,20 @@ namespace H5_Cinema.phim
 
                 Th_KetQuaTraCuu.DataSource = pds;
                 Th_KetQuaTraCuu.DataBind();
+
+                int _temp = _dsPhim.Count - (CurrentIndex * _pageSize);
+                int _itemCount = 0;
+                if (_temp >= _pageSize)
+                    _itemCount = _pageSize;
+                else
+                    _itemCount = _temp;
+                if (Session["NguoiDung"] == null || ((NguoiDung)Session["NguoiDung"]).MaDanhMucNguoiDung != 1)
+                {
+                    for (int i = 0; i < _itemCount; i++)
+                    {
+                        ((LinkButton)Th_KetQuaTraCuu.Items[i].FindControl("lbt_ChinhSuaPhim")).Visible = false;
+                    }
+                }
 
                 Pagging_CountPage(_dsPhim.Count);
             }
