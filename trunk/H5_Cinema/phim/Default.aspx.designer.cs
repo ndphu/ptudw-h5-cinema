@@ -22,30 +22,21 @@ namespace H5_Cinema {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Th_DanhSachPhim control.
+        /// dtl_pagging control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView Th_DanhSachPhim;
+        protected global::System.Web.UI.WebControls.DataList dtl_pagging;
         
         /// <summary>
-        /// Xl_ThemPhimMoi control.
+        /// Th_KetQuaTraCuu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Xl_ThemPhimMoi;
-        
-        /// <summary>
-        /// CinemaLINQ control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource CinemaLINQ;
+        protected global::System.Web.UI.WebControls.DataList Th_KetQuaTraCuu;
     }
 }

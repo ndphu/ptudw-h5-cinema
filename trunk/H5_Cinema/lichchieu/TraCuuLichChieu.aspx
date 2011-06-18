@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TraCuuLichChieu.aspx.cs" Inherits="H5_Cinema.lichchieu.TraCuuLichChieu" %>
 
 <%@ Import Namespace="H5_Cinema" %>
+<%@ Import Namespace="System.Drawing" %>
+
 <script language="C#" runat="Server">
         void LinkButton_Click (object sender, EventArgs e)
         {
@@ -36,10 +38,29 @@
                 foreach (SuatChieu _sc in _dsSuatChieuTheoSuat)
                 {
                     ((LinkButton)dtl_DanhSachSuatChieu.Items[_count].FindControl("lbt_SuatChieu")).Text = _sc.DanhMucSuatChieu.ThoiGianBatDau.ToString("HH:mm");
+                    DateTime _ngayTraCuu = (DateTime)Session["ThoiGianTimKiem"];
+                    if (_ngayTraCuu.Date < DateTime.Now.Date || (_ngayTraCuu.Date == DateTime.Now.Date && _sc.DanhMucSuatChieu.ThoiGianBatDau.AddHours(-2).TimeOfDay < DateTime.Now.TimeOfDay))
+                    {
+                        ((LinkButton)dtl_DanhSachSuatChieu.Items[_count].FindControl("lbt_SuatChieu")).ForeColor = Color.White;
+                        ((LinkButton)dtl_DanhSachSuatChieu.Items[_count].FindControl("lbt_SuatChieu")).Enabled = false;
+                    }
                     _count++;
                 }                       
             }
         }
+
+    void LBT_Click_DatVe(object sender, EventArgs e)
+    {
+        CinemaLINQDataContext dt = new CinemaLINQDataContext();
+        var suatchieu = from _suatchieu in dt.SuatChieus
+                        where _suatchieu.MaSuatChieu == int.Parse(((LinkButton)sender).CommandArgument)
+                        select _suatchieu;
+        if (suatchieu.Count<SuatChieu>() == 1)
+        {
+            Session["SuatChieu"] = suatchieu.Single();
+            Response.Redirect("/datve/datve.aspx");
+        }
+    }
 </script>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -80,7 +101,7 @@
                             <asp:Panel ID="Panel2" runat="server" Height="495px">
                                 <asp:DataList ID="dtl_DanhSachSuatChieu" runat="server" Width="81px">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="lbt_SuatChieu" runat="server" 
+                                        <asp:LinkButton ID="lbt_SuatChieu" runat="server" OnClick = "LBT_Click_DatVe"
                                             CommandArgument='<%# Eval("MaSuatChieu") %>' Font-Size="13pt" 
                                             ForeColor="Yellow"></asp:LinkButton>
                                         <br />

@@ -80,6 +80,7 @@
     <Content Include="lichchieu\Default.aspx" />
     <Content Include="lichchieu\TraCuuLichChieu.aspx" />
     <Content Include="lichchieu\TraCuuSuatChieu.aspx" />
+    <Content Include="lichchieu\XemLichChieuTheoPhim.aspx" />
     <Content Include="phim\TraCuuPhim.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Img\film\lenh_xoa_so.png" />
@@ -169,6 +170,13 @@
     </Compile>
     <Compile Include="lichchieu\TraCuuSuatChieu.aspx.designer.cs">
       <DependentUpon>TraCuuSuatChieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lichchieu\XemLichChieuTheoPhim.aspx.cs">
+      <DependentUpon>XemLichChieuTheoPhim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lichchieu\XemLichChieuTheoPhim.aspx.designer.cs">
+      <DependentUpon>XemLichChieuTheoPhim.aspx</DependentUpon>
     </Compile>
     <Compile Include="paypal\PayPalGateway.cs" />
     <Compile Include="paypal\PayPalReturn.cs" />
